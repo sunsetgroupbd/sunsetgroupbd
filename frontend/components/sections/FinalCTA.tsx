@@ -35,7 +35,7 @@ export default function FinalCTA() {
         >
           <div className="mb-5 flex items-center justify-center gap-3">
             <span className="h-px w-6 bg-[var(--sunset-red)]" aria-hidden />
-            <p className="text-eyebrow" style={{ color: "rgba(250,249,246,0.62)" }}>
+            <p className="text-eyebrow" style={{ color: "rgba(255, 255, 255,0.62)" }}>
               {isBn ? "শরীয়া তদারকি · সাফ-কবালা নিবন্ধিত" : "Shariah supervised · Saf-kabala registered"}
             </p>
           </div>
@@ -46,7 +46,7 @@ export default function FinalCTA() {
               : "Become an equity partner in Sunset Group"}
           </h2>
 
-          <p className="text-body-lg mx-auto mb-9 max-w-xl leading-relaxed text-[rgba(250,249,246,0.7)]">
+          <p className="text-body-lg mx-auto mb-9 max-w-xl leading-relaxed text-[rgba(255, 255, 255,0.7)]">
             {isBn
               ? "সীমিত সংখ্যক সাফ-কবালা নিবন্ধিত শেয়ারহোল্ডার প্যাকেজ উপলব্ধ। আজই আমাদের বিনিয়োগ উপদেষ্টার সাথে কথা বলুন।"
               : "A limited number of saf-kabala registered packages remain. Speak directly with an investment adviser today."}
@@ -77,7 +77,7 @@ export default function FinalCTA() {
             </Link>
           </div>
 
-          <p className="mt-9 flex items-center justify-center gap-2 text-[11.5px] text-[rgba(250,249,246,0.5)]">
+          <p className="mt-9 flex items-center justify-center gap-2 text-[11.5px] text-[rgba(255, 255, 255,0.5)]">
             <MapPin size={12} className="text-[var(--sunset-red)]" />
             27 Shaptak Square, Level-11, Old Dhanmondi 27, Dhaka-1209
           </p>

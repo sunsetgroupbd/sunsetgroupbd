@@ -64,7 +64,7 @@ export default function GalleryPreview() {
               sizes="(max-width: 768px) 100vw, 50vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[rgba(14,42,31,0.5)] via-transparent to-transparent" />
-            <figcaption className="absolute bottom-4 left-4 rounded-full bg-[rgba(250,249,246,0.92)] px-3 py-1.5 text-[10.5px] font-semibold uppercase tracking-[0.08em] text-[var(--sunset-green-900)] backdrop-blur">
+            <figcaption className="absolute bottom-4 left-4 rounded-full bg-[#0e2a1f] px-3.5 py-1.5 text-[10.5px] font-semibold uppercase tracking-[0.08em] text-white shadow-md border border-white/20">
               {labels[0]}
             </figcaption>
           </motion.figure>
@@ -86,7 +86,7 @@ export default function GalleryPreview() {
                 sizes="(max-width: 768px) 50vw, 25vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[rgba(14,42,31,0.42)] via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              <figcaption className="absolute bottom-3 left-3 text-[10.5px] font-medium text-[rgba(250,249,246,0.9)] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <figcaption className="absolute bottom-3 left-3 text-[10.5px] font-medium text-[rgba(255, 255, 255,0.9)] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 {labels[i + 1]}
               </figcaption>
             </motion.figure>

@@ -76,7 +76,7 @@ export default function WhyKuakata() {
           >
             <div className="mb-4 flex items-center gap-3">
               <span className="h-px w-6 bg-[var(--sunset-red)]" aria-hidden />
-              <p className="text-eyebrow" style={{ color: "rgba(250, 249, 246, 0.62)" }}>
+              <p className="text-eyebrow" style={{ color: "rgba(255, 255, 255, 0.62)" }}>
                 {isBn ? "প্রাকৃতিক বৈচিত্র্য ও অবস্থান" : "A singular coastline"}
               </p>
             </div>
@@ -87,7 +87,7 @@ export default function WhyKuakata() {
                 : "One coast. Two horizons. Sunrise, sunset and the Sundarbans."}
             </h2>
 
-            <p className="text-body-lg mb-8 max-w-2xl leading-relaxed text-[rgba(250,249,246,0.72)]">
+            <p className="text-body-lg mb-8 max-w-2xl leading-relaxed text-[rgba(255, 255, 255,0.72)]">
               {isBn
                 ? "কুয়াকাটা বাংলাদেশের একমাত্র সৈকত যেখান থেকে একই ফ্রেমে সূর্যোদয় ও সূর্যাস্ত দেখা যায়। ইউনেস্কো বিশ্ব ঐতিহ্য সুন্দরবনের নৈকট্য এবং সরকারি কেটিসি মাস্টার প্ল্যান এ অঞ্চলকে দেশের প্রধান পর্যটন কেন্দ্রে পরিণত করছে।"
                 : "Kuakata is Bangladesh's only coast where sunrise and sunset unfold across the same beach. Beside the UNESCO-listed Sundarbans and inside the government's Kuakata Tourism City plan, it is becoming the country's defining coastal destination."}
@@ -99,11 +99,11 @@ export default function WhyKuakata() {
                 return (
                   <div
                     key={item.title}
-                    className="rounded-[14px] border border-[rgba(250,249,246,0.12)] bg-[rgba(250,249,246,0.04)] p-4"
+                    className="rounded-[14px] border border-[rgba(255, 255, 255,0.12)] bg-[rgba(255, 255, 255,0.04)] p-4"
                   >
                     <Icon size={18} strokeWidth={1.5} className="mb-3 text-[var(--sunset-red)]" />
                     <p className="text-[13px] font-semibold text-[var(--paper)]">{item.title}</p>
-                    <p className="mt-1 text-[11.5px] leading-relaxed text-[rgba(250,249,246,0.56)]">
+                    <p className="mt-1 text-[11.5px] leading-relaxed text-[rgba(255, 255, 255,0.56)]">
                       {item.desc}
                     </p>
                   </div>
@@ -128,19 +128,19 @@ export default function WhyKuakata() {
                 sizes="(max-width: 1024px) 100vw, 40vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[rgba(14,42,31,0.5)] via-transparent to-transparent" />
-              <p className="absolute bottom-4 left-4 rounded-full bg-[rgba(250,249,246,0.9)] px-3 py-1.5 text-[10.5px] font-semibold uppercase tracking-[0.08em] text-[var(--sunset-green-900)] backdrop-blur">
+              <p className="absolute bottom-4 left-4 rounded-full bg-[#0e2a1f] px-3.5 py-1.5 text-[10.5px] font-semibold uppercase tracking-[0.08em] text-white shadow-md border border-white/20">
                 {isBn ? "কেটিসি মাস্টার প্ল্যান অঞ্চল" : "KTC master plan zone"}
               </p>
             </div>
           </motion.div>
         </div>
 
-        <div className="border-t border-[rgba(250,249,246,0.12)] pt-8">
+        <div className="border-t border-[rgba(255, 255, 255,0.12)] pt-8">
           <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
-            <p className="text-[10.5px] font-semibold uppercase tracking-[0.14em] text-[rgba(250,249,246,0.56)]">
+            <p className="text-[10.5px] font-semibold uppercase tracking-[0.14em] text-[rgba(255, 255, 255,0.56)]">
               {isBn ? "অবকাঠামো ও যোগাযোগ" : "Infrastructure & connectivity"}
             </p>
-            <p className="text-[11px] text-[rgba(250,249,246,0.56)]">
+            <p className="text-[11px] text-[rgba(255, 255, 255,0.56)]">
               {isBn ? "ভূমিকম্প অঞ্চলের বাইরে" : "Outside the earthquake zone"}
             </p>
           </div>
@@ -150,14 +150,14 @@ export default function WhyKuakata() {
               const Icon = item.icon;
               return (
                 <div key={item.label} className="flex gap-3.5">
-                  <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[rgba(250,249,246,0.14)] text-[var(--sunset-red)]">
+                  <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[rgba(255, 255, 255,0.14)] text-[var(--sunset-red)]">
                     <Icon size={16} strokeWidth={1.5} />
                   </span>
                   <div>
                     <p className="text-[13.5px] font-semibold text-[var(--paper)]">
                       {isBn ? item.labelBn : item.label}
                     </p>
-                    <p className="mt-1 text-[12px] leading-relaxed text-[rgba(250,249,246,0.56)]">
+                    <p className="mt-1 text-[12px] leading-relaxed text-[rgba(255, 255, 255,0.56)]">
                       {isBn ? item.subBn : item.sub}
                     </p>
                   </div>

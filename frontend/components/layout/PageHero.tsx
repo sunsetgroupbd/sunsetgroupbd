@@ -71,7 +71,7 @@ export default function PageHero({
             className={`flex items-center gap-3 mb-5 ${centered ? "justify-center" : ""}`}
           >
             <span className="h-px w-7 bg-[var(--sunset-red)]" aria-hidden />
-            <p className="text-eyebrow" style={{ color: "rgba(250, 249, 246, 0.72)" }}>
+            <p className="text-eyebrow" style={{ color: "rgba(255, 255, 255, 0.72)" }}>
               {eyebrow}
             </p>
           </div>
@@ -88,7 +88,7 @@ export default function PageHero({
               className={`text-body-lg leading-relaxed ${
                 centered ? "mx-auto" : ""
               } max-w-2xl`}
-              style={{ color: "rgba(250, 249, 246, 0.78)" }}
+              style={{ color: "rgba(255, 255, 255, 0.78)" }}
             >
               {description}
             </p>
@@ -107,7 +107,7 @@ export default function PageHero({
           {meta && (
             <div
               className="mt-10 pt-6 flex flex-wrap gap-x-8 gap-y-3 border-t"
-              style={{ borderColor: "rgba(250, 249, 246, 0.16)" }}
+              style={{ borderColor: "rgba(255, 255, 255, 0.16)" }}
             >
               {meta}
             </div>

@@ -74,7 +74,7 @@ export default function Header() {
     transparent
       ? active
         ? "#FFFFFF"
-        : "rgba(250, 249, 246, 0.82)"
+        : "rgba(255, 255, 255, 0.82)"
       : active
         ? "var(--sunset-green-900)"
         : "var(--ink)";
@@ -85,7 +85,7 @@ export default function Header() {
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
           transparent
             ? "bg-transparent"
-            : "bg-[rgba(250,249,246,0.94)] backdrop-blur-xl border-b border-[var(--line)]"
+            : "bg-[rgba(255, 255, 255,0.94)] backdrop-blur-xl border-b border-[var(--line)]"
         }`}
       >
         <div className="container-site">
@@ -106,26 +106,14 @@ export default function Header() {
                   priority
                 />
               </span>
-              <span className="leading-none">
-                <span
-                  className="block text-[1.15rem] sm:text-[1.22rem] font-medium tracking-[-0.01em] transition-colors"
-                  style={{
-                    color: transparent ? "#FFFFFF" : "var(--sunset-green-900)",
-                    fontFamily: "var(--font-cormorant)",
-                  }}
-                >
-                  Sunset Group
-                </span>
-                <span
-                  className="mt-0.5 block text-[9px] sm:text-[9.5px] font-semibold uppercase tracking-[0.14em] transition-colors"
-                  style={{
-                    color: transparent
-                      ? "rgba(250, 249, 246, 0.62)"
-                      : "var(--sunset-grey-700)",
-                  }}
-                >
-                  {isBn ? "হসপিটালিটি ও হেলথকেয়ার" : "Hospitality & Healthcare"}
-                </span>
+              <span
+                className="block text-[1.22rem] sm:text-[1.32rem] font-medium tracking-[-0.01em] transition-colors leading-none"
+                style={{
+                  color: transparent ? "#FFFFFF" : "var(--sunset-green-900)",
+                  fontFamily: "var(--font-cormorant)",
+                }}
+              >
+                Sunset Group
               </span>
             </Link>
 
@@ -151,7 +139,7 @@ export default function Header() {
                     className="absolute -bottom-1.5 left-0 h-px w-full"
                     style={{
                       backgroundColor: transparent
-                        ? "rgba(250, 249, 246, 0.85)"
+                        ? "rgba(255, 255, 255, 0.85)"
                         : "var(--sunset-green-900)",
                     }}
                   />
@@ -234,7 +222,7 @@ export default function Header() {
                     className="absolute -bottom-1.5 left-0 h-px w-full"
                     style={{
                       backgroundColor: transparent
-                        ? "rgba(250, 249, 246, 0.85)"
+                        ? "rgba(255, 255, 255, 0.85)"
                         : "var(--sunset-green-900)",
                     }}
                   />
@@ -253,7 +241,7 @@ export default function Header() {
                     className="absolute -bottom-1.5 left-0 h-px w-full"
                     style={{
                       backgroundColor: transparent
-                        ? "rgba(250, 249, 246, 0.85)"
+                        ? "rgba(255, 255, 255, 0.85)"
                         : "var(--sunset-green-900)",
                     }}
                   />
@@ -322,7 +310,7 @@ export default function Header() {
                     className="absolute -bottom-1.5 left-0 h-px w-full"
                     style={{
                       backgroundColor: transparent
-                        ? "rgba(250, 249, 246, 0.85)"
+                        ? "rgba(255, 255, 255, 0.85)"
                         : "var(--sunset-green-900)",
                     }}
                   />
@@ -336,7 +324,7 @@ export default function Header() {
                 type="button"
                 onClick={toggle}
                 className="flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-[12px] font-semibold transition-colors hover:opacity-75 cursor-pointer whitespace-nowrap"
-                style={{ color: transparent ? "rgba(250, 249, 246, 0.9)" : "var(--ink)" }}
+                style={{ color: transparent ? "rgba(255, 255, 255, 0.9)" : "var(--ink)" }}
                 aria-label="Change language"
               >
                 <Globe size={14} />

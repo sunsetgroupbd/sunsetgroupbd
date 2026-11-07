@@ -64,11 +64,11 @@ export default function ProjectsContent() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[rgba(14,42,31,0.42)] via-transparent to-transparent" />
                   {(isBn ? project.badgeBn : project.badge) && (
-                    <span className="absolute left-4 top-4 rounded-full bg-[rgba(250,249,246,0.92)] px-2.5 py-1 text-[10px] font-semibold text-[var(--sunset-green-900)] backdrop-blur">
+                    <span className="absolute left-4 top-4 rounded-full bg-[#0e2a1f] px-3 py-1 text-[10px] font-semibold text-white shadow-md border border-white/20">
                       {isBn ? project.badgeBn : project.badge}
                     </span>
                   )}
-                  <span className="absolute right-4 top-4 rounded-full bg-[rgba(14,42,31,0.85)] px-2.5 py-0.5 text-[10px] font-medium tabular-nums text-[var(--paper)] backdrop-blur">
+                  <span className="absolute right-4 top-4 rounded-full bg-[#0e2a1f] px-3 py-1 text-[10px] font-semibold tabular-nums text-white shadow-md border border-white/20">
                     {project.number}
                   </span>
                 </Link>

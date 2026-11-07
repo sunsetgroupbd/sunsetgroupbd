@@ -120,7 +120,7 @@ export default function AboutContent() {
         meta={
           <>
             <div>
-              <p className="text-[10.5px] uppercase tracking-[0.12em] text-[rgba(250,249,246,0.5)]">
+              <p className="text-[10.5px] uppercase tracking-[0.12em] text-[rgba(255, 255, 255,0.5)]">
                 {isBn ? "মূল প্রতিষ্ঠান" : "Parent company"}
               </p>
               <p className="mt-1 text-[13px] text-[var(--paper)]">
@@ -130,13 +130,13 @@ export default function AboutContent() {
               </p>
             </div>
             <div>
-              <p className="text-[10.5px] uppercase tracking-[0.12em] text-[rgba(250,249,246,0.5)]">
+              <p className="text-[10.5px] uppercase tracking-[0.12em] text-[rgba(255, 255, 255,0.5)]">
                 {isBn ? "আরজেএসসি নিবন্ধন" : "RJSC registration"}
               </p>
               <p className="mt-1 text-[13px] text-[var(--paper)]">C-189422/2023</p>
             </div>
             <div>
-              <p className="text-[10.5px] uppercase tracking-[0.12em] text-[rgba(250,249,246,0.5)]">
+              <p className="text-[10.5px] uppercase tracking-[0.12em] text-[rgba(255, 255, 255,0.5)]">
                 {isBn ? "প্রধান কার্যালয়" : "Headquarters"}
               </p>
               <p className="mt-1 text-[13px] text-[var(--paper)]">
@@ -292,7 +292,7 @@ export default function AboutContent() {
             <div>
               <div className="mb-4 flex items-center gap-3">
                 <span className="h-px w-6 bg-[var(--sunset-red)]" aria-hidden />
-                <p className="text-eyebrow" style={{ color: "rgba(250,249,246,0.62)" }}>
+                <p className="text-eyebrow" style={{ color: "rgba(255, 255, 255,0.62)" }}>
                   {isBn ? "শরীয়া সুপারভাইজরি কমিটি" : "Shariah supervisory committee"}
                 </p>
               </div>
@@ -301,7 +301,7 @@ export default function AboutContent() {
                   ? "ইসলামী নীতিমালার আলোকে নিরীক্ষিত ও প্রত্যয়িত"
                   : "Audited and certified under Islamic principles"}
               </h2>
-              <div className="space-y-4 text-body text-[rgba(250,249,246,0.72)]">
+              <div className="space-y-4 text-body text-[rgba(255, 255, 255,0.72)]">
                 <p>
                   {isBn
                     ? "সানসেট গ্রুপে 'হালাল' কেবল একটি ব্যবসায়িক স্লোগান নয়; এটি আমাদের সামগ্রিক ব্যবসায়িক কাঠামোর ভিত্তি। আমাদের কার্যক্রম দেশের খ্যাতনামা ইসলামী ফিকহ ও অর্থায়ন বিশেষজ্ঞদের সমন্বয়ে গঠিত একটি স্বাধীন শরীয়া বোর্ডের তত্ত্বাবধানে পরিচালিত হয়।"
@@ -317,17 +317,17 @@ export default function AboutContent() {
               <ul className="mt-5 space-y-3">
                 {shariahPoints.map((point) => (
                   <li key={point} className="flex items-start gap-2.5">
-                    <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[rgba(250,249,246,0.1)]">
+                    <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[rgba(255, 255, 255,0.1)]">
                       <Check size={10} strokeWidth={2.5} className="text-[var(--sunset-red)]" />
                     </span>
-                    <span className="text-[13px] leading-relaxed text-[rgba(250,249,246,0.8)]">
+                    <span className="text-[13px] leading-relaxed text-[rgba(255, 255, 255,0.8)]">
                       {point}
                     </span>
                   </li>
                 ))}
               </ul>
 
-              <p className="mt-7 rounded-[12px] border border-[rgba(250,249,246,0.14)] bg-[rgba(250,249,246,0.04)] p-4 text-[12px] leading-relaxed text-[rgba(250,249,246,0.62)]">
+              <p className="mt-7 rounded-[12px] border border-[rgba(255, 255, 255,0.14)] bg-[rgba(255, 255, 255,0.04)] p-4 text-[12px] leading-relaxed text-[rgba(255, 255, 255,0.62)]">
                 <strong className="text-[var(--paper)]">
                   {isBn ? "অফিসিয়াল ফতোয়া ও সনদ" : "Official fatwa & board certification"}
                 </strong>{" "}
@@ -337,16 +337,16 @@ export default function AboutContent() {
               </p>
             </div>
 
-            <div className="rounded-[20px] border border-[rgba(250,249,246,0.14)] bg-[rgba(250,249,246,0.04)] p-8 md:p-10">
+            <div className="rounded-[20px] border border-[rgba(255, 255, 255,0.14)] bg-[rgba(255, 255, 255,0.04)] p-8 md:p-10">
               <h3 className="text-display-sm mb-5 text-[var(--paper)]">
                 {isBn ? "উলামা ও বিশেষজ্ঞ পরিষদ" : "Board of scholars"}
               </h3>
-              <p className="mb-7 text-[13px] leading-relaxed text-[rgba(250,249,246,0.62)]">
+              <p className="mb-7 text-[13px] leading-relaxed text-[rgba(255, 255, 255,0.62)]">
                 {isBn
                   ? "বিনিয়োগকারীদের ব্যাংক অ্যাকাউন্টে লভ্যাংশ বিতরণের পূর্বে কমিটি হিসাবরক্ষণ ও মুনাফা বণ্টন চক্র নিবিড়ভাবে নিরীক্ষা করে।"
                   : "The panel continuously monitors revenue accounting and audits distribution cycles before dividends are credited to investor bank accounts."}
               </p>
-              <div className="divide-y divide-[rgba(250,249,246,0.12)]">
+              <div className="divide-y divide-[rgba(255, 255, 255,0.12)]">
                 {[
                   {
                     title: isBn ? "প্রধান শরীয়া উপদেষ্টা" : "Chief Shariah adviser",
@@ -369,7 +369,7 @@ export default function AboutContent() {
                 ].map((item) => (
                   <div key={item.title} className="py-4 first:pt-0 last:pb-0">
                     <p className="text-[13px] font-semibold text-[var(--paper)]">{item.title}</p>
-                    <p className="mt-1 text-[12px] leading-relaxed text-[rgba(250,249,246,0.56)]">
+                    <p className="mt-1 text-[12px] leading-relaxed text-[rgba(255, 255, 255,0.56)]">
                       {item.body}
                     </p>
                   </div>
@@ -443,7 +443,7 @@ export default function AboutContent() {
                 ? "আমাদের সক্রিয় পোর্টফোলিও দেখতে প্রস্তুত?"
                 : "Ready to explore our active portfolios?"}
             </h2>
-            <p className="text-[13px] text-[rgba(250,249,246,0.68)]">
+            <p className="text-[13px] text-[rgba(255, 255, 255,0.68)]">
               {isBn
                 ? "ধানমন্ডি প্রধান কার্যালয়ে সিনিয়র বিনিয়োগ বিশ্লেষকদের সাথে পরামর্শ করুন বা প্রজেক্ট সাইট পরিদর্শনের সময় নির্ধারণ করুন।"
                 : "Consult with our senior investment analysts at Dhanmondi or schedule a project site visit."}

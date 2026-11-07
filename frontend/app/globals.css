@@ -19,8 +19,9 @@
   --color-blue-500:  #426b80;
   --color-grey-700:  #5b625c;
   --color-ink:       #171b18;
-  --color-paper:     #faf9f6;
-  --color-sand:      #f1efe9;
+  --color-paper:     #ffffff;
+  --color-sand:      #f4f5f7;
+  --color-ash:       #f4f5f7;
   --color-white:     #ffffff;
   --color-line:      rgba(23, 27, 24, 0.1);
 
@@ -59,12 +60,13 @@
   --sunset-grey-700:  #5b625c;
   --ink:              #171b18;
   --muted:            #5b625c;
-  --paper:            #faf9f6;
-  --sand:             #f1efe9;
+  --paper:            #ffffff;
+  --sand:             #f4f5f7;
+  --ash:              #f4f5f7;
   --white:            #ffffff;
-  --line:             rgba(23, 27, 24, 0.1);
-  --line-strong:      rgba(23, 27, 24, 0.16);
-  --line-light:       rgba(250, 249, 246, 0.16);
+  --line:             rgba(23, 27, 24, 0.08);
+  --line-strong:      rgba(23, 27, 24, 0.14);
+  --line-light:       rgba(255, 255, 255, 0.16);
   --ease-premium:     cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -311,7 +313,7 @@ html[lang="bn"] *,
 .btn-outline-white {
   background-color: transparent;
   color: var(--paper);
-  border-color: rgba(250, 249, 246, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .btn-outline-white:hover {
@@ -668,8 +670,8 @@ textarea.form-input {
 }
 
 /* Dark section prose adjustments */
-.on-dark .text-eyebrow { color: rgba(250, 249, 246, 0.62); }
-.on-dark .text-lead { color: rgba(250, 249, 246, 0.74); }
+.on-dark .text-eyebrow { color: rgba(255, 255, 255, 0.62); }
+.on-dark .text-lead { color: rgba(255, 255, 255, 0.74); }
 
 /* Remove default number input arrows */
 input[type="range"] {

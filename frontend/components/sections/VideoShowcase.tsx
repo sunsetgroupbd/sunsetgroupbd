@@ -14,21 +14,24 @@ export default function VideoShowcase() {
 
   return (
     <section
-      className="section-gap"
+      id="video-showcase"
+      className="section-gap scroll-mt-20"
       style={{ backgroundColor: "var(--sand)" }}
       aria-labelledby="video-showcase-heading"
     >
       <div className="container-site">
-        <SectionHeading
-          eyebrow={isBn ? "প্রকল্পের ভিডিও" : "Project films"}
-          title={isBn ? "ভিডিওতে দেখুন আমাদের প্রকল্পসমূহ" : "Witness the vision in motion"}
-          description={
-            isBn
-              ? "নির্মাণ অগ্রগতি, স্থাপত্য উপস্থাপনা এবং বিনিয়োগকারী ব্রিফিং সরাসরি দেখুন।"
-              : "On-ground progress, architectural walkthroughs and investor briefings from our official channel."
-          }
-          className="mb-14 md:mb-16"
-        />
+        <div id="video-showcase-heading">
+          <SectionHeading
+            eyebrow={isBn ? "প্রকল্পের ভিডিও" : "Project films"}
+            title={isBn ? "ভিডিওতে দেখুন আমাদের প্রকল্পসমূহ" : "Witness the vision in motion"}
+            description={
+              isBn
+                ? "নির্মাণ অগ্রগতি, স্থাপত্য উপস্থাপনা এবং বিনিয়োগকারী ব্রিফিং সরাসরি দেখুন।"
+                : "On-ground progress, architectural walkthroughs and investor briefings from our official channel."
+            }
+            className="mb-14 md:mb-16"
+          />
+        </div>
 
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
           {projectVideos.map((video, idx) => (
@@ -53,11 +56,11 @@ export default function VideoShowcase() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-[rgba(14,42,31,0.28)] transition-colors group-hover:bg-[rgba(14,42,31,0.42)]">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[rgba(250,249,246,0.92)] text-[var(--sunset-green-900)] backdrop-blur transition-transform duration-300 group-hover:scale-110">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-[var(--sunset-green-950)] shadow-lg transition-transform duration-300 group-hover:scale-110">
                     <Play size={15} fill="currentColor" stroke="none" className="ml-0.5" />
                   </span>
                 </div>
-                <span className="absolute bottom-3 left-3 rounded-full bg-[rgba(14,42,31,0.82)] px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.08em] text-[var(--paper)] backdrop-blur">
+                <span className="absolute bottom-3 left-3 rounded-full bg-[#0e2a1f] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-white shadow-md border border-white/20">
                   {video.category}
                 </span>
               </div>
@@ -95,17 +98,17 @@ export default function VideoShowcase() {
           >
             <div
               className="relative w-full max-w-4xl overflow-hidden rounded-[18px] border bg-[var(--ink)]"
-              style={{ borderColor: "rgba(250, 249, 246, 0.16)" }}
+              style={{ borderColor: "rgba(255, 255, 255, 0.16)" }}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex items-center justify-between gap-4 border-b border-[rgba(250,249,246,0.12)] px-5 py-3.5 text-[var(--paper)]">
+              <div className="flex items-center justify-between gap-4 border-b border-[rgba(255, 255, 255,0.12)] px-5 py-3.5 text-[var(--paper)]">
                 <span className="truncate text-sm font-medium">
                   {isBn ? activeVideo.titleBn : activeVideo.title}
                 </span>
                 <button
                   type="button"
                   onClick={() => setActiveVideo(null)}
-                  className="rounded-md p-1 text-[var(--paper)] transition-colors hover:bg-[rgba(250,249,246,0.1)]"
+                  className="rounded-md p-1 text-[var(--paper)] transition-colors hover:bg-[rgba(255, 255, 255,0.1)]"
                   aria-label="Close video player"
                 >
                   <X size={19} />
@@ -123,7 +126,7 @@ export default function VideoShowcase() {
               </div>
 
               <div className="flex flex-col gap-4 bg-[var(--sunset-green-950)] p-5 text-[var(--paper)] md:flex-row md:items-center md:justify-between">
-                <p className="max-w-xl text-[12.5px] leading-relaxed text-[rgba(250,249,246,0.66)]">
+                <p className="max-w-xl text-[12.5px] leading-relaxed text-[rgba(255, 255, 255,0.66)]">
                   {isBn ? activeVideo.descriptionBn : activeVideo.description}
                 </p>
                 <a

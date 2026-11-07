@@ -15,7 +15,7 @@ export default function PackagesSection() {
   return (
     <section
       className="section-gap"
-      style={{ backgroundColor: "var(--sand)" }}
+      style={{ backgroundColor: "var(--ash, #f4f5f7)" }}
       aria-labelledby="packages-section-heading"
     >
       <div className="container-site">

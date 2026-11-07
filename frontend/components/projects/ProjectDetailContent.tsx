@@ -48,7 +48,7 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
         meta={
           project.keyFacts.slice(0, 3).map((fact) => (
             <div key={fact.label}>
-              <p className="text-[10.5px] uppercase tracking-[0.12em] text-[rgba(250,249,246,0.5)]">
+              <p className="text-[10.5px] uppercase tracking-[0.12em] text-[rgba(255, 255, 255,0.5)]">
                 {fact.label}
               </p>
               <p className="mt-1 text-[13px] text-[var(--paper)]">{fact.value}</p>
@@ -284,7 +284,7 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
                 ? "শেয়ারহোল্ডার হিসেবে যুক্ত হতে আগ্রহী?"
                 : "Interested in becoming an equity shareholder?"}
             </h2>
-            <p className="text-[13px] text-[rgba(250,249,246,0.68)]">
+            <p className="text-[13px] text-[rgba(255, 255, 255,0.68)]">
               {isBn
                 ? "প্রাথমিক পর্যায়ের ট্রাঞ্চ শেষ হওয়ার পূর্বেই আপনার সাফ-কবালা প্যাকেজ সংরক্ষণ করুন।"
                 : "Reserve your deeded saf-kabala package before early-bird tranches close."}

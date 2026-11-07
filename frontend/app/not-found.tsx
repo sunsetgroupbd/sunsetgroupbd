@@ -17,7 +17,7 @@ export default function NotFound() {
           }}
         />
 
-        <p className="mb-4 text-[10.5px] font-semibold uppercase tracking-[0.16em] text-[rgba(250,249,246,0.5)]">
+        <p className="mb-4 text-[10.5px] font-semibold uppercase tracking-[0.16em] text-[rgba(255, 255, 255,0.5)]">
           Error 404
         </p>
 
@@ -29,7 +29,7 @@ export default function NotFound() {
           The horizon you&apos;re looking for doesn&apos;t exist
         </h1>
 
-        <p className="mx-auto mb-9 max-w-md text-[13.5px] leading-relaxed text-[rgba(250,249,246,0.66)]">
+        <p className="mx-auto mb-9 max-w-md text-[13.5px] leading-relaxed text-[rgba(255, 255, 255,0.66)]">
           The requested page could not be located. It may have been moved or updated. Return to the
           home page or explore our flagship projects.
         </p>
@@ -50,7 +50,7 @@ export default function NotFound() {
 
         <Link
           href="/"
-          className="mt-9 inline-flex items-center gap-1.5 text-[11.5px] text-[rgba(250,249,246,0.5)] transition-colors hover:text-[var(--paper)]"
+          className="mt-9 inline-flex items-center gap-1.5 text-[11.5px] text-[rgba(255, 255, 255,0.5)] transition-colors hover:text-[var(--paper)]"
         >
           <ArrowLeft size={12} />
           Back to sunsetgroupbd.com

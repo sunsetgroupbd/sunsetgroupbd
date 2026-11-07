@@ -55,13 +55,13 @@ export default function TermsContent() {
           }}
         />
         <div className="container-site relative max-w-3xl">
-          <p className="text-eyebrow mb-4" style={{ color: "rgba(250,249,246,0.6)" }}>
+          <p className="text-eyebrow mb-4" style={{ color: "rgba(255, 255, 255,0.6)" }}>
             {isBn ? "আইনি কাঠামো ও চুক্তি" : "Legal framework & agreements"}
           </p>
           <h1 className="text-display-lg mb-4 text-[var(--paper)]">
             {isBn ? "শর্তাবলী ও নিয়মাবলী" : "Terms & Conditions"}
           </h1>
-          <p className="text-[12px] text-[rgba(250,249,246,0.56)]">
+          <p className="text-[12px] text-[rgba(255, 255, 255,0.56)]">
             {isBn
               ? "সর্বশেষ সংশোধিত জানুয়ারি ২০২৬ · সানসেট কুয়াকাটা হোটেল ও রিসোর্ট লি."
               : "Last revised January 2026 · Sunset Kuakata Hotel & Resort Ltd."}

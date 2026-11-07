@@ -1,22 +1,30 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useState } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play, X, ExternalLink } from "lucide-react";
 import { useLang } from "@/lib/lang";
+import { projectVideos } from "@/data/videos";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 export default function HeroSection() {
   const { isBn } = useLang();
   const ref = useRef<HTMLDivElement>(null);
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const imageY = useTransform(scrollYProgress, [0, 1], [0, 70]);
 
+  const featuredVideo = projectVideos[0];
+
   const scrollToVideos = () => {
-    document.getElementById("video-showcase-heading")?.scrollIntoView({ behavior: "smooth" });
+    setIsVideoOpen(false);
+    const target = document.getElementById("video-showcase");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -55,7 +63,7 @@ export default function HeroSection() {
             className="mb-6 flex items-center gap-3"
           >
             <span className="h-px w-8 bg-[var(--sunset-red)]" aria-hidden />
-            <p className="text-eyebrow" style={{ color: "rgba(250, 249, 246, 0.72)" }}>
+            <p className="text-eyebrow" style={{ color: "rgba(255, 255, 255, 0.72)" }}>
               {isBn
                 ? "শরীয়া তদারকি · সাফ-কবালা নিবন্ধিত · কোম্পানি আইন ১৯৯৪"
                 : "Shariah supervised · Saf-Kabala registered · Company Act 1994"}
@@ -79,7 +87,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: EASE, delay: 0.2 }}
             className="text-body-lg mb-9 max-w-xl leading-relaxed"
-            style={{ color: "rgba(250, 249, 246, 0.76)" }}
+            style={{ color: "rgba(255, 255, 255, 0.76)" }}
           >
             {isBn
               ? "কুয়াকাটা রিসোর্ট, সান কেয়ার হাসপাতাল এবং ঢাকা ফ্যান্টাসি আইল্যান্ডে সাফ-কবালা নিবন্ধিত স্থায়ী মালিকানা। শরীয়া তদারকিতে পরিচালিত, দীর্ঘমেয়াদি হালাল আয়।"
@@ -102,10 +110,10 @@ export default function HeroSection() {
 
             <button
               type="button"
-              onClick={scrollToVideos}
-              className="inline-flex items-center gap-2.5 rounded-md border border-[rgba(250,249,246,0.32)] px-5 py-3.5 text-[13.5px] font-semibold text-[var(--paper)] transition-colors hover:border-[rgba(250,249,246,0.6)] hover:bg-[rgba(250,249,246,0.06)]"
+              onClick={() => setIsVideoOpen(true)}
+              className="inline-flex items-center gap-2.5 rounded-md border border-[rgba(255, 255, 255,0.32)] px-5 py-3.5 text-[13.5px] font-semibold text-[var(--paper)] transition-colors hover:border-[rgba(255, 255, 255,0.6)] hover:bg-[rgba(255, 255, 255,0.06)]"
             >
-              <span className="flex h-6 w-6 items-center justify-center rounded-full border border-[rgba(250,249,246,0.4)]">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full border border-[rgba(255, 255, 255,0.4)]">
                 <Play size={9} fill="currentColor" stroke="none" className="ml-0.5" />
               </span>
               {isBn ? "প্রকল্পের ভিডিও" : "Watch the film"}
@@ -118,9 +126,8 @@ export default function HeroSection() {
       <div
         className="relative z-10 border-t"
         style={{
-          backgroundColor: "rgba(8, 24, 17, 0.55)",
-          borderColor: "rgba(250, 249, 246, 0.14)",
-          backdropFilter: "blur(10px)",
+          backgroundColor: "rgba(8, 24, 17, 0.95)",
+          borderColor: "rgba(255, 255, 255, 0.14)",
         }}
       >
         <div className="container-site grid grid-cols-3 gap-x-4 gap-y-5 py-5 sm:gap-x-8 md:py-7">
@@ -136,13 +143,81 @@ export default function HeroSection() {
               >
                 {item.value}
               </div>
-              <div className="mt-1 text-[10.5px] uppercase tracking-[0.12em] text-[rgba(250,249,246,0.52)]">
+              <div className="mt-1 text-[10.5px] uppercase tracking-[0.12em] text-[rgba(255, 255, 255,0.52)]">
                 {item.label}
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      <AnimatePresence>
+        {isVideoOpen && featuredVideo && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-10"
+            style={{ backgroundColor: "rgba(9, 24, 17, 0.94)" }}
+            onClick={() => setIsVideoOpen(false)}
+          >
+            <div
+              className="relative w-full max-w-4xl overflow-hidden rounded-[18px] border bg-[var(--ink)]"
+              style={{ borderColor: "rgba(255, 255, 255, 0.16)" }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex items-center justify-between gap-4 border-b border-[rgba(255, 255, 255,0.12)] px-5 py-3.5 text-[var(--paper)]">
+                <span className="truncate text-sm font-medium">
+                  {isBn ? featuredVideo.titleBn : featuredVideo.title}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setIsVideoOpen(false)}
+                  className="rounded-md p-1 text-[var(--paper)] transition-colors hover:bg-[rgba(255, 255, 255,0.1)]"
+                  aria-label="Close video player"
+                >
+                  <X size={19} />
+                </button>
+              </div>
+
+              <div className="relative aspect-video w-full bg-black">
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${featuredVideo.youtubeId}?autoplay=1&rel=0`}
+                  title={featuredVideo.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="h-full w-full border-0"
+                />
+              </div>
+
+              <div className="flex flex-col gap-4 bg-[var(--sunset-green-950)] p-5 text-[var(--paper)] md:flex-row md:items-center md:justify-between">
+                <p className="max-w-xl text-[12.5px] leading-relaxed text-[rgba(255, 255, 255,0.66)]">
+                  {isBn ? featuredVideo.descriptionBn : featuredVideo.description}
+                </p>
+                <div className="flex flex-wrap items-center gap-3 shrink-0">
+                  <button
+                    type="button"
+                    onClick={scrollToVideos}
+                    className="text-[12px] font-semibold text-[rgba(255, 255, 255,0.85)] underline underline-offset-4 hover:text-white"
+                  >
+                    {isBn ? "সকল ভিডিও দেখুন ↓" : "View all films ↓"}
+                  </button>
+                  <a
+                    href={`https://youtu.be/${featuredVideo.youtubeId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-outline-white btn-sm"
+                  >
+                    {isBn ? "ইউটিউবে খুলুন" : "Open on YouTube"}
+                    <ExternalLink size={13} />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

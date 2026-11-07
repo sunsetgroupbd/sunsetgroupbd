@@ -72,11 +72,11 @@ export default function ProjectsShowcase() {
                       sizes="(max-width: 1024px) 100vw, 60vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[rgba(14,42,31,0.35)] via-transparent to-transparent opacity-70" />
-                    <div className="absolute bottom-4 left-4 flex items-center gap-2 rounded-full bg-[rgba(250,249,246,0.92)] px-3 py-1.5 text-[11px] font-semibold text-[var(--sunset-green-900)] backdrop-blur">
-                      <MapPin size={12} />
+                    <div className="absolute bottom-4 left-4 flex items-center gap-2 rounded-full bg-[#0e2a1f] px-3.5 py-1.5 text-[11px] font-semibold text-white shadow-md border border-white/20">
+                      <MapPin size={12} className="text-[var(--sunset-red)]" />
                       {isBn ? project.locationBn : project.location}
                     </div>
-                    <span className="absolute right-4 top-4 rounded-full bg-[rgba(14,42,31,0.82)] px-2.5 py-1 text-[11px] font-medium tabular-nums text-[var(--paper)] backdrop-blur">
+                    <span className="absolute right-4 top-4 rounded-full bg-[#0e2a1f] px-3 py-1 text-[11px] font-semibold tabular-nums text-white shadow-md border border-white/20">
                       {project.number}
                     </span>
                   </Link>

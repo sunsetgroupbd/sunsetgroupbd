@@ -126,20 +126,20 @@ export default function ProfitCalculator() {
         className="rounded-[22px] p-6 text-[var(--paper)] md:p-10"
         style={{ backgroundColor: "var(--sunset-green-950)" }}
       >
-        <div className="mb-8 flex flex-col justify-between gap-5 border-b border-[rgba(250,249,246,0.14)] pb-7 md:flex-row md:items-end">
+        <div className="mb-8 flex flex-col justify-between gap-5 border-b border-[rgba(255, 255, 255,0.14)] pb-7 md:flex-row md:items-end">
           <div>
-            <p className="mb-2 text-[10.5px] font-semibold uppercase tracking-[0.12em] text-[rgba(250,249,246,0.56)]">
+            <p className="mb-2 text-[10.5px] font-semibold uppercase tracking-[0.12em] text-[rgba(255, 255, 255,0.56)]">
               {isBn ? "আনুমানিক বিনিয়োগ সারসংক্ষেপ" : "Estimated investment summary"}
             </p>
             <h3 className="text-display-md text-[var(--paper)]">
               {isBn ? selectedPkg.nameBn : selectedPkg.name}{" "}
-              <span className="text-[rgba(250,249,246,0.56)]">
+              <span className="text-[rgba(255, 255, 255,0.56)]">
                 · {customUnits} {isBn ? "ইউনিট" : customUnits > 1 ? "units" : "unit"}
               </span>
             </h3>
           </div>
           <div className="text-left md:text-right">
-            <p className="mb-1 text-[10.5px] uppercase tracking-[0.12em] text-[rgba(250,249,246,0.56)]">
+            <p className="mb-1 text-[10.5px] uppercase tracking-[0.12em] text-[rgba(255, 255, 255,0.56)]">
               {isBn ? "মোট প্যাকেজ মূল্য" : "Total package price"}
             </p>
             <p className="font-display text-[clamp(1.8rem,4vw,2.6rem)] leading-none tabular-nums text-[var(--paper)]">
@@ -169,9 +169,9 @@ export default function ProfitCalculator() {
           ].map((item) => (
             <div
               key={item.label}
-              className="rounded-[14px] border border-[rgba(250,249,246,0.12)] bg-[rgba(250,249,246,0.05)] p-5"
+              className="rounded-[14px] border border-[rgba(255, 255, 255,0.12)] bg-[rgba(255, 255, 255,0.05)] p-5"
             >
-              <p className="mb-1 flex items-center gap-1.5 text-[10.5px] uppercase tracking-[0.1em] text-[rgba(250,249,246,0.56)]">
+              <p className="mb-1 flex items-center gap-1.5 text-[10.5px] uppercase tracking-[0.1em] text-[rgba(255, 255, 255,0.56)]">
                 {item.accent && <Calendar size={12} className="text-[var(--sunset-red)]" />}
                 {item.label}
               </p>
@@ -182,16 +182,16 @@ export default function ProfitCalculator() {
               >
                 {item.value}
               </p>
-              <p className="mt-2 text-[10.5px] leading-relaxed text-[rgba(250,249,246,0.45)]">
+              <p className="mt-2 text-[10.5px] leading-relaxed text-[rgba(255, 255, 255,0.45)]">
                 {item.note}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="mb-8 flex flex-col justify-between gap-5 rounded-[14px] border border-[rgba(250,249,246,0.14)] bg-[rgba(0,0,0,0.18)] p-5 md:flex-row md:items-center">
+        <div className="mb-8 flex flex-col justify-between gap-5 rounded-[14px] border border-[rgba(255, 255, 255,0.14)] bg-[rgba(0,0,0,0.18)] p-5 md:flex-row md:items-center">
           <div>
-            <p className="mb-1 text-[10.5px] uppercase tracking-[0.1em] text-[rgba(250,249,246,0.56)]">
+            <p className="mb-1 text-[10.5px] uppercase tracking-[0.1em] text-[rgba(255, 255, 255,0.56)]">
               {isBn ? "বার্ষিক প্রক্ষেপিত সম্ভাব্য মুনাফা" : "Annual projected rate of return"}
             </p>
             <p className="text-[13.5px] font-medium">
@@ -222,7 +222,7 @@ export default function ProfitCalculator() {
 
         <div className="flex items-start gap-3 rounded-[12px] border border-[rgba(173,90,67,0.5)] bg-[rgba(173,90,67,0.14)] p-4">
           <AlertTriangle size={16} className="mt-0.5 shrink-0 text-[var(--sunset-red)]" />
-          <p className="text-[11px] leading-relaxed text-[rgba(250,249,246,0.78)]">
+          <p className="text-[11px] leading-relaxed text-[rgba(255, 255, 255,0.78)]">
             <strong className="mr-1 font-semibold text-[var(--sunset-red)]">
               {isBn ? "সম্মতি বিজ্ঞপ্তি:" : "Compliance notice:"}
             </strong>

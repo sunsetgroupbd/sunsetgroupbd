@@ -30,7 +30,7 @@ export default function BlogPostDetailContent({ post }: BlogPostDetailContentPro
         <div className="container-site relative max-w-3xl">
           <Link
             href="/blogs"
-            className="mb-6 inline-flex items-center gap-1.5 text-[11.5px] font-medium text-[rgba(250,249,246,0.62)] transition-colors hover:text-[var(--paper)]"
+            className="mb-6 inline-flex items-center gap-1.5 text-[11.5px] font-medium text-[rgba(255, 255, 255,0.62)] transition-colors hover:text-[var(--paper)]"
           >
             <ArrowLeft size={13} />
             {isBn ? "জার্নালে ফিরে যান" : "Back to the journal"}
@@ -44,7 +44,7 @@ export default function BlogPostDetailContent({ post }: BlogPostDetailContentPro
             {isBn ? post.titleBn : post.title}
           </h1>
 
-          <div className="flex flex-wrap items-center gap-5 border-t border-[rgba(250,249,246,0.14)] pt-5 text-[11.5px] text-[rgba(250,249,246,0.62)]">
+          <div className="flex flex-wrap items-center gap-5 border-t border-[rgba(255, 255, 255,0.14)] pt-5 text-[11.5px] text-[rgba(255, 255, 255,0.62)]">
             <span className="flex items-center gap-1.5">
               <User size={12} />
               {isBn ? post.authorBn : post.author}

@@ -55,13 +55,13 @@ export default function PrivacyPolicyContent() {
           }}
         />
         <div className="container-site relative max-w-3xl">
-          <p className="text-eyebrow mb-4" style={{ color: "rgba(250,249,246,0.6)" }}>
+          <p className="text-eyebrow mb-4" style={{ color: "rgba(255, 255, 255,0.6)" }}>
             {isBn ? "তথ্য সুরক্ষা ও গোপনীয়তা" : "Data protection & confidentiality"}
           </p>
           <h1 className="text-display-lg mb-4 text-[var(--paper)]">
             {isBn ? "গোপনীয়তা নীতি" : "Privacy Policy"}
           </h1>
-          <p className="text-[12px] text-[rgba(250,249,246,0.56)]">
+          <p className="text-[12px] text-[rgba(255, 255, 255,0.56)]">
             {isBn
               ? "সর্বশেষ হালনাগাদ জানুয়ারি ২০২৬ · সানসেট কুয়াকাটা হোটেল ও রিসোর্ট লি."
               : "Last updated January 2026 · Sunset Kuakata Hotel & Resort Ltd."}

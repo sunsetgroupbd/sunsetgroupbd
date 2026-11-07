@@ -142,13 +142,13 @@ export default function GalleryPage() {
               className="absolute left-0 right-0 top-0 z-10 flex items-center justify-between p-5"
               onClick={(e) => e.stopPropagation()}
             >
-              <p className="max-w-lg truncate text-[12.5px] text-[rgba(250,249,246,0.8)]">
+              <p className="max-w-lg truncate text-[12.5px] text-[rgba(255, 255, 255,0.8)]">
                 {isBn ? currentImage.altBn : currentImage.alt}
               </p>
               <button
                 type="button"
                 onClick={() => setLightboxIndex(null)}
-                className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-[rgba(250,249,246,0.24)] text-[var(--paper)] transition-colors hover:bg-[rgba(250,249,246,0.1)]"
+                className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-[rgba(255, 255, 255,0.24)] text-[var(--paper)] transition-colors hover:bg-[rgba(255, 255, 255,0.1)]"
                 aria-label="Close image preview"
               >
                 <X size={18} />
@@ -163,7 +163,7 @@ export default function GalleryPage() {
                   (lightboxIndex - 1 + filteredImages.length) % filteredImages.length
                 );
               }}
-              className="absolute left-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-[rgba(250,249,246,0.24)] text-[var(--paper)] transition-colors hover:bg-[rgba(250,249,246,0.1)] md:left-7"
+              className="absolute left-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-[rgba(255, 255, 255,0.24)] text-[var(--paper)] transition-colors hover:bg-[rgba(255, 255, 255,0.1)] md:left-7"
               aria-label="Previous image"
             >
               <ChevronLeft size={20} />
@@ -175,7 +175,7 @@ export default function GalleryPage() {
                 e.stopPropagation();
                 setLightboxIndex((lightboxIndex + 1) % filteredImages.length);
               }}
-              className="absolute right-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-[rgba(250,249,246,0.24)] text-[var(--paper)] transition-colors hover:bg-[rgba(250,249,246,0.1)] md:right-7"
+              className="absolute right-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-[rgba(255, 255, 255,0.24)] text-[var(--paper)] transition-colors hover:bg-[rgba(255, 255, 255,0.1)] md:right-7"
               aria-label="Next image"
             >
               <ChevronRight size={20} />
@@ -195,7 +195,7 @@ export default function GalleryPage() {
               />
             </div>
 
-            <p className="absolute bottom-5 left-0 right-0 text-center text-[11px] text-[rgba(250,249,246,0.5)]">
+            <p className="absolute bottom-5 left-0 right-0 text-center text-[11px] text-[rgba(255, 255, 255,0.5)]">
               {isBn
                 ? `ছবি ${lightboxIndex + 1} / ${filteredImages.length} · দেখতে তীর বা সোয়াইপ ব্যবহার করুন`
                 : `Image ${lightboxIndex + 1} of ${filteredImages.length} · Use arrow keys to navigate`}

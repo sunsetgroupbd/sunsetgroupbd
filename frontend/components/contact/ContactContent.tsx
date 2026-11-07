@@ -1,6 +1,6 @@
 "use client";
 
-import { Phone, MessageCircle, MapPin, Clock, ShieldCheck } from "lucide-react";
+import { Phone, MessageCircle, MapPin, Clock, ShieldCheck, ExternalLink } from "lucide-react";
 import PageHero from "@/components/layout/PageHero";
 import SectionHeading from "@/components/ui/SectionHeading";
 import InquiryForm from "@/components/ui/InquiryForm";
@@ -108,11 +108,22 @@ export default function ContactContent({
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[rgba(173,90,67,0.09)] text-[var(--sunset-red)]">
                     <MapPin size={17} />
                   </span>
-                  <div>
-                    <p className="text-[10.5px] uppercase tracking-[0.1em] text-[var(--sunset-grey-700)]">
-                      {isBn ? "কর্পোরেট প্রধান কার্যালয়" : "Corporate headquarters"}
-                    </p>
-                    <address className="mt-0.5 text-[13px] not-italic leading-relaxed text-[var(--ink)]">
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between">
+                      <p className="text-[10.5px] uppercase tracking-[0.1em] text-[var(--sunset-grey-700)]">
+                        {isBn ? "কর্পোরেট প্রধান কার্যালয়" : "Corporate headquarters"}
+                      </p>
+                      <a
+                        href="https://maps.google.com/?q=Shaptak+Square,+Dhanmondi+27,+Dhaka"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-[11px] font-semibold text-[var(--sunset-green-700)] hover:underline"
+                      >
+                        <span>{isBn ? "গুগল ম্যাপ" : "Google Map"}</span>
+                        <ExternalLink size={11} />
+                      </a>
+                    </div>
+                    <address className="mt-1 text-[13px] not-italic leading-relaxed text-[var(--ink)]">
                       {isBn ? (
                         <>
                           ২৭ সপ্তক স্কয়ার, লিফট-১১ (লেভেল-১১),
@@ -161,6 +172,53 @@ export default function ContactContent({
 
             <div className="lg:col-span-7">
               <InquiryForm defaultProject={initialProject} defaultPackage={initialPackage} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Interactive Google Map Section */}
+      <section
+        className="pb-20 md:pb-28"
+        style={{ backgroundColor: "var(--paper)" }}
+      >
+        <div className="container-site">
+          <div className="overflow-hidden rounded-[22px] border border-[var(--line)] bg-white shadow-[0_12px_45px_-24px_rgba(18,54,42,0.15)]">
+            <div className="flex flex-col justify-between gap-4 border-b border-[var(--line)] p-6 sm:flex-row sm:items-center md:px-8">
+              <div>
+                <span className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--sunset-red)]">
+                  <MapPin size={13} />
+                  {isBn ? "কার্যালয়ের অবস্থান" : "Office location"}
+                </span>
+                <h3 className="text-display-xs mt-1 text-[var(--sunset-green-900)]">
+                  {isBn
+                    ? "সপ্তক স্কয়ার, ধানমন্ডি ২৭ — গুগল ম্যাপস ভিউ"
+                    : "Shaptak Square, Dhanmondi 27 — Google Maps View"}
+                </h3>
+              </div>
+              <a
+                href="https://maps.google.com/?q=Shaptak+Square,+Old+Dhanmondi+27,+Dhaka"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-outline shrink-0 gap-1.5 text-[12.5px]"
+              >
+                <span>{isBn ? "গুগল ম্যাপে ডিরেকশন দেখুন" : "Get directions on Google Maps"}</span>
+                <ExternalLink size={13} />
+              </a>
+            </div>
+
+            <div className="relative aspect-[16/9] w-full min-h-[380px] md:min-h-[460px] bg-[var(--sand)]">
+              <iframe
+                title="Sunset Group Dhaka Headquarters - Shaptak Square"
+                src="https://maps.google.com/maps?q=Shaptak+Square,+Old+Dhanmondi+27,+Dhaka,+Bangladesh&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 h-full w-full"
+              />
             </div>
           </div>
         </div>

@@ -15,7 +15,7 @@ export default function FloatingActions() {
       <button
         type="button"
         onClick={() => downloadBrochure()}
-        className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white/95 px-3.5 py-2 text-[11.5px] font-semibold text-[var(--ink)] shadow-[0_4px_18px_-6px_rgba(14,42,31,0.25)] backdrop-blur transition-colors hover:bg-white"
+        className="inline-flex items-center gap-2 rounded-full border border-[var(--line-strong)] bg-white px-3.5 py-2 text-[11.5px] font-semibold text-[var(--ink)] shadow-[0_6px_24px_-6px_rgba(14,42,31,0.25)] transition-colors hover:bg-[var(--ash)]"
         aria-label={isBn ? "সানসেট গ্রুপ ব্রোশার ডাউনলোড করুন" : "Download the Sunset Group brochure"}
       >
         <Download size={13} />
