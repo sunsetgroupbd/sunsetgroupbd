@@ -145,7 +145,7 @@ export const galleryImages: GalleryImage[] = [
   // DFI
   {
     id: "dfi-01",
-    src: "/images/dfi/DFI.webp",
+    src: "/images/dfi/dfi-aerial.webp",
     alt: "Dhaka Fantasy Island — main view",
     altBn: "ঢাকা ফ্যান্টাসি আইল্যান্ড — প্রধান দৃশ্য",
     category: "dfi",

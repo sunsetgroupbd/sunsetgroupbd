@@ -5,7 +5,6 @@ import ProjectsShowcase from "@/components/sections/ProjectsShowcase";
 import VideoShowcase from "@/components/sections/VideoShowcase";
 import WhyInvest from "@/components/sections/WhyInvest";
 import WhyKuakata from "@/components/sections/WhyKuakata";
-import Timeline from "@/components/sections/Timeline";
 import PackagesSection from "@/components/sections/PackagesSection";
 import CalculatorTeaser from "@/components/sections/CalculatorTeaser";
 import Testimonials from "@/components/sections/Testimonials";
@@ -35,7 +34,6 @@ export default function HomePage() {
       <VideoShowcase />
       <WhyInvest />
       <WhyKuakata />
-      <Timeline />
       <PackagesSection />
       <CalculatorTeaser />
       <Testimonials />

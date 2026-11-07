@@ -73,9 +73,9 @@ export const projectVideos: ProjectVideo[] = [
     category: "Corporate",
     duration: "Documentary",
     description:
-      "A comprehensive walkthrough of Sunset Group's legal saf-kabala deed structure, Shariah supervisory board audit protocols, and milestone roadmap from 2023 to 2029.",
+      "A comprehensive walkthrough of Sunset Group's legal saf-kabala deed structure and Shariah supervisory board audit protocols.",
     descriptionBn:
-      "সানসেট গ্রুপের সাফ-কবালা আইনি কাঠামো, শরীয়া বোর্ডের নিরীক্ষা এবং ২০২৯ সাল পর্যন্ত উন্নয়ন রোডম্যাপের তথ্যচিত্র।",
+      "সানসেট গ্রুপের সাফ-কবালা আইনি কাঠামো ও শরীয়া বোর্ডের নিরীক্ষা সংক্রান্ত প্রামাণ্যচিত্র।",
     thumbnail: "https://img.youtube.com/vi/SpEeHVubfWw/maxresdefault.jpg",
   },
 ];

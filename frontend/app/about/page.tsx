@@ -167,8 +167,8 @@ export default function AboutPage() {
             <div className="lg:col-span-5">
               <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[22px] bg-[var(--sand)]">
                 <Image
-                  src="/images/kuakata/gallery-01.webp"
-                  alt="Beachfront at Sunset Kuakata Hotel & Resort"
+                  src="/images/kuakata/about-trust.webp"
+                  alt="Sunset Kuakata Hotel & Resort architecture and amphitheater"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 440px"

@@ -201,8 +201,9 @@ export const projects: Project[] = [
       "Dhaka Fantasy Island is an eco hotel & resort combining residential and commercial zones in the heart of Dhaka's expanding western corridor. Strategically located just 20 minutes from Parliament House in Mohammadpur, DFI offers a unique urban retreat concept. All units carry saf-kabala registration, ensuring legal security for investors.",
     descriptionBn:
       "ঢাকা ফ্যান্টাসি আইল্যান্ড ঢাকার পশ্চিম করিডরে আবাসিক ও বাণিজ্যিক এলাকা নিয়ে একটি ইকো হোটেল ও রিসোর্ট। জাতীয় সংসদ ভবন থেকে মাত্র ২০ মিনিটের দূরত্বে মোহাম্মদপুরে অবস্থিত। সকল ইউনিট সাফ-কবালা নিবন্ধিত।",
-    heroImage: "/images/dfi/DFI.webp",
+    heroImage: "/images/dfi/dfi-aerial.webp",
     galleryImages: [
+      "/images/dfi/dfi-aerial.webp",
       "/images/dfi/DFI.webp",
       "/images/dfi/DFI-top-view.webp",
       "/images/dfi/Dhaka-Fantasy-Island.webp",
@@ -253,7 +254,7 @@ export const projects: Project[] = [
     heroImage: "/images/kuakata/hero.webp",
     galleryImages: [
       "/images/kuakata/gallery-01.webp",
-      "/images/dfi/DFI.webp",
+      "/images/dfi/dfi-aerial.webp",
       "/images/sun-care/hero.webp",
     ],
     keyFacts: [

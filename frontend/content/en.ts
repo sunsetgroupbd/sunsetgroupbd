@@ -87,17 +87,6 @@ export const en = {
       { label: "Planned Airport", sub: "Air connectivity coming" },
     ],
   },
-  timeline: {
-    eyebrow: "Project Timeline",
-    headline: "2023 → 2029",
-    milestones: [
-      { year: "2023", label: "Land Purchase & Planning" },
-      { year: "2024", label: "Construction Begins" },
-      { year: "2025", label: "Partial Operations" },
-      { year: "2027", label: "Zero Point Operations" },
-      { year: "2029", label: "Full Operations" },
-    ],
-  },
   packages: {
     eyebrow: "Ownership Packages",
     headline: "Choose Your Investment Level",

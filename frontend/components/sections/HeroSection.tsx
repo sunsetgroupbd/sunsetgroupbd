@@ -123,12 +123,11 @@ export default function HeroSection() {
           backdropFilter: "blur(10px)",
         }}
       >
-        <div className="container-site grid grid-cols-2 gap-x-6 gap-y-5 py-6 md:grid-cols-4 md:py-7">
+        <div className="container-site grid grid-cols-3 gap-x-4 gap-y-5 py-5 sm:gap-x-8 md:py-7">
           {[
             { value: "04", label: isBn ? "প্রধান প্রকল্প" : "Flagship developments" },
             { value: "100%", label: isBn ? "শরীয়া তদারকি" : "Shariah supervised" },
             { value: "Saf-Kabala", label: isBn ? "নিবন্ধিত দলিল" : "Registered title deed" },
-            { value: "2023—29", label: isBn ? "বাস্তবায়ন রোডম্যাপ" : "Delivery roadmap" },
           ].map((item) => (
             <div key={item.label}>
               <div
