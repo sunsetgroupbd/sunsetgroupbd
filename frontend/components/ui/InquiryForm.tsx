@@ -28,7 +28,7 @@ interface InquiryFormProps {
 }
 
 export default function InquiryForm({ defaultProject, defaultPackage }: InquiryFormProps) {
-  const { t } = useLang();
+  const { t, isBn } = useLang();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
 
@@ -93,18 +93,20 @@ export default function InquiryForm({ defaultProject, defaultPackage }: InquiryF
               <CheckCircle2 size={30} strokeWidth={1.5} />
             </span>
             <h3 className="text-display-sm mb-3 text-[var(--sunset-green-900)]">
-              Enquiry received
+              {isBn ? "আবেদন গ্রহণ করা হয়েছে" : "Enquiry received"}
             </h3>
             <p className="mx-auto mb-8 max-w-md text-[13px] leading-relaxed text-[var(--sunset-grey-700)]">
               {t.contact.success ||
-                "Thank you for your interest in Sunset Group. An investment adviser will contact you within 24 hours."}
+                (isBn
+                  ? "সানসেট গ্রুপে আগ্রহ প্রকাশের জন্য ধন্যবাদ। একজন বিনিয়োগ উপদেষ্টা ২৪ ঘণ্টার মধ্যে আপনার সাথে যোগাযোগ করবেন।"
+                  : "Thank you for your interest in Sunset Group. An investment adviser will contact you within 24 hours.")}
             </p>
             <button
               type="button"
               onClick={() => setIsSubmitted(false)}
               className="btn btn-outline"
             >
-              Submit another enquiry
+              {isBn ? "আরেকটি আবেদন পাঠান" : "Submit another enquiry"}
             </button>
           </motion.div>
         ) : (
@@ -118,10 +120,12 @@ export default function InquiryForm({ defaultProject, defaultPackage }: InquiryF
           >
             <div className="mb-7">
               <h2 className="text-display-sm mb-2 text-[var(--sunset-green-900)]">
-                Request a private consultation
+                {isBn ? "পরামর্শের জন্য আবেদন করুন" : "Request a private consultation"}
               </h2>
               <p className="text-[12.5px] leading-relaxed text-[var(--sunset-grey-700)]">
-                Share a few details and an adviser will prepare a tailored ownership brief.
+                {isBn
+                  ? "কিছু প্রাথমিক তথ্য দিন, আমাদের উপদেষ্টা আপনার জন্য বিস্তারিত মালিকানা প্রস্তাবনা প্রস্তুত করবেন।"
+                  : "Share a few details and an adviser will prepare a tailored ownership brief."}
               </p>
             </div>
 
@@ -133,7 +137,7 @@ export default function InquiryForm({ defaultProject, defaultPackage }: InquiryF
                 id="name"
                 type="text"
                 className="form-input"
-                placeholder="e.g. Md. Faizul Bari"
+                placeholder={isBn ? "উদাঃ মোঃ ফয়জুল বারী" : "e.g. Md. Faizul Bari"}
                 {...register("name")}
               />
               {errors.name && <p className="form-error">{errors.name.message}</p>}
@@ -175,7 +179,7 @@ export default function InquiryForm({ defaultProject, defaultPackage }: InquiryF
                   {t.contact.project} *
                 </label>
                 <select id="project" className="form-input" {...register("project")}>
-                  <option value="">Select project</option>
+                  <option value="">{isBn ? "প্রকল্প নির্বাচন করুন" : "Select project"}</option>
                   {t.contact.projectOptions.map((opt) => (
                     <option key={opt} value={opt}>
                       {opt}
@@ -190,7 +194,7 @@ export default function InquiryForm({ defaultProject, defaultPackage }: InquiryF
                   {t.contact.package}
                 </label>
                 <select id="package" className="form-input" {...register("package")}>
-                  <option value="">Select package (optional)</option>
+                  <option value="">{isBn ? "প্যাকেজ নির্বাচন করুন (ঐচ্ছিক)" : "Select package (optional)"}</option>
                   {t.contact.packageOptions.map((opt) => (
                     <option key={opt} value={opt}>
                       {opt}
@@ -208,7 +212,11 @@ export default function InquiryForm({ defaultProject, defaultPackage }: InquiryF
                 id="message"
                 rows={4}
                 className="form-input"
-                placeholder="Tell us about your investment horizon, questions or site-visit requirements…"
+                placeholder={
+                  isBn
+                    ? "আপনার বিনিয়োগের দিগন্ত, কোনো প্রশ্ন বা সাইট পরিদর্শনের প্রয়োজনীয়তা সম্পর্কে জানান…"
+                    : "Tell us about your investment horizon, questions or site-visit requirements…"
+                }
                 {...register("message")}
               />
             </div>
@@ -234,7 +242,7 @@ export default function InquiryForm({ defaultProject, defaultPackage }: InquiryF
               {isSubmitting ? (
                 <>
                   <Loader2 size={15} className="animate-spin" />
-                  Sending…
+                  {isBn ? "পাঠানো হচ্ছে…" : "Sending…"}
                 </>
               ) : (
                 <>

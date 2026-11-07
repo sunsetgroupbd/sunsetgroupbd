@@ -35,10 +35,14 @@ export default function ProfitCalculator() {
           </span>
           <div>
             <h2 className="text-display-sm text-[var(--sunset-green-900)]">
-              Select a package and ownership units
+              {isBn
+                ? "প্যাকেজ এবং মালিকানা ইউনিট নির্বাচন করুন"
+                : "Select a package and ownership units"}
             </h2>
             <p className="text-[11.5px] text-[var(--sunset-grey-700)]">
-              Step 1 of 2 — configure your investment
+              {isBn
+                ? "ধাপ ১ / ২ — আপনার বিনিয়োগ নির্ধারণ করুন"
+                : "Step 1 of 2 — configure your investment"}
             </p>
           </div>
         </div>
@@ -74,7 +78,9 @@ export default function ProfitCalculator() {
         <div className="grid grid-cols-1 items-center gap-6 border-t border-[var(--line)] pt-6 md:grid-cols-2">
           <div>
             <label htmlFor="units" className="form-label">
-              Number of ownership shares / units
+              {isBn
+                ? "মালিকানা শেয়ার / ইউনিটের সংখ্যা"
+                : "Number of ownership shares / units"}
             </label>
             <div className="flex items-center gap-4">
               <input
@@ -91,18 +97,21 @@ export default function ProfitCalculator() {
               </span>
             </div>
             <p className="mt-1.5 text-[11.5px] text-[var(--sunset-grey-700)]">
-              Slide to scale from 1 to 10 packages.
+              {isBn
+                ? "১ থেকে ১০টি প্যাকেজের মধ্যে নির্ধারণ করতে স্লাইড করুন।"
+                : "Slide to scale from 1 to 10 packages."}
             </p>
           </div>
 
           <div className="rounded-[12px] border border-[var(--line)] bg-[var(--paper)] p-4">
             <p className="mb-1.5 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--sunset-green-700)]">
               <ShieldCheck size={13} />
-              Shariah-supervised structure
+              {isBn ? "শরীয়া-তত্ত্বাবধানে পরিচালিত কাঠামো" : "Shariah-supervised structure"}
             </p>
             <p className="text-[11.5px] leading-relaxed text-[var(--sunset-grey-700)]">
-              Shares are verified under Musharakah and Mudarabah principles. Saf-kabala
-              registration is provided per share purchase.
+              {isBn
+                ? "শেয়ারসমূহ মুশারাকাহ ও মুদারাবাহ নীতিমালার অধীনে নিরীক্ষিত। প্রতিটি শেয়ার ক্রয়ে সরকারি সাফ-কবালা দলিল নিশ্চিত করা হয়।"
+                : "Shares are verified under Musharakah and Mudarabah principles. Saf-kabala registration is provided per share purchase."}
             </p>
           </div>
         </div>
@@ -120,18 +129,18 @@ export default function ProfitCalculator() {
         <div className="mb-8 flex flex-col justify-between gap-5 border-b border-[rgba(250,249,246,0.14)] pb-7 md:flex-row md:items-end">
           <div>
             <p className="mb-2 text-[10.5px] font-semibold uppercase tracking-[0.12em] text-[rgba(250,249,246,0.56)]">
-              Estimated investment summary
+              {isBn ? "আনুমানিক বিনিয়োগ সারসংক্ষেপ" : "Estimated investment summary"}
             </p>
             <h3 className="text-display-md text-[var(--paper)]">
               {isBn ? selectedPkg.nameBn : selectedPkg.name}{" "}
               <span className="text-[rgba(250,249,246,0.56)]">
-                · {customUnits} {customUnits > 1 ? "units" : "unit"}
+                · {customUnits} {isBn ? "ইউনিট" : customUnits > 1 ? "units" : "unit"}
               </span>
             </h3>
           </div>
           <div className="text-left md:text-right">
             <p className="mb-1 text-[10.5px] uppercase tracking-[0.12em] text-[rgba(250,249,246,0.56)]">
-              Total package price
+              {isBn ? "মোট প্যাকেজ মূল্য" : "Total package price"}
             </p>
             <p className="font-display text-[clamp(1.8rem,4vw,2.6rem)] leading-none tabular-nums text-[var(--paper)]">
               {formatBDT(totalInvestment)}
@@ -144,17 +153,17 @@ export default function ProfitCalculator() {
             {
               label: t.packages.booking,
               value: formatBDT(totalBooking),
-              note: "Payable on application and verification",
+              note: isBn ? "আবেদন ও যাচাইকরণের সময় প্রদেয়" : "Payable on application and verification",
             },
             {
               label: t.packages.remaining,
               value: formatBDT(remainingAmount),
-              note: "Structured instalment plan",
+              note: isBn ? "সহজ কিস্তি কাঠামো" : "Structured instalment plan",
             },
             {
               label: t.packages.profitDays,
-              value: `${totalProfitDays} days`,
-              note: "Annual operational revenue cycle",
+              value: `${totalProfitDays} ${isBn ? "দিন" : "days"}`,
+              note: isBn ? "বার্ষিক ব্যবসায়িক আয় বণ্টন চক্র" : "Annual operational revenue cycle",
               accent: true,
             },
           ].map((item) => (
@@ -183,16 +192,20 @@ export default function ProfitCalculator() {
         <div className="mb-8 flex flex-col justify-between gap-5 rounded-[14px] border border-[rgba(250,249,246,0.14)] bg-[rgba(0,0,0,0.18)] p-5 md:flex-row md:items-center">
           <div>
             <p className="mb-1 text-[10.5px] uppercase tracking-[0.1em] text-[rgba(250,249,246,0.56)]">
-              Annual projected rate of return
+              {isBn ? "বার্ষিক প্রক্ষেপিত সম্ভাব্য মুনাফা" : "Annual projected rate of return"}
             </p>
             <p className="text-[13.5px] font-medium">
               {isRatePlaceholder ? (
                 <span className="text-[var(--sunset-red)]">
-                  Rates are confidential and disclosed during a private briefing.
+                  {isBn
+                    ? "মুনাফার হার গোপনীয় এবং ব্যক্তিগত পরামর্শে বিস্তারিত জানানো হয়।"
+                    : "Rates are confidential and disclosed during a private briefing."}
                 </span>
               ) : (
                 <span className="text-[var(--paper)]">
-                  Estimated {formatBDT(projectedAnnualReturn)} per year
+                  {isBn
+                    ? `আনুমানিক প্রতি বছর ${formatBDT(projectedAnnualReturn)}`
+                    : `Estimated ${formatBDT(projectedAnnualReturn)} per year`}
                 </span>
               )}
             </p>
@@ -202,7 +215,7 @@ export default function ProfitCalculator() {
             href={`/contact?project=Sunset+Kuakata+Hotel+%26+Resort&package=${selectedPkg.name}`}
             className="inline-flex shrink-0 items-center justify-center gap-2 rounded-md bg-[var(--paper)] px-4 py-3 text-[12.5px] font-semibold text-[var(--sunset-green-900)] transition-colors hover:bg-white"
           >
-            Reserve this package
+            {isBn ? "এই প্যাকেজটি সংরক্ষণ করুন" : "Reserve this package"}
             <ArrowRight size={14} />
           </Link>
         </div>
@@ -211,7 +224,7 @@ export default function ProfitCalculator() {
           <AlertTriangle size={16} className="mt-0.5 shrink-0 text-[var(--sunset-red)]" />
           <p className="text-[11px] leading-relaxed text-[rgba(250,249,246,0.78)]">
             <strong className="mr-1 font-semibold text-[var(--sunset-red)]">
-              Compliance notice:
+              {isBn ? "সম্মতি বিজ্ঞপ্তি:" : "Compliance notice:"}
             </strong>
             {isBn ? DISCLAIMER_BN : DISCLAIMER_EN}
           </p>

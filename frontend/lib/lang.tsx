@@ -26,13 +26,13 @@ function subscribe(callback: () => void) {
 }
 
 function getSnapshot(): Locale {
-  if (typeof window === "undefined") return "bn";
+  if (typeof window === "undefined") return "en";
   const stored = window.localStorage.getItem("sg-locale");
-  return stored === "en" || stored === "bn" ? stored : "bn";
+  return stored === "en" || stored === "bn" ? stored : "en";
 }
 
 function getServerSnapshot(): Locale {
-  return "bn";
+  return "en";
 }
 
 export function LangProvider({ children }: { children: ReactNode }) {

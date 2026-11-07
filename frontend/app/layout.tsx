@@ -210,7 +210,7 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="bn"
+      lang="en"
       className={`${cormorant.variable} ${manrope.variable} ${notoSerifBengali.variable} ${hindSiliguri.variable}`}
     >
       <head>

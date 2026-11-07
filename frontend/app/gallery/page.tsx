@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import PageHero from "@/components/layout/PageHero";
+import { useLang } from "@/lib/lang";
 import {
   galleryImages,
   galleryCategories,
@@ -12,6 +13,7 @@ import {
 } from "@/data/gallery";
 
 export default function GalleryPage() {
+  const { isBn } = useLang();
   const [activeCategory, setActiveCategory] = useState<GalleryCategory>("all");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
@@ -52,11 +54,15 @@ export default function GalleryPage() {
   return (
     <div style={{ backgroundColor: "var(--paper)" }}>
       <PageHero
-        eyebrow="Visual archive · Architecture"
-        title="Project gallery."
-        description="Photography, site progression and architectural visualisations across our active portfolio in Kuakata, Dhaka and beyond."
+        eyebrow={isBn ? "ভিজ্যুয়াল আর্কাইভ · স্থাপত্য" : "Visual archive · Architecture"}
+        title={isBn ? "প্রকল্প গ্যালারি।" : "Project gallery."}
+        description={
+          isBn
+            ? "কুয়াকাটা, ঢাকা ও অন্যান্য অঞ্চলে আমাদের সক্রিয় পোর্টফোলিওর ফটোগ্রাফি, কাজের অগ্রগতি এবং স্থাপত্য দৃশ্য।"
+            : "Photography, site progression and architectural visualisations across our active portfolio in Kuakata, Dhaka and beyond."
+        }
         image="/images/kuakata/gallery-01.webp"
-        imageAlt="Kuakata beachfront"
+        imageAlt={isBn ? "কুয়াকাটা সৈকত" : "Kuakata beachfront"}
       />
 
       <section className="section-gap" style={{ backgroundColor: "var(--paper)" }}>
@@ -78,7 +84,7 @@ export default function GalleryPage() {
                       : "border-[var(--line-strong)] bg-transparent text-[var(--ink)] hover:bg-[var(--sand)]"
                   }`}
                 >
-                  {cat.label}
+                  {isBn ? cat.labelBn : cat.label}
                 </button>
               );
             })}
@@ -104,14 +110,14 @@ export default function GalleryPage() {
                 >
                   <Image
                     src={image.src}
-                    alt={image.alt}
+                    alt={isBn ? image.altBn : image.alt}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 flex items-end bg-gradient-to-t from-[rgba(14,42,31,0.6)] via-transparent to-transparent p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     <p className="text-left text-[11.5px] font-medium leading-snug text-[var(--paper)]">
-                      {image.alt}
+                      {isBn ? image.altBn : image.alt}
                     </p>
                   </div>
                 </motion.button>
@@ -137,7 +143,7 @@ export default function GalleryPage() {
               onClick={(e) => e.stopPropagation()}
             >
               <p className="max-w-lg truncate text-[12.5px] text-[rgba(250,249,246,0.8)]">
-                {currentImage.alt}
+                {isBn ? currentImage.altBn : currentImage.alt}
               </p>
               <button
                 type="button"
@@ -190,7 +196,9 @@ export default function GalleryPage() {
             </div>
 
             <p className="absolute bottom-5 left-0 right-0 text-center text-[11px] text-[rgba(250,249,246,0.5)]">
-              Image {lightboxIndex + 1} of {filteredImages.length} · Use arrow keys to navigate
+              {isBn
+                ? `ছবি ${lightboxIndex + 1} / ${filteredImages.length} · দেখতে তীর বা সোয়াইপ ব্যবহার করুন`
+                : `Image ${lightboxIndex + 1} of ${filteredImages.length} · Use arrow keys to navigate`}
             </p>
           </motion.div>
         )}

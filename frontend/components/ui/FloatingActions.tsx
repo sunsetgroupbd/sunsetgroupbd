@@ -2,8 +2,11 @@
 
 import { Download, MessageCircle } from "lucide-react";
 import { downloadBrochure } from "@/lib/api";
+import { useLang } from "@/lib/lang";
 
 export default function FloatingActions() {
+  const { isBn } = useLang();
+
   return (
     <div
       className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-2.5"
@@ -13,10 +16,10 @@ export default function FloatingActions() {
         type="button"
         onClick={() => downloadBrochure()}
         className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white/95 px-3.5 py-2 text-[11.5px] font-semibold text-[var(--ink)] shadow-[0_4px_18px_-6px_rgba(14,42,31,0.25)] backdrop-blur transition-colors hover:bg-white"
-        aria-label="Download the Sunset Group brochure"
+        aria-label={isBn ? "সানসেট গ্রুপ ব্রোশার ডাউনলোড করুন" : "Download the Sunset Group brochure"}
       >
         <Download size={13} />
-        Brochure
+        {isBn ? "ব্রোশার" : "Brochure"}
       </button>
 
       <a

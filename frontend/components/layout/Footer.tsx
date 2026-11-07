@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight, Clock, MapPin, Phone } from "lucide-react";
@@ -8,23 +10,25 @@ import {
   YoutubeIcon,
 } from "@/components/svg/SocialIcons";
 import { projects } from "@/data/projects";
+import { useLang } from "@/lib/lang";
 
 export default function Footer() {
+  const { isBn } = useLang();
   const year = new Date().getFullYear();
 
   const quickLinks = [
-    { href: "/about", label: "About the group" },
-    { href: "/packages", label: "Ownership packages" },
-    { href: "/profit-calculator", label: "Profit calculator" },
-    { href: "/source-of-income", label: "Source of income" },
-    { href: "/gallery", label: "Gallery" },
-    { href: "/blogs", label: "Journal" },
-    { href: "/contact", label: "Contact" },
+    { href: "/about", label: isBn ? "আমাদের পরিচয়" : "About the group" },
+    { href: "/packages", label: isBn ? "মালিকানা প্যাকেজ" : "Ownership packages" },
+    { href: "/profit-calculator", label: isBn ? "মুনাফা ক্যালকুলেটর" : "Profit calculator" },
+    { href: "/source-of-income", label: isBn ? "আয়ের উৎস" : "Source of income" },
+    { href: "/gallery", label: isBn ? "গ্যালারি" : "Gallery" },
+    { href: "/blogs", label: isBn ? "জার্নাল ও নিবন্ধ" : "Journal" },
+    { href: "/contact", label: isBn ? "যোগাযোগ" : "Contact" },
   ];
 
   const legalLinks = [
-    { href: "/privacy-policy", label: "Privacy policy" },
-    { href: "/terms", label: "Terms & conditions" },
+    { href: "/privacy-policy", label: isBn ? "গোপনীয়তা নীতি" : "Privacy policy" },
+    { href: "/terms", label: isBn ? "শর্তাবলী ও নিয়মাবলী" : "Terms & conditions" },
   ];
 
   const socials = [
@@ -63,20 +67,20 @@ export default function Footer() {
                   Sunset Group
                 </span>
                 <span className="mt-1 block text-[9.5px] font-semibold uppercase tracking-[0.16em] text-[rgba(250,249,246,0.55)]">
-                  Hospitality &amp; Healthcare
+                  {isBn ? "হসপিটালিটি ও হেলথকেয়ার" : "Hospitality & Healthcare"}
                 </span>
               </span>
             </Link>
 
             <p className="mt-6 max-w-sm text-[13.5px] leading-relaxed text-[rgba(250,249,246,0.68)]">
-              Sunset Kuakata Hotel &amp; Resort Ltd. — a Shariah-supervised hospitality,
-              healthcare and leisure group building transparent, deeded ownership for
-              long-term investors in Bangladesh.
+              {isBn
+                ? "সানসেট কুয়াকাটা হোটেল ও রিসোর্ট লিমিটেড — বাংলাদেশে দীর্ঘমেয়াদী বিনিয়োগকারীদের জন্য স্বচ্ছ, দলিলযুক্ত মালিকানা নিশ্চিতকারী একটি শরীয়া-তদারকিকৃত হসপিটালিটি, হেলথকেয়ার ও অবকাশ যাপন গ্রুপ।"
+                : "Sunset Kuakata Hotel & Resort Ltd. — a Shariah-supervised hospitality, healthcare and leisure group building transparent, deeded ownership for long-term investors in Bangladesh."}
             </p>
 
             <div className="mt-7 space-y-1.5 text-[11.5px] text-[rgba(250,249,246,0.45)]">
-              <p>RJSC Reg. No. C-189422/2023</p>
-              <p>Shariah Supervisory Committee certified</p>
+              <p>{isBn ? "আরজেএসসি নিবন্ধন নং C-189422/2023" : "RJSC Reg. No. C-189422/2023"}</p>
+              <p>{isBn ? "শরীয়া সুপারভাইজরি কমিটি প্রত্যয়িত" : "Shariah Supervisory Committee certified"}</p>
             </div>
 
             <div className="mt-7 flex gap-2.5">
@@ -97,7 +101,9 @@ export default function Footer() {
 
           {/* Explore */}
           <div className="lg:col-span-2">
-            <h3 className="text-eyebrow mb-5 text-[rgba(250,249,246,0.45)]">Explore</h3>
+            <h3 className="text-eyebrow mb-5 text-[rgba(250,249,246,0.45)]">
+              {isBn ? "অন্বেষণ" : "Explore"}
+            </h3>
             <ul className="space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.href}>
@@ -114,7 +120,9 @@ export default function Footer() {
 
           {/* Portfolio */}
           <div className="lg:col-span-3">
-            <h3 className="text-eyebrow mb-5 text-[rgba(250,249,246,0.45)]">Portfolio</h3>
+            <h3 className="text-eyebrow mb-5 text-[rgba(250,249,246,0.45)]">
+              {isBn ? "প্রকল্পসমূহ" : "Portfolio"}
+            </h3>
             <ul className="space-y-2.5">
               {projects.map((project) => (
                 <li key={project.slug}>
@@ -125,7 +133,7 @@ export default function Footer() {
                     <span className="text-[10px] tabular-nums text-[rgba(250,249,246,0.32)]">
                       {project.number}
                     </span>
-                    <span>{project.name}</span>
+                    <span>{isBn ? project.nameBn : project.name}</span>
                     <ArrowUpRight
                       size={12}
                       className="opacity-0 transition-opacity group-hover:opacity-60"
@@ -138,7 +146,9 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="lg:col-span-3">
-            <h3 className="text-eyebrow mb-5 text-[rgba(250,249,246,0.45)]">Contact</h3>
+            <h3 className="text-eyebrow mb-5 text-[rgba(250,249,246,0.45)]">
+              {isBn ? "যোগাযোগ" : "Contact"}
+            </h3>
             <ul className="space-y-4 text-[13.5px] text-[rgba(250,249,246,0.7)]">
               <li className="flex gap-3">
                 <Phone size={15} className="mt-0.5 shrink-0 text-[rgba(250,249,246,0.4)]" />
@@ -152,7 +162,7 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     className="mt-0.5 inline-block text-[12px] text-[rgba(250,249,246,0.45)] transition-colors hover:text-[var(--paper)]"
                   >
-                    WhatsApp consultation
+                    {isBn ? "হোয়াটসঅ্যাপে পরামর্শ" : "WhatsApp consultation"}
                   </a>
                 </span>
               </li>
@@ -160,17 +170,29 @@ export default function Footer() {
               <li className="flex gap-3">
                 <MapPin size={15} className="mt-0.5 shrink-0 text-[rgba(250,249,246,0.4)]" />
                 <address className="not-italic leading-relaxed">
-                  27 Shaptak Square, Level 11
-                  <br />
-                  Road 16, Old Dhanmondi 27
-                  <br />
-                  Dhaka 1209, Bangladesh
+                  {isBn ? (
+                    <>
+                      ২৭ সপ্তক স্কয়ার, লিফট ১১ (লেভেল ১১)
+                      <br />
+                      রোড ১৬, পুরাতন ধানমন্ডি ২৭
+                      <br />
+                      ঢাকা ১২০৯, বাংলাদেশ
+                    </>
+                  ) : (
+                    <>
+                      27 Shaptak Square, Level 11
+                      <br />
+                      Road 16, Old Dhanmondi 27
+                      <br />
+                      Dhaka 1209, Bangladesh
+                    </>
+                  )}
                 </address>
               </li>
 
               <li className="flex gap-3">
                 <Clock size={15} className="mt-0.5 shrink-0 text-[rgba(250,249,246,0.4)]" />
-                <span>Sunday – Thursday, 9:30 – 18:30</span>
+                <span>{isBn ? "রবিবার – বৃহস্পতিবার, ৯:৩০ – ১৮:৩০" : "Sunday – Thursday, 9:30 – 18:30"}</span>
               </li>
             </ul>
           </div>
@@ -181,11 +203,12 @@ export default function Footer() {
       <div className="border-t border-[rgba(250,249,246,0.1)]">
         <div className="container-site py-5">
           <p className="max-w-4xl text-[11.5px] leading-relaxed text-[rgba(250,249,246,0.42)]">
-            <span className="font-semibold text-[rgba(250,249,246,0.6)]">Investment notice:</span>{" "}
-            Participation in Sunset Group projects carries risk. Past performance does not
-            indicate future results. Projected profit-sharing figures are illustrative and
-            subject to the terms of the applicable agreement. Independent financial advice is
-            recommended.
+            <span className="font-semibold text-[rgba(250,249,246,0.6)]">
+              {isBn ? "বিনিয়োগ সতর্কবার্তা:" : "Investment notice:"}
+            </span>{" "}
+            {isBn
+              ? "সানসেট গ্রুপের প্রকল্পসমূহে অংশীদারিত্বে ঝুঁকি অন্তর্ভুক্ত। অতীতের ফলাফল ভবিষ্যতের নিশ্চয়তা নয়। প্রক্ষেপিত মুনাফার হিসাব শুধুমাত্র আনুমানিক এবং সংশ্লিষ্ট চুক্তি ও নিরীক্ষিত ফলাফলের ওপর নির্ভরশীল। নিজস্ব আর্থিক পরামর্শ গ্রহণ সমীচীন।"
+              : "Participation in Sunset Group projects carries risk. Past performance does not indicate future results. Projected profit-sharing figures are illustrative and subject to the terms of the applicable agreement. Independent financial advice is recommended."}
           </p>
         </div>
       </div>
@@ -194,7 +217,9 @@ export default function Footer() {
       <div className="border-t border-[rgba(250,249,246,0.1)]">
         <div className="container-site flex flex-col gap-3 py-5 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-[11.5px] text-[rgba(250,249,246,0.4)]">
-            © {year} Sunset Group (Sunset Kuakata Hotel &amp; Resort Ltd.). All rights reserved.
+            {isBn
+              ? `© ${year} সানসেট গ্রুপ (সানসেট কুয়াকাটা হোটেল ও রিসোর্ট লি.)। সর্বস্বত্ব সংরক্ষিত।`
+              : `© ${year} Sunset Group (Sunset Kuakata Hotel & Resort Ltd.). All rights reserved.`}
           </p>
           <div className="flex gap-6">
             {legalLinks.map((link) => (
