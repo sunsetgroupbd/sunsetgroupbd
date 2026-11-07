@@ -14,8 +14,10 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [projectsOpen, setProjectsOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
   const pathname = usePathname();
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
+  const moreRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -26,8 +28,12 @@ export default function Header() {
 
   useEffect(() => {
     const handler = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      const target = event.target as Node;
+      if (projectsRef.current && !projectsRef.current.contains(target)) {
         setProjectsOpen(false);
+      }
+      if (moreRef.current && !moreRef.current.contains(target)) {
+        setMoreOpen(false);
       }
     };
     document.addEventListener("mousedown", handler);
@@ -41,14 +47,20 @@ export default function Header() {
     };
   }, [mobileOpen]);
 
-  const navLinks = [
-    { href: "/about", label: t.nav.about, always: true },
-    { href: "/packages", label: t.nav.packages, always: true },
-    { href: "/profit-calculator", label: t.nav.calculator, always: false },
-    { href: "/source-of-income", label: t.nav.sourceOfIncome, always: false },
-    { href: "/gallery", label: t.nav.gallery, always: false },
-    { href: "/blogs", label: t.nav.blogs, always: false },
-    { href: "/contact", label: t.nav.contact, always: true },
+  const moreLinks = [
+    { href: "/source-of-income", label: t.nav.sourceOfIncome },
+    { href: "/gallery", label: t.nav.gallery },
+    { href: "/blogs", label: t.nav.blogs },
+  ];
+
+  const allNavLinks = [
+    { href: "/about", label: t.nav.about },
+    { href: "/packages", label: t.nav.packages },
+    { href: "/profit-calculator", label: isBn ? "ক্যালকুলেটর" : "Calculator" },
+    { href: "/source-of-income", label: t.nav.sourceOfIncome },
+    { href: "/gallery", label: t.nav.gallery },
+    { href: "/blogs", label: t.nav.blogs },
+    { href: "/contact", label: t.nav.contact },
   ];
 
   const isActive = (href: string) =>
@@ -56,12 +68,13 @@ export default function Header() {
 
   const transparent = !scrolled;
   const projectsActive = pathname.startsWith("/projects");
+  const moreActive = moreLinks.some((l) => pathname.startsWith(l.href));
 
   const navColor = (active: boolean) =>
     transparent
       ? active
         ? "#FFFFFF"
-        : "rgba(250, 249, 246, 0.78)"
+        : "rgba(250, 249, 246, 0.82)"
       : active
         ? "var(--sunset-green-900)"
         : "var(--ink)";
@@ -72,30 +85,30 @@ export default function Header() {
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
           transparent
             ? "bg-transparent"
-            : "bg-[rgba(250,249,246,0.92)] backdrop-blur-xl border-b border-[var(--line)]"
+            : "bg-[rgba(250,249,246,0.94)] backdrop-blur-xl border-b border-[var(--line)]"
         }`}
       >
         <div className="container-site">
-          <div className="flex h-[72px] md:h-20 items-center justify-between gap-6">
-            {/* Brand */}
+          <div className="flex h-[72px] md:h-20 items-center justify-between gap-4 xl:gap-8">
+            {/* Brand — transparent logo without white square background */}
             <Link
               href="/"
               aria-label="Sunset Group home"
-              className="flex items-center gap-3 shrink-0"
+              className="flex items-center gap-2.5 sm:gap-3 shrink-0"
             >
-              <span className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-[4px] bg-white p-1 border border-black/5">
+              <span className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center shrink-0">
                 <Image
                   src="/Sunset-Group-Logo.png"
                   alt="Sunset Group crest"
-                  width={32}
-                  height={32}
+                  width={38}
+                  height={38}
                   className="object-contain"
                   priority
                 />
               </span>
               <span className="leading-none">
                 <span
-                  className="block text-[1.18rem] font-medium tracking-[-0.01em] transition-colors"
+                  className="block text-[1.15rem] sm:text-[1.22rem] font-medium tracking-[-0.01em] transition-colors"
                   style={{
                     color: transparent ? "#FFFFFF" : "var(--sunset-green-900)",
                     fontFamily: "var(--font-cormorant)",
@@ -104,10 +117,10 @@ export default function Header() {
                   Sunset Group
                 </span>
                 <span
-                  className="mt-1 block text-[9.5px] font-semibold uppercase tracking-[0.16em] transition-colors"
+                  className="mt-0.5 block text-[9px] sm:text-[9.5px] font-semibold uppercase tracking-[0.14em] transition-colors"
                   style={{
                     color: transparent
-                      ? "rgba(250, 249, 246, 0.58)"
+                      ? "rgba(250, 249, 246, 0.62)"
                       : "var(--sunset-grey-700)",
                   }}
                 >
@@ -116,46 +129,44 @@ export default function Header() {
               </span>
             </Link>
 
-            {/* Desktop nav */}
-            <nav className="hidden lg:flex items-center gap-4 xl:gap-6 2xl:gap-7" aria-label="Main navigation">
+            {/* Desktop nav — spacious, uncongested 5-6 core items + clean dropdowns */}
+            <nav className="hidden lg:flex items-center gap-5 xl:gap-7" aria-label="Main navigation">
               <Link
                 href="/"
-                className="text-[13.5px] font-medium transition-colors hover:opacity-70 whitespace-nowrap"
+                className="text-[13.5px] font-medium transition-colors hover:opacity-75 whitespace-nowrap"
                 style={{ color: navColor(pathname === "/") }}
               >
                 {t.nav.home}
               </Link>
 
-              {navLinks.slice(0, 2).map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`relative text-[13.5px] font-medium transition-colors hover:opacity-70 whitespace-nowrap ${
-                    link.always ? "inline-block" : "hidden xl:inline-block"
-                  }`}
-                  style={{ color: navColor(isActive(link.href)) }}
-                >
-                  {link.label}
-                  {isActive(link.href) && (
-                    <span
-                      aria-hidden
-                      className="absolute -bottom-1.5 left-0 h-px w-full"
-                      style={{
-                        backgroundColor: transparent
-                          ? "rgba(250, 249, 246, 0.8)"
-                          : "var(--sunset-green-900)",
-                      }}
-                    />
-                  )}
-                </Link>
-              ))}
+              <Link
+                href="/about"
+                className="relative text-[13.5px] font-medium transition-colors hover:opacity-75 whitespace-nowrap"
+                style={{ color: navColor(isActive("/about")) }}
+              >
+                {t.nav.about}
+                {isActive("/about") && (
+                  <span
+                    aria-hidden
+                    className="absolute -bottom-1.5 left-0 h-px w-full"
+                    style={{
+                      backgroundColor: transparent
+                        ? "rgba(250, 249, 246, 0.85)"
+                        : "var(--sunset-green-900)",
+                    }}
+                  />
+                )}
+              </Link>
 
               {/* Projects dropdown */}
-              <div className="relative" ref={dropdownRef}>
+              <div className="relative" ref={projectsRef}>
                 <button
                   type="button"
-                  onClick={() => setProjectsOpen((open) => !open)}
-                  className="flex items-center gap-1 text-[13.5px] font-medium transition-colors hover:opacity-70 cursor-pointer whitespace-nowrap"
+                  onClick={() => {
+                    setProjectsOpen((o) => !o);
+                    setMoreOpen(false);
+                  }}
+                  className="flex items-center gap-1 text-[13.5px] font-medium transition-colors hover:opacity-75 cursor-pointer whitespace-nowrap"
                   style={{ color: navColor(projectsActive) }}
                   aria-expanded={projectsOpen}
                   aria-haspopup="true"
@@ -174,8 +185,8 @@ export default function Header() {
                       initial={{ opacity: 0, y: 6 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 6 }}
-                      transition={{ duration: 0.18 }}
-                      className="absolute left-1/2 top-full mt-4 w-[300px] -translate-x-1/2 overflow-hidden rounded-xl border border-[var(--line)] bg-white p-1.5 shadow-[0_18px_50px_-18px_rgba(14,42,31,0.28)]"
+                      transition={{ duration: 0.16 }}
+                      className="absolute left-1/2 top-full mt-3.5 w-[290px] -translate-x-1/2 overflow-hidden rounded-xl border border-[var(--line)] bg-white p-1.5 shadow-[0_16px_40px_-16px_rgba(14,42,31,0.25)]"
                       role="menu"
                     >
                       <Link
@@ -184,7 +195,7 @@ export default function Header() {
                         className="flex items-center justify-between rounded-lg px-3 py-2.5 text-[13px] font-semibold text-[var(--sunset-green-900)] hover:bg-[var(--sand)] transition-colors"
                         role="menuitem"
                       >
-                        <span>{isBn ? "সকল প্রকল্প" : "All projects"}</span>
+                        <span>{isBn ? "সকল প্রকল্প দেখুন" : "View all projects"}</span>
                         <ArrowRight size={14} />
                       </Link>
 
@@ -211,38 +222,121 @@ export default function Header() {
                 </AnimatePresence>
               </div>
 
-              {navLinks.slice(2).map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`relative text-[13.5px] font-medium transition-colors hover:opacity-70 whitespace-nowrap ${
-                    link.always ? "inline-block" : "hidden xl:inline-block"
-                  }`}
-                  style={{ color: navColor(isActive(link.href)) }}
+              <Link
+                href="/packages"
+                className="relative text-[13.5px] font-medium transition-colors hover:opacity-75 whitespace-nowrap"
+                style={{ color: navColor(isActive("/packages")) }}
+              >
+                {t.nav.packages}
+                {isActive("/packages") && (
+                  <span
+                    aria-hidden
+                    className="absolute -bottom-1.5 left-0 h-px w-full"
+                    style={{
+                      backgroundColor: transparent
+                        ? "rgba(250, 249, 246, 0.85)"
+                        : "var(--sunset-green-900)",
+                    }}
+                  />
+                )}
+              </Link>
+
+              <Link
+                href="/profit-calculator"
+                className="relative text-[13.5px] font-medium transition-colors hover:opacity-75 whitespace-nowrap"
+                style={{ color: navColor(isActive("/profit-calculator")) }}
+              >
+                {isBn ? "ক্যালকুলেটর" : "Calculator"}
+                {isActive("/profit-calculator") && (
+                  <span
+                    aria-hidden
+                    className="absolute -bottom-1.5 left-0 h-px w-full"
+                    style={{
+                      backgroundColor: transparent
+                        ? "rgba(250, 249, 246, 0.85)"
+                        : "var(--sunset-green-900)",
+                    }}
+                  />
+                )}
+              </Link>
+
+              {/* More dropdown — neatly contains secondary items (Income, Gallery, Blog) */}
+              <div className="relative" ref={moreRef}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMoreOpen((o) => !o);
+                    setProjectsOpen(false);
+                  }}
+                  className="flex items-center gap-1 text-[13.5px] font-medium transition-colors hover:opacity-75 cursor-pointer whitespace-nowrap"
+                  style={{ color: navColor(moreActive) }}
+                  aria-expanded={moreOpen}
+                  aria-haspopup="true"
                 >
-                  {link.label}
-                  {isActive(link.href) && (
-                    <span
-                      aria-hidden
-                      className="absolute -bottom-1.5 left-0 h-px w-full"
-                      style={{
-                        backgroundColor: transparent
-                          ? "rgba(250, 249, 246, 0.8)"
-                          : "var(--sunset-green-900)",
-                      }}
-                    />
+                  {isBn ? "অন্যান্য" : "More"}
+                  <ChevronDown
+                    size={13}
+                    className="transition-transform duration-200"
+                    style={{ transform: moreOpen ? "rotate(180deg)" : "rotate(0)" }}
+                  />
+                </button>
+
+                <AnimatePresence>
+                  {moreOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 6 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 6 }}
+                      transition={{ duration: 0.16 }}
+                      className="absolute left-1/2 top-full mt-3.5 w-[210px] -translate-x-1/2 overflow-hidden rounded-xl border border-[var(--line)] bg-white p-1.5 shadow-[0_16px_40px_-16px_rgba(14,42,31,0.25)]"
+                      role="menu"
+                    >
+                      {moreLinks.map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          onClick={() => setMoreOpen(false)}
+                          className="flex items-center justify-between rounded-lg px-3 py-2 text-[13px] text-[var(--ink)] hover:bg-[var(--sand)] transition-colors"
+                          role="menuitem"
+                        >
+                          <span>{link.label}</span>
+                          {isActive(link.href) && (
+                            <span className="h-1.5 w-1.5 rounded-full bg-[var(--sunset-green-900)]" />
+                          )}
+                        </Link>
+                      ))}
+                    </motion.div>
                   )}
-                </Link>
-              ))}
+                </AnimatePresence>
+              </div>
+
+              <Link
+                href="/contact"
+                className="relative text-[13.5px] font-medium transition-colors hover:opacity-75 whitespace-nowrap"
+                style={{ color: navColor(isActive("/contact")) }}
+              >
+                {t.nav.contact}
+                {isActive("/contact") && (
+                  <span
+                    aria-hidden
+                    className="absolute -bottom-1.5 left-0 h-px w-full"
+                    style={{
+                      backgroundColor: transparent
+                        ? "rgba(250, 249, 246, 0.85)"
+                        : "var(--sunset-green-900)",
+                    }}
+                  />
+                )}
+              </Link>
             </nav>
 
             {/* Actions */}
-            <div className="flex items-center gap-2 sm:gap-3">
+            <div className="flex items-center gap-2 sm:gap-3 shrink-0">
               <button
                 type="button"
                 onClick={toggle}
-                className="flex items-center gap-1.5 rounded-md px-2 py-1.5 text-[12px] font-semibold transition-colors hover:opacity-75 cursor-pointer"
-                style={{ color: transparent ? "rgba(250, 249, 246, 0.86)" : "var(--ink)" }}
+                className="flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-[12px] font-semibold transition-colors hover:opacity-75 cursor-pointer whitespace-nowrap"
+                style={{ color: transparent ? "rgba(250, 249, 246, 0.9)" : "var(--ink)" }}
                 aria-label="Change language"
               >
                 <Globe size={14} />
@@ -251,7 +345,7 @@ export default function Header() {
 
               <Link
                 href="/contact"
-                className={`hidden sm:inline-flex items-center gap-1.5 rounded-md px-4 py-2.5 text-[12.5px] font-semibold transition-colors ${
+                className={`hidden sm:inline-flex items-center gap-1.5 rounded-md px-4 py-2.5 text-[12.5px] font-semibold transition-colors whitespace-nowrap ${
                   transparent
                     ? "bg-[var(--paper)] text-[var(--sunset-green-900)] hover:bg-white"
                     : "bg-[var(--sunset-green-900)] text-[var(--paper)] hover:bg-[var(--sunset-green-950)]"
@@ -289,12 +383,12 @@ export default function Header() {
           >
             <div className="container-site flex h-[72px] items-center justify-between border-b border-[var(--line)]">
               <Link href="/" onClick={() => setMobileOpen(false)} className="flex items-center gap-3">
-                <span className="flex h-9 w-9 items-center justify-center rounded-[4px] border border-black/5 bg-white p-1">
+                <span className="flex h-9 w-9 items-center justify-center shrink-0">
                   <Image
                     src="/Sunset-Group-Logo.png"
                     alt="Sunset Group crest"
-                    width={32}
-                    height={32}
+                    width={36}
+                    height={36}
                     className="object-contain"
                   />
                 </span>
@@ -321,17 +415,17 @@ export default function Header() {
                 <Link
                   href="/"
                   onClick={() => setMobileOpen(false)}
-                  className="border-b border-[var(--line)] py-3.5 text-2xl text-[var(--sunset-green-900)]"
+                  className="border-b border-[var(--line)] py-3 text-xl text-[var(--sunset-green-900)]"
                   style={{ fontFamily: "var(--font-cormorant)" }}
                 >
                   {t.nav.home}
                 </Link>
-                {navLinks.map((link) => (
+                {allNavLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className="border-b border-[var(--line)] py-3.5 text-2xl text-[var(--sunset-green-900)]"
+                    className="border-b border-[var(--line)] py-3 text-xl text-[var(--sunset-green-900)]"
                     style={{ fontFamily: "var(--font-cormorant)" }}
                   >
                     {link.label}

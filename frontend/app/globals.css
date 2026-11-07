@@ -110,42 +110,42 @@
    TYPOGRAPHY — restrained editorial scale
    ============================================================ */
 .text-display-xl {
-  font-family: var(--font-display, 'Cormorant Garamond', serif);
-  font-size: clamp(2.65rem, 5.4vw, 4.65rem);
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.04;
-}
-
-.text-display-lg {
-  font-family: var(--font-display, 'Cormorant Garamond', serif);
-  font-size: clamp(2.15rem, 4vw, 3.4rem);
-  font-weight: 400;
-  letter-spacing: -0.018em;
+  font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2.5rem, 5vw, 4.4rem);
+  font-weight: 500;
+  letter-spacing: -0.015em;
   line-height: 1.08;
 }
 
-.text-display-md {
-  font-family: var(--font-display, 'Cormorant Garamond', serif);
-  font-size: clamp(1.85rem, 3vw, 2.7rem);
-  font-weight: 400;
-  letter-spacing: -0.015em;
+.text-display-lg {
+  font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2.1rem, 3.8vw, 3.25rem);
+  font-weight: 500;
+  letter-spacing: -0.012em;
   line-height: 1.12;
 }
 
-.text-display-sm {
-  font-family: var(--font-display, 'Cormorant Garamond', serif);
-  font-size: clamp(1.35rem, 2vw, 1.7rem);
+.text-display-md {
+  font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.75rem, 2.8vw, 2.5rem);
   font-weight: 500;
   letter-spacing: -0.01em;
-  line-height: 1.22;
+  line-height: 1.18;
+}
+
+.text-display-sm {
+  font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.3rem, 1.8vw, 1.65rem);
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  line-height: 1.25;
 }
 
 .text-eyebrow {
   font-family: var(--font-body, 'Manrope', sans-serif);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--sunset-grey-700);
 }
@@ -166,16 +166,65 @@
   color: var(--sunset-grey-700);
 }
 
-/* Bangla-specific */
-[lang="bn"] body,
+/* ============================================================
+   BANGLA TYPOGRAPHY — STRICTLY ZERO LETTER-GAP
+   Bangla ligatures and matras must never be separated.
+   ============================================================ */
+[lang="bn"],
+[lang="bn"] *,
+html[lang="bn"] *,
+.bn,
+.bn-heading,
+.bn-body {
+  letter-spacing: 0 !important;
+  word-spacing: normal !important;
+}
+
+[lang="bn"] .text-eyebrow,
+[lang="bn"] [class*="tracking-"],
+[lang="bn"] [class*="uppercase"] {
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+[lang="bn"] h1,
+[lang="bn"] h2,
+[lang="bn"] h3,
+[lang="bn"] h4,
+[lang="bn"] h5,
+[lang="bn"] h6,
+[lang="bn"] .text-display-xl,
+[lang="bn"] .text-display-lg,
+[lang="bn"] .text-display-md,
+[lang="bn"] .text-display-sm,
+[lang="bn"] .font-display,
 .bn-heading {
-  font-family: var(--font-bangla-heading, 'Noto Serif Bengali', serif);
+  font-family: var(--font-bangla-heading, 'Noto Serif Bengali', serif) !important;
+  letter-spacing: 0 !important;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+[lang="bn"] body,
+[lang="bn"] p,
+[lang="bn"] span,
+[lang="bn"] a,
+[lang="bn"] button,
+[lang="bn"] input,
+[lang="bn"] textarea,
+[lang="bn"] select,
+[lang="bn"] dt,
+[lang="bn"] dd,
+[lang="bn"] li,
+[lang="bn"] label,
+.bn-body {
+  font-family: var(--font-bangla-body, 'Hind Siliguri', system-ui, sans-serif);
+  letter-spacing: 0 !important;
   line-height: 1.75;
 }
 
-.bn-body {
-  font-family: var(--font-bangla-body, 'Hind Siliguri', sans-serif);
-  line-height: 1.8;
+[lang="bn"] .tabular-nums {
+  letter-spacing: 0 !important;
 }
 
 /* ============================================================
