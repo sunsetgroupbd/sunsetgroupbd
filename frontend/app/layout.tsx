@@ -110,7 +110,7 @@ export const metadata: Metadata = {
       "Own deeded, saf-kabala registered equity in Bangladesh's most ethical, Shariah-supervised hospitality and healthcare projects.",
     images: [
       {
-        url: "/images/kuakata/hero.jpg",
+        url: "/images/kuakata/hero.webp",
         width: 1200,
         height: 630,
         alt: "Sunset Kuakata Hotel & Resort — Sunset Group Bangladesh",
@@ -128,7 +128,7 @@ export const metadata: Metadata = {
     title: "Sunset Group — Luxury & Recreation with Ethical Hospitality",
     description:
       "Halal, Shariah-supervised hospitality & real-estate investments in Bangladesh. Saf-kabala registration.",
-    images: ["/images/kuakata/hero.jpg"],
+    images: ["/images/kuakata/hero.webp"],
     creator: "@sunsetkuakatahotel",
   },
   robots: {

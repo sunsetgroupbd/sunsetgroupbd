@@ -18,7 +18,7 @@ export default function ProjectsPage() {
         eyebrow="Deeded portfolio · Saf-kabala · Shariah supervised"
         title="Flagship investment projects."
         description="Verified hospitality, healthcare and leisure destinations offering ethical, asset-backed profit-sharing for discerning shareholders."
-        image="/images/kuakata/gallery-02.jpg"
+        image="/images/kuakata/gallery-02.webp"
         imageAlt="Kuakata coastline"
         actions={
           <>

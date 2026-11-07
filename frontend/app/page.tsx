@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description:
       "Bangladesh's premier halal, Shariah-supervised hotel & resort investment company. Build lifetime halal income through deeded ownership packages.",
     url: "https://sunsetgroupbd.com",
-    images: [{ url: "/images/kuakata/hero.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/images/kuakata/hero.webp", width: 1200, height: 630 }],
   },
 };
 

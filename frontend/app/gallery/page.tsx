@@ -55,7 +55,7 @@ export default function GalleryPage() {
         eyebrow="Visual archive · Architecture"
         title="Project gallery."
         description="Photography, site progression and architectural visualisations across our active portfolio in Kuakata, Dhaka and beyond."
-        image="/images/kuakata/gallery-01.jpg"
+        image="/images/kuakata/gallery-01.webp"
         imageAlt="Kuakata beachfront"
       />
 

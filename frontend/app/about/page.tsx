@@ -72,7 +72,7 @@ export default function AboutPage() {
         eyebrow="Ethical hospitality · Company Act 1994 · Saf-kabala"
         title="Built on trust. Grown through ethics."
         description="Sunset Group operates with an unwavering dedication to halal wealth creation, ethical asset ownership and hospitality excellence across Bangladesh's most promising growth corridors."
-        image="/images/kuakata/hero.jpg"
+        image="/images/kuakata/hero.webp"
         imageAlt="Sunset Kuakata Hotel & Resort"
         actions={
           <>
@@ -167,7 +167,7 @@ export default function AboutPage() {
             <div className="lg:col-span-5">
               <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[22px] bg-[var(--sand)]">
                 <Image
-                  src="/images/kuakata/gallery-01.jpg"
+                  src="/images/kuakata/gallery-01.webp"
                   alt="Beachfront at Sunset Kuakata Hotel & Resort"
                   fill
                   className="object-cover"

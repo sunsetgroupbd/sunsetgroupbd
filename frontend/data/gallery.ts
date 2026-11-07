@@ -26,7 +26,7 @@ export const galleryImages: GalleryImage[] = [
   // Kuakata
   {
     id: "k-01",
-    src: "/images/kuakata/hero.jpg",
+    src: "/images/kuakata/hero.webp",
     alt: "Sunset Kuakata Hotel & Resort — aerial view",
     altBn: "সানসেট কুয়াকাটা হোটেল ও রিসোর্ট — আকাশ দর্শন",
     category: "kuakata",
@@ -35,7 +35,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "k-02",
-    src: "/images/kuakata/gallery-01.jpg",
+    src: "/images/kuakata/gallery-01.webp",
     alt: "Kuakata Resort — beachfront view",
     altBn: "কুয়াকাটা রিসোর্ট — সমুদ্র সৈকত দর্শন",
     category: "kuakata",
@@ -44,7 +44,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "k-03",
-    src: "/images/kuakata/gallery-02.jpg",
+    src: "/images/kuakata/gallery-02.webp",
     alt: "Kuakata Resort — sunset panorama",
     altBn: "কুয়াকাটা রিসোর্ট — সূর্যাস্ত প্যানোরামা",
     category: "kuakata",
@@ -53,7 +53,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "k-04",
-    src: "/images/kuakata/gallery-03.jpg",
+    src: "/images/kuakata/gallery-03.webp",
     alt: "Kuakata Hotel — exterior design",
     altBn: "কুয়াকাটা হোটেল — বাহ্যিক নকশা",
     category: "kuakata",
@@ -62,7 +62,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "k-05",
-    src: "/images/kuakata/gallery-04.jpg",
+    src: "/images/kuakata/gallery-04.webp",
     alt: "Kuakata Resort — pool area",
     altBn: "কুয়াকাটা রিসোর্ট — পুল এলাকা",
     category: "kuakata",
@@ -71,7 +71,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "k-06",
-    src: "/images/kuakata/gallery-05.jpg",
+    src: "/images/kuakata/gallery-05.webp",
     alt: "Kuakata Hotel — lobby render",
     altBn: "কুয়াকাটা হোটেল — লবি রেন্ডার",
     category: "kuakata",
@@ -80,7 +80,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "k-07",
-    src: "/images/kuakata/gallery-06.jpg",
+    src: "/images/kuakata/gallery-06.webp",
     alt: "Kuakata — sunrise view from beach",
     altBn: "কুয়াকাটা — সমুদ্র সৈকত থেকে সূর্যোদয়",
     category: "kuakata",
@@ -89,7 +89,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "k-08",
-    src: "/images/kuakata/Sunset Hotel & Resort.jpg",
+    src: "/images/kuakata/Sunset Hotel & Resort.webp",
     alt: "Sunset Hotel & Resort — full view",
     altBn: "সানসেট হোটেল ও রিসোর্ট — পূর্ণ দৃশ্য",
     category: "kuakata",
@@ -99,7 +99,7 @@ export const galleryImages: GalleryImage[] = [
   // Sun Care
   {
     id: "sc-01",
-    src: "/images/sun-care/hero.jpg",
+    src: "/images/sun-care/hero.webp",
     alt: "Sun Care Hospital — main building",
     altBn: "সান কেয়ার হাসপাতাল — প্রধান ভবন",
     category: "sun-care",
@@ -108,7 +108,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "sc-02",
-    src: "/images/sun-care/gallery-01.jpg",
+    src: "/images/sun-care/gallery-01.webp",
     alt: "Sun Care Hospital — diagnostic center",
     altBn: "সান কেয়ার হাসপাতাল — ডায়াগনস্টিক সেন্টার",
     category: "sun-care",
@@ -117,7 +117,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "sc-03",
-    src: "/images/sun-care/gallery-02.png",
+    src: "/images/sun-care/gallery-02.webp",
     alt: "Sun Care Hospital — patient care area",
     altBn: "সান কেয়ার হাসপাতাল — রোগী পরিচর্যা এলাকা",
     category: "sun-care",
@@ -126,7 +126,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "sc-04",
-    src: "/images/sun-care/Hospital view.jpg",
+    src: "/images/sun-care/Hospital view.webp",
     alt: "Sun Care Hospital — exterior view",
     altBn: "সান কেয়ার হাসপাতাল — বাহ্যিক দৃশ্য",
     category: "sun-care",
@@ -135,7 +135,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "sc-05",
-    src: "/images/sun-care/Sun Care Hospital.jpg",
+    src: "/images/sun-care/Sun Care Hospital.webp",
     alt: "Sun Care Hospital — building facade",
     altBn: "সান কেয়ার হাসপাতাল — ভবনের সম্মুখভাগ",
     category: "sun-care",
@@ -145,7 +145,7 @@ export const galleryImages: GalleryImage[] = [
   // DFI
   {
     id: "dfi-01",
-    src: "/images/dfi/DFI.jpg",
+    src: "/images/dfi/DFI.webp",
     alt: "Dhaka Fantasy Island — main view",
     altBn: "ঢাকা ফ্যান্টাসি আইল্যান্ড — প্রধান দৃশ্য",
     category: "dfi",
@@ -154,7 +154,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "dfi-02",
-    src: "/images/dfi/DFI-top-view.png",
+    src: "/images/dfi/DFI-top-view.webp",
     alt: "Dhaka Fantasy Island — aerial top view",
     altBn: "ঢাকা ফ্যান্টাসি আইল্যান্ড — আকাশ দর্শন",
     category: "dfi",
@@ -163,7 +163,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "dfi-03",
-    src: "/images/dfi/Dhaka-Fantasy-Island.jpg",
+    src: "/images/dfi/Dhaka-Fantasy-Island.webp",
     alt: "Dhaka Fantasy Island — landscape",
     altBn: "ঢাকা ফ্যান্টাসি আইল্যান্ড — ল্যান্ডস্কেপ",
     category: "dfi",
@@ -172,7 +172,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "dfi-04",
-    src: "/images/dfi/Hotel & restaurant View.jpg.jpeg",
+    src: "/images/dfi/Hotel & restaurant View.jpg.webp",
     alt: "DFI — Hotel and restaurant view",
     altBn: "ডিএফআই — হোটেল ও রেস্তোরাঁ দৃশ্য",
     category: "dfi",
@@ -181,7 +181,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "dfi-05",
-    src: "/images/dfi/North View.jpg.jpeg",
+    src: "/images/dfi/North View.jpg.webp",
     alt: "DFI — North view",
     altBn: "ডিএফআই — উত্তর দৃশ্য",
     category: "dfi",
@@ -190,7 +190,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "dfi-06",
-    src: "/images/dfi/Coffee Corner& Rest Room.jpg.jpeg",
+    src: "/images/dfi/Coffee Corner& Rest Room.jpg.webp",
     alt: "DFI — Coffee corner and rest area",
     altBn: "ডিএফআই — কফি কর্নার ও বিশ্রাম কক্ষ",
     category: "dfi",
@@ -199,7 +199,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "dfi-07",
-    src: "/images/dfi/Recreational Playing Zone.jpg.jpeg",
+    src: "/images/dfi/Recreational Playing Zone.jpg.webp",
     alt: "DFI — Recreational playing zone",
     altBn: "ডিএফআই — বিনোদনমূলক খেলার জোন",
     category: "dfi",
@@ -209,7 +209,7 @@ export const galleryImages: GalleryImage[] = [
   // The Deck
   {
     id: "td-01",
-    src: "/images/the-deck/The Deck view-01.jpg",
+    src: "/images/the-deck/The Deck view-01.webp",
     alt: "The Deck — main view",
     altBn: "দ্য ডেক — প্রধান দৃশ্য",
     category: "the-deck",
@@ -218,7 +218,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "td-02",
-    src: "/images/the-deck/The Deck view2-01.jpg",
+    src: "/images/the-deck/The Deck view2-01.webp",
     alt: "The Deck — second view",
     altBn: "দ্য ডেক — দ্বিতীয় দৃশ্য",
     category: "the-deck",
@@ -227,7 +227,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "td-03",
-    src: "/images/the-deck/The deck-01.jpg",
+    src: "/images/the-deck/The deck-01.webp",
     alt: "The Deck — lifestyle venue",
     altBn: "দ্য ডেক — লাইফস্টাইল ভেন্যু",
     category: "the-deck",
@@ -237,7 +237,7 @@ export const galleryImages: GalleryImage[] = [
   // Mangrove
   {
     id: "mg-01",
-    src: "/images/mangrove/Mangrove.png",
+    src: "/images/mangrove/Mangrove.webp",
     alt: "Mangrove Resort — entrance render",
     altBn: "ম্যানগ্রোভ রিসোর্ট — প্রবেশদ্বার রেন্ডার",
     category: "mangrove",
@@ -246,7 +246,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "mg-02",
-    src: "/images/mangrove/Mangrove Entry01.jpeg",
+    src: "/images/mangrove/Mangrove Entry01.webp",
     alt: "Mangrove Resort — entry view",
     altBn: "ম্যানগ্রোভ রিসোর্ট — প্রবেশ দৃশ্য",
     category: "mangrove",
@@ -255,7 +255,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "mg-03",
-    src: "/images/mangrove/Mangrove02.jpg",
+    src: "/images/mangrove/Mangrove02.webp",
     alt: "Mangrove Resort — forest view",
     altBn: "ম্যানগ্রোভ রিসোর্ট — বন দৃশ্য",
     category: "mangrove",
@@ -264,7 +264,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "mg-04",
-    src: "/images/mangrove/Mangrove03.jpg",
+    src: "/images/mangrove/Mangrove03.webp",
     alt: "Mangrove Resort — walkway",
     altBn: "ম্যানগ্রোভ রিসোর্ট — হাঁটার পথ",
     category: "mangrove",
@@ -273,7 +273,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "mg-05",
-    src: "/images/mangrove/Mangrove04.jpg",
+    src: "/images/mangrove/Mangrove04.webp",
     alt: "Mangrove Resort — water reflection",
     altBn: "ম্যানগ্রোভ রিসোর্ট — জলের প্রতিফলন",
     category: "mangrove",
@@ -282,7 +282,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "mg-06",
-    src: "/images/mangrove/Mangrove05.jpg",
+    src: "/images/mangrove/Mangrove05.webp",
     alt: "Mangrove Resort — villa area",
     altBn: "ম্যানগ্রোভ রিসোর্ট — ভিলা এলাকা",
     category: "mangrove",

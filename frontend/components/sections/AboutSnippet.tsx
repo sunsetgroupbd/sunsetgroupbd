@@ -46,7 +46,7 @@ export default function AboutSnippet() {
           >
             <div className="relative aspect-[4/5] w-full max-w-[420px] overflow-hidden rounded-[20px] bg-[var(--sand)]">
               <Image
-                src="/images/kuakata/gallery-01.jpg"
+                src="/images/kuakata/gallery-01.webp"
                 alt="Beachfront at Sunset Kuakata Hotel & Resort"
                 fill
                 sizes="(max-width: 1024px) 100vw, 420px"

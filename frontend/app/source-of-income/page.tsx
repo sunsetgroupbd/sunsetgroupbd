@@ -84,7 +84,7 @@ export default function SourceOfIncomePage() {
         eyebrow="Revenue engine · Shariah integrity"
         title="How your halal income is generated."
         description="Real businesses, physical real-estate assets and audited cash flows. Explore the five-step lifecycle that turns hospitality and healthcare into shareholder distributions."
-        image="/images/kuakata/gallery-03.jpg"
+        image="/images/kuakata/gallery-03.webp"
         imageAlt="Sunset Group project"
         actions={
           <Link href="/packages" className="btn btn-primary">

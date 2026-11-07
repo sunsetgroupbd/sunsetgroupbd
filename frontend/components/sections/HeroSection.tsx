@@ -28,7 +28,7 @@ export default function HeroSection() {
       {/* Background */}
       <motion.div className="absolute inset-0 z-0" style={{ y: imageY }}>
         <Image
-          src="/images/kuakata/hero.jpg"
+          src="/images/kuakata/hero.webp"
           alt="Sunset Kuakata Hotel & Resort on the Bay of Bengal"
           fill
           priority

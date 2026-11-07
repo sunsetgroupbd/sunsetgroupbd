@@ -37,7 +37,7 @@ export const blogPosts: BlogPost[] = [
 <p>Kuakata falls under the KTC (Kuakata Tourism City) Master Plan — a government-designated tourism development zone. This ensures planned, regulated development with proper infrastructure investment.</p>
 <p>Sunset Group's project is located squarely within this master plan area, ensuring future infrastructure benefits automatically accrue to investors.</p>`,
     contentBn: `<p>কুয়াকাটা, যা "সাগর কন্যা" নামে পরিচিত, বাংলাদেশের সবচেয়ে অনন্য উপকূলীয় গন্তব্যগুলির মধ্যে একটি।</p>`,
-    coverImage: "/images/kuakata/gallery-02.jpg",
+    coverImage: "/images/kuakata/gallery-02.webp",
     category: "Investment",
     categoryBn: "বিনিয়োগ",
     author: "Sunset Group Research Team",
@@ -58,7 +58,7 @@ export const blogPosts: BlogPost[] = [
 <p>Islamic finance rests on three key prohibitions: riba (interest), gharar (excessive uncertainty), and maysir (gambling/speculation). A Shariah-compliant investment must be free of all three.</p>
 <p>Sunset Group's profit-sharing model — where investors own a portion of actual assets and receive a share of real operational revenue — aligns with the Islamic concept of musharakah (partnership).</p>`,
     contentBn: `<p>বাংলাদেশ এবং বাইরের মুসলিম বিনিয়োগকারীদের জন্য ইসলামী আর্থিক নীতির সাথে সামঞ্জস্যপূর্ণ বিনিয়োগ যানবাহন খুঁজে পাওয়া ঐতিহাসিকভাবে চ্যালেঞ্জিং হয়েছে।</p>`,
-    coverImage: "/images/kuakata/gallery-01.jpg",
+    coverImage: "/images/kuakata/gallery-01.webp",
     category: "Islamic Finance",
     categoryBn: "ইসলামী অর্থায়ন",
     author: "Sunset Group Legal Team",
@@ -78,7 +78,7 @@ export const blogPosts: BlogPost[] = [
 <h2>The Dual-Benefit Model</h2>
 <p>Sun Care Hospital's investor model is unique in Bangladesh: beyond financial returns, every investor and their nominated individuals receive hospital services at cost price. This is not a minor benefit — for a family, lifetime healthcare at cost price in a full-service hospital can represent substantial savings.</p>`,
     contentBn: `<p>বাংলাদেশের স্বাস্থ্যসেবা খাত গত এক দশকে উল্লেখযোগ্য পরিবর্তন হয়েছে।</p>`,
-    coverImage: "/images/sun-care/hero.jpg",
+    coverImage: "/images/sun-care/hero.webp",
     category: "Healthcare",
     categoryBn: "স্বাস্থ্যসেবা",
     author: "Sunset Group Research Team",

@@ -121,7 +121,7 @@ export default function WhyKuakata() {
           >
             <div className="relative aspect-[4/5] overflow-hidden rounded-[20px] bg-[rgba(0,0,0,0.3)] lg:aspect-[4/3.4]">
               <Image
-                src="/images/kuakata/gallery-02.jpg"
+                src="/images/kuakata/gallery-02.webp"
                 alt="Sunset over Kuakata beach"
                 fill
                 className="object-cover"
