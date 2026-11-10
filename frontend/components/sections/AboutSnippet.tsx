@@ -107,8 +107,8 @@ export default function AboutSnippet() {
               ].map((stat) => (
                 <div key={stat.label}>
                   <div
-                    className="text-2xl font-medium tabular-nums text-[var(--sunset-green-900)]"
-                    style={{ fontFamily: "var(--font-cormorant)" }}
+                    className="text-2xl font-bold tabular-nums text-[var(--sunset-green-900)]"
+                    style={{ fontFamily: "var(--font-display)" }}
                   >
                     {stat.value}
                   </div>

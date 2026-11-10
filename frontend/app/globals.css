@@ -13,8 +13,8 @@
   --color-green-800: #1a4433;
   --color-green-700: #2c5a43;
   --color-green-600: #3e7355;
-  --color-accent:    #c83228;
-  --color-accent-600:#a32219;
+  --color-accent:    #e52520;
+  --color-accent-600:#c51d18;
   --color-blue-800:  #223c4b;
   --color-blue-500:  #426b80;
   --color-grey-700:  #5b625c;
@@ -27,8 +27,8 @@
 
   /* --- TYPE --- */
   --font-sans:    var(--font-manrope), system-ui, sans-serif;
-  --font-serif:   var(--font-cormorant), serif;
-  --font-display: var(--font-cormorant);
+  --font-serif:   var(--font-manrope), system-ui, sans-serif;
+  --font-display: var(--font-manrope), system-ui, sans-serif;
   --font-body:    var(--font-manrope);
   --font-bangla-heading: var(--font-noto-serif-bengali);
   --font-bangla-body:    var(--font-hind-siliguri);
@@ -53,8 +53,8 @@
   --sunset-green-800: #1a4433;
   --sunset-green-700: #2c5a43;
   --sunset-green-600: #3e7355;
-  --sunset-red:       #c83228;
-  --sunset-red-600:   #a32219;
+  --sunset-red:       #e52520;
+  --sunset-red-600:   #c51d18;
   --sunset-blue-800:  #223c4b;
   --sunset-blue-500:  #426b80;
   --sunset-grey-700:  #5b625c;
@@ -112,34 +112,34 @@
    TYPOGRAPHY — restrained editorial scale
    ============================================================ */
 .text-display-xl {
-  font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
-  font-size: clamp(2.5rem, 5vw, 4.4rem);
-  font-weight: 500;
-  letter-spacing: -0.015em;
-  line-height: 1.08;
+  font-family: var(--font-display, var(--font-sans), sans-serif);
+  font-size: clamp(2.35rem, 4.8vw, 4.1rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
 }
 
 .text-display-lg {
-  font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
-  font-size: clamp(2.1rem, 3.8vw, 3.25rem);
-  font-weight: 500;
-  letter-spacing: -0.012em;
-  line-height: 1.12;
+  font-family: var(--font-display, var(--font-sans), sans-serif);
+  font-size: clamp(2rem, 3.6vw, 3.1rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
 }
 
 .text-display-md {
-  font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
-  font-size: clamp(1.75rem, 2.8vw, 2.5rem);
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  line-height: 1.18;
+  font-family: var(--font-display, var(--font-sans), sans-serif);
+  font-size: clamp(1.7rem, 2.6vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
 }
 
 .text-display-sm {
-  font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
-  font-size: clamp(1.3rem, 1.8vw, 1.65rem);
+  font-family: var(--font-display, var(--font-sans), sans-serif);
+  font-size: clamp(1.25rem, 1.7vw, 1.55rem);
   font-weight: 600;
-  letter-spacing: -0.005em;
+  letter-spacing: -0.02em;
   line-height: 1.25;
 }
 
@@ -615,10 +615,10 @@ textarea.form-input {
 }
 
 .prose-editorial h2 {
-  font-family: var(--font-display, 'Cormorant Garamond', serif);
+  font-family: var(--font-display, var(--font-sans), sans-serif);
   font-size: clamp(1.5rem, 2.2vw, 1.9rem);
-  font-weight: 500;
-  letter-spacing: -0.01em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   color: var(--sunset-green-900);
   margin-top: 2.75rem;
   margin-bottom: 0.75rem;
@@ -663,8 +663,9 @@ textarea.form-input {
 .prose-editorial blockquote {
   border-left: 2px solid var(--sunset-green-700);
   padding-left: 1.25rem;
-  font-family: var(--font-display, 'Cormorant Garamond', serif);
-  font-size: 1.35rem;
+  font-family: var(--font-display, var(--font-sans), sans-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
   line-height: 1.5;
   color: var(--sunset-green-900);
 }

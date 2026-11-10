@@ -87,7 +87,7 @@ export default function ProjectsShowcase() {
                     isReversed ? "lg:order-1" : "lg:order-2"
                   }`}
                 >
-                  <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--sunset-red)]">
+                  <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--sunset-red)]">
                     {project.badge
                       ? isBn
                         ? project.badgeBn || project.badge

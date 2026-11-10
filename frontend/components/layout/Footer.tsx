@@ -61,8 +61,8 @@ export default function Footer() {
               </span>
               <span className="leading-none">
                 <span
-                  className="block text-xl font-medium"
-                  style={{ fontFamily: "var(--font-cormorant)" }}
+                  className="block text-lg font-bold tracking-tight"
+                  style={{ fontFamily: "var(--font-display)" }}
                 >
                   Sunset Group
                 </span>

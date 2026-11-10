@@ -71,14 +71,14 @@ export default function PageHero({
             className={`flex items-center gap-3 mb-5 ${centered ? "justify-center" : ""}`}
           >
             <span className="h-px w-7 bg-[var(--sunset-red)]" aria-hidden />
-            <p className="text-eyebrow" style={{ color: "rgba(255, 255, 255, 0.72)" }}>
+            <p className="text-eyebrow font-semibold" style={{ color: "rgba(255, 255, 255, 0.94)" }}>
               {eyebrow}
             </p>
           </div>
 
           <h1
-            className="text-display-lg mb-5"
-            style={{ color: "var(--paper)", fontFamily: "var(--font-cormorant)" }}
+            className="text-display-lg mb-5 font-bold"
+            style={{ color: "var(--paper)", fontFamily: "var(--font-display)" }}
           >
             {title}
           </h1>

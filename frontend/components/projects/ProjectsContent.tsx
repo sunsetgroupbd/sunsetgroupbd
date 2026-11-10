@@ -137,8 +137,8 @@ export default function ProjectsContent() {
             </h3>
             <p className="mt-1 max-w-xl text-[12.5px] text-[var(--sunset-grey-700)]">
               {isBn
-                ? "আমাদের 'সুপার কম্বো' প্যাকেজ কুয়াকাটা রিসোর্ট, সান কেয়ার হাসপাতাল এবং ঢাকা ফ্যান্টাসি আইল্যান্ডে একসাথে মালিকানা সুবিধা প্রদান করে।"
-                : "Our Super Combo package gives you an ownership stake in Kuakata Resort, Sun Care Hospital, and Dhaka Fantasy Island under one entry."}
+                ? "আমাদের 'সুপার কম্বো' প্যাকেজ কুয়াকাটা রিসোর্ট, সান কেয়ার হাসপাতাল, ঢাকা ফ্যান্টাসি আইল্যান্ড এবং ম্যানগ্রোভ রিসোর্টে একসাথে মালিকানা সুবিধা প্রদান করে।"
+                : "Our Super Combo package gives you an ownership stake in Kuakata Resort, Sun Care Hospital, Dhaka Fantasy Island, and Mangrove Resort under one single entry."}
             </p>
           </div>
           <Link href="/projects/super-combo" className="btn btn-primary shrink-0">

@@ -30,7 +30,7 @@ const cormorant = Cormorant_Garamond({
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     template: "%s | Sunset Group",
   },
   description:
-    "Sunset Group (Sunset Kuakata Hotel & Resort Ltd.) — Bangladesh's premier halal, Shariah-supervised hospitality & healthcare investment enterprise. Deeded saf-kabala ownership in 5-star Kuakata Resort, Sun Care Hospital, and Dhaka Fantasy Island.",
+    "Sunset Group (Sunset Kuakata Hotel & Resort Ltd.) — Bangladesh's premier halal, Shariah-supervised hospitality & healthcare investment enterprise. Deeded saf-kabala ownership in 5-star Kuakata Resort, Sun Care Hospital, Dhaka Fantasy Island, and Mangrove Resort.",
   keywords: [
     "Sunset Group",
     "Sunset Group Bangladesh",

@@ -63,7 +63,7 @@ export default function HeroSection() {
             className="mb-6 flex items-center gap-3"
           >
             <span className="h-px w-8 bg-[var(--sunset-red)]" aria-hidden />
-            <p className="text-eyebrow" style={{ color: "rgba(255, 255, 255, 0.72)" }}>
+            <p className="text-eyebrow font-semibold" style={{ color: "rgba(255, 255, 255, 0.94)" }}>
               {isBn
                 ? "শরীয়া তদারকি · সাফ-কবালা নিবন্ধিত · কোম্পানি আইন ১৯৯৪"
                 : "Shariah supervised · Saf-Kabala registered · Company Act 1994"}
@@ -74,8 +74,8 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: EASE, delay: 0.08 }}
-            className="text-display-xl mb-6"
-            style={{ color: "var(--paper)", fontFamily: "var(--font-cormorant)" }}
+            className="text-display-xl mb-6 font-bold"
+            style={{ color: "var(--paper)", fontFamily: "var(--font-display)" }}
           >
             {isBn
               ? "বিলাসিতা ও বিনোদন, নৈতিক আতিথেয়তার সাথে"
@@ -87,11 +87,11 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: EASE, delay: 0.2 }}
             className="text-body-lg mb-9 max-w-xl leading-relaxed"
-            style={{ color: "rgba(255, 255, 255, 0.76)" }}
+            style={{ color: "rgba(255, 255, 255, 0.88)" }}
           >
             {isBn
-              ? "কুয়াকাটা রিসোর্ট, সান কেয়ার হাসপাতাল এবং ঢাকা ফ্যান্টাসি আইল্যান্ডে সাফ-কবালা নিবন্ধিত স্থায়ী মালিকানা। শরীয়া তদারকিতে পরিচালিত, দীর্ঘমেয়াদি হালাল আয়।"
-              : "Own deeded equity in Bangladesh's most considered hospitality and healthcare ventures — governed by Islamic finance principles, designed for long-term halal income."}
+              ? "কুয়াকাটা রিসোর্ট, সান কেয়ার হাসপাতাল, ঢাকা ফ্যান্টাসি আইল্যান্ড ও ম্যানগ্রোভ রিসোর্টে সাফ-কবালা নিবন্ধিত স্থায়ী মালিকানা। শরীয়া তদারকিতে পরিচালিত, দীর্ঘমেয়াদি হালাল আয়।"
+              : "Own deeded equity across Sunset Kuakata Resort, Sun Care Hospital, Dhaka Fantasy Island, and Mangrove Resort — governed by Islamic finance principles, designed for long-term halal income."}
           </motion.p>
 
           <motion.div
@@ -138,8 +138,8 @@ export default function HeroSection() {
           ].map((item) => (
             <div key={item.label}>
               <div
-                className="text-xl font-medium tabular-nums md:text-2xl"
-                style={{ color: "var(--paper)", fontFamily: "var(--font-cormorant)" }}
+                className="text-xl font-bold tabular-nums md:text-2xl"
+                style={{ color: "var(--paper)", fontFamily: "var(--font-display)" }}
               >
                 {item.value}
               </div>

@@ -66,31 +66,24 @@ export default function Header() {
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
-  const transparent = !scrolled;
   const projectsActive = pathname.startsWith("/projects");
   const moreActive = moreLinks.some((l) => pathname.startsWith(l.href));
 
   const navColor = (active: boolean) =>
-    transparent
-      ? active
-        ? "#FFFFFF"
-        : "rgba(255, 255, 255, 0.82)"
-      : active
-        ? "var(--sunset-green-900)"
-        : "var(--ink)";
+    active ? "var(--sunset-green-900)" : "var(--ink)";
 
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-          transparent
-            ? "bg-transparent"
-            : "bg-[rgba(255, 255, 255,0.94)] backdrop-blur-xl border-b border-[var(--line)]"
+        className={`fixed inset-x-0 top-0 z-50 bg-white border-b border-[var(--line)] transition-shadow duration-200 ${
+          scrolled
+            ? "shadow-[0_4px_20px_-4px_rgba(18,54,42,0.12)]"
+            : "shadow-[0_1px_4px_rgba(0,0,0,0.03)]"
         }`}
       >
         <div className="container-site">
           <div className="flex h-[72px] md:h-20 items-center justify-between gap-4 xl:gap-8">
-            {/* Brand — transparent logo without white square background */}
+            {/* Brand */}
             <Link
               href="/"
               aria-label="Sunset Group home"
@@ -107,10 +100,9 @@ export default function Header() {
                 />
               </span>
               <span
-                className="block text-[1.22rem] sm:text-[1.32rem] font-medium tracking-[-0.01em] transition-colors leading-none"
+                className="block text-[1.2rem] sm:text-[1.28rem] font-bold tracking-tight text-[var(--sunset-green-900)] transition-colors leading-none"
                 style={{
-                  color: transparent ? "#FFFFFF" : "var(--sunset-green-900)",
-                  fontFamily: "var(--font-cormorant)",
+                  fontFamily: "var(--font-display)",
                 }}
               >
                 Sunset Group
@@ -121,7 +113,7 @@ export default function Header() {
             <nav className="hidden lg:flex items-center gap-5 xl:gap-7" aria-label="Main navigation">
               <Link
                 href="/"
-                className="text-[13.5px] font-medium transition-colors hover:opacity-75 whitespace-nowrap"
+                className="text-[13.5px] font-medium transition-colors hover:text-[var(--sunset-green-700)] whitespace-nowrap"
                 style={{ color: navColor(pathname === "/") }}
               >
                 {t.nav.home}
@@ -129,19 +121,14 @@ export default function Header() {
 
               <Link
                 href="/about"
-                className="relative text-[13.5px] font-medium transition-colors hover:opacity-75 whitespace-nowrap"
+                className="relative text-[13.5px] font-medium transition-colors hover:text-[var(--sunset-green-700)] whitespace-nowrap"
                 style={{ color: navColor(isActive("/about")) }}
               >
                 {t.nav.about}
                 {isActive("/about") && (
                   <span
                     aria-hidden
-                    className="absolute -bottom-1.5 left-0 h-px w-full"
-                    style={{
-                      backgroundColor: transparent
-                        ? "rgba(255, 255, 255, 0.85)"
-                        : "var(--sunset-green-900)",
-                    }}
+                    className="absolute -bottom-1.5 left-0 h-[2px] w-full bg-[var(--sunset-green-900)]"
                   />
                 )}
               </Link>
@@ -212,38 +199,28 @@ export default function Header() {
 
               <Link
                 href="/packages"
-                className="relative text-[13.5px] font-medium transition-colors hover:opacity-75 whitespace-nowrap"
+                className="relative text-[13.5px] font-medium transition-colors hover:text-[var(--sunset-green-700)] whitespace-nowrap"
                 style={{ color: navColor(isActive("/packages")) }}
               >
                 {t.nav.packages}
                 {isActive("/packages") && (
                   <span
                     aria-hidden
-                    className="absolute -bottom-1.5 left-0 h-px w-full"
-                    style={{
-                      backgroundColor: transparent
-                        ? "rgba(255, 255, 255, 0.85)"
-                        : "var(--sunset-green-900)",
-                    }}
+                    className="absolute -bottom-1.5 left-0 h-[2px] w-full bg-[var(--sunset-green-900)]"
                   />
                 )}
               </Link>
 
               <Link
                 href="/profit-calculator"
-                className="relative text-[13.5px] font-medium transition-colors hover:opacity-75 whitespace-nowrap"
+                className="relative text-[13.5px] font-medium transition-colors hover:text-[var(--sunset-green-700)] whitespace-nowrap"
                 style={{ color: navColor(isActive("/profit-calculator")) }}
               >
                 {isBn ? "ক্যালকুলেটর" : "Calculator"}
                 {isActive("/profit-calculator") && (
                   <span
                     aria-hidden
-                    className="absolute -bottom-1.5 left-0 h-px w-full"
-                    style={{
-                      backgroundColor: transparent
-                        ? "rgba(255, 255, 255, 0.85)"
-                        : "var(--sunset-green-900)",
-                    }}
+                    className="absolute -bottom-1.5 left-0 h-[2px] w-full bg-[var(--sunset-green-900)]"
                   />
                 )}
               </Link>
@@ -256,7 +233,7 @@ export default function Header() {
                     setMoreOpen((o) => !o);
                     setProjectsOpen(false);
                   }}
-                  className="flex items-center gap-1 text-[13.5px] font-medium transition-colors hover:opacity-75 cursor-pointer whitespace-nowrap"
+                  className="flex items-center gap-1 text-[13.5px] font-medium transition-colors hover:text-[var(--sunset-green-700)] cursor-pointer whitespace-nowrap"
                   style={{ color: navColor(moreActive) }}
                   aria-expanded={moreOpen}
                   aria-haspopup="true"
@@ -300,19 +277,14 @@ export default function Header() {
 
               <Link
                 href="/contact"
-                className="relative text-[13.5px] font-medium transition-colors hover:opacity-75 whitespace-nowrap"
+                className="relative text-[13.5px] font-medium transition-colors hover:text-[var(--sunset-green-700)] whitespace-nowrap"
                 style={{ color: navColor(isActive("/contact")) }}
               >
                 {t.nav.contact}
                 {isActive("/contact") && (
                   <span
                     aria-hidden
-                    className="absolute -bottom-1.5 left-0 h-px w-full"
-                    style={{
-                      backgroundColor: transparent
-                        ? "rgba(255, 255, 255, 0.85)"
-                        : "var(--sunset-green-900)",
-                    }}
+                    className="absolute -bottom-1.5 left-0 h-[2px] w-full bg-[var(--sunset-green-900)]"
                   />
                 )}
               </Link>
@@ -323,8 +295,7 @@ export default function Header() {
               <button
                 type="button"
                 onClick={toggle}
-                className="flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-[12px] font-semibold transition-colors hover:opacity-75 cursor-pointer whitespace-nowrap"
-                style={{ color: transparent ? "rgba(255, 255, 255, 0.9)" : "var(--ink)" }}
+                className="flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-[12px] font-semibold text-[var(--ink)] transition-colors hover:text-[var(--sunset-green-900)] cursor-pointer whitespace-nowrap"
                 aria-label="Change language"
               >
                 <Globe size={14} />
@@ -333,11 +304,7 @@ export default function Header() {
 
               <Link
                 href="/contact"
-                className={`hidden sm:inline-flex items-center gap-1.5 rounded-md px-4 py-2.5 text-[12.5px] font-semibold transition-colors whitespace-nowrap ${
-                  transparent
-                    ? "bg-[var(--paper)] text-[var(--sunset-green-900)] hover:bg-white"
-                    : "bg-[var(--sunset-green-900)] text-[var(--paper)] hover:bg-[var(--sunset-green-950)]"
-                }`}
+                className="hidden sm:inline-flex items-center gap-1.5 rounded-md px-4 py-2.5 text-[12.5px] font-semibold transition-colors whitespace-nowrap bg-[var(--sunset-green-900)] text-white hover:bg-[var(--sunset-green-950)]"
               >
                 {t.nav.investNow}
                 <ArrowRight size={13} />
@@ -346,9 +313,8 @@ export default function Header() {
               <button
                 type="button"
                 onClick={() => setMobileOpen(true)}
-                className="lg:hidden flex h-10 w-10 items-center justify-center rounded-md"
+                className="lg:hidden flex h-10 w-10 items-center justify-center rounded-md text-[var(--ink)]"
                 aria-label="Open menu"
-                style={{ color: transparent ? "var(--paper)" : "var(--ink)" }}
               >
                 <Menu size={22} />
               </button>
@@ -381,8 +347,8 @@ export default function Header() {
                   />
                 </span>
                 <span
-                  className="text-lg font-medium text-[var(--sunset-green-900)]"
-                  style={{ fontFamily: "var(--font-cormorant)" }}
+                  className="text-lg font-bold tracking-tight text-[var(--sunset-green-900)]"
+                  style={{ fontFamily: "var(--font-display)" }}
                 >
                   Sunset Group
                 </span>
@@ -403,8 +369,8 @@ export default function Header() {
                 <Link
                   href="/"
                   onClick={() => setMobileOpen(false)}
-                  className="border-b border-[var(--line)] py-3 text-xl text-[var(--sunset-green-900)]"
-                  style={{ fontFamily: "var(--font-cormorant)" }}
+                  className="border-b border-[var(--line)] py-3 text-lg font-semibold text-[var(--sunset-green-900)]"
+                  style={{ fontFamily: "var(--font-display)" }}
                 >
                   {t.nav.home}
                 </Link>
@@ -413,8 +379,8 @@ export default function Header() {
                     key={link.href}
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className="border-b border-[var(--line)] py-3 text-xl text-[var(--sunset-green-900)]"
-                    style={{ fontFamily: "var(--font-cormorant)" }}
+                    className="border-b border-[var(--line)] py-3 text-lg font-semibold text-[var(--sunset-green-900)]"
+                    style={{ fontFamily: "var(--font-display)" }}
                   >
                     {link.label}
                   </Link>
