@@ -35,5 +35,36 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
-  return <BlogPostDetailContent post={post} />;
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    image: `https://sunsetgroupbd.com${post.coverImage}`,
+    datePublished: post.publishedAt,
+    author: {
+      "@type": "Organization",
+      name: "Sunset Group Editorial",
+      url: "https://sunsetgroupbd.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Sunset Group",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://sunsetgroupbd.com/Sunset-Group-Logo.png",
+      },
+    },
+    mainEntityOfPage: `https://sunsetgroupbd.com/blogs/${post.slug}`,
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <BlogPostDetailContent post={post} />
+    </>
+  );
 }
