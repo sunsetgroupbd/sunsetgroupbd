@@ -207,20 +207,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Notice */}
-      <div className="border-t border-[rgba(255, 255, 255,0.1)]">
-        <div className="container-site py-5">
-          <p className="max-w-4xl text-[11.5px] leading-relaxed text-[rgba(255, 255, 255,0.42)]">
-            <span className="font-semibold text-[rgba(255, 255, 255,0.6)]">
-              {isBn ? "বিনিয়োগ সতর্কবার্তা:" : "Investment notice:"}
-            </span>{" "}
-            {isBn
-              ? "সানসেট গ্রুপের প্রকল্পসমূহে অংশীদারিত্বে ঝুঁকি অন্তর্ভুক্ত। অতীতের ফলাফল ভবিষ্যতের নিশ্চয়তা নয়। প্রক্ষেপিত মুনাফার হিসাব শুধুমাত্র আনুমানিক এবং সংশ্লিষ্ট চুক্তি ও নিরীক্ষিত ফলাফলের ওপর নির্ভরশীল। নিজস্ব আর্থিক পরামর্শ গ্রহণ সমীচীন।"
-              : "Participation in Sunset Group projects carries risk. Past performance does not indicate future results. Projected profit-sharing figures are illustrative and subject to the terms of the applicable agreement. Independent financial advice is recommended."}
-          </p>
-        </div>
-      </div>
-
       {/* Bottom */}
       <div className="border-t border-[rgba(255, 255, 255,0.1)]">
         <div className="container-site flex flex-col gap-3 py-5 sm:flex-row sm:items-center sm:justify-between">

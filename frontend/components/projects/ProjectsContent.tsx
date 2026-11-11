@@ -68,9 +68,6 @@ export default function ProjectsContent() {
                       {isBn ? project.badgeBn : project.badge}
                     </span>
                   )}
-                  <span className="absolute right-4 top-4 rounded-full bg-[#0e2a1f] px-3 py-1 text-[10px] font-semibold tabular-nums text-white shadow-md border border-white/20">
-                    {project.number}
-                  </span>
                 </Link>
 
                 <div className="flex flex-1 flex-col justify-between p-6 md:p-7">
@@ -137,8 +134,8 @@ export default function ProjectsContent() {
             </h3>
             <p className="mt-1 max-w-xl text-[12.5px] text-[var(--sunset-grey-700)]">
               {isBn
-                ? "আমাদের 'সুপার কম্বো' প্যাকেজ কুয়াকাটা রিসোর্ট, সান কেয়ার হাসপাতাল, ঢাকা ফ্যান্টাসি আইল্যান্ড এবং ম্যানগ্রোভ রিসোর্টে একসাথে মালিকানা সুবিধা প্রদান করে।"
-                : "Our Super Combo package gives you an ownership stake in Kuakata Resort, Sun Care Hospital, Dhaka Fantasy Island, and Mangrove Resort under one single entry."}
+                ? "আমাদের 'সুপার কম্বো' প্যাকেজ কুয়াকাটা রিসোর্ট, সান কেয়ার হাসপাতাল, ঢাকা ফ্যান্টাসি আইল্যান্ড এবং কুয়াকাটা মেরিন ড্রাইভ সংলগ্ন ম্যানগ্রোভ হোটেল ও রিসোর্টে একসাথে মালিকানা সুবিধা প্রদান করে।"
+                : "Our Super Combo package gives you an ownership stake in Kuakata Resort, Sun Care Hospital, Dhaka Fantasy Island, and Mangrove Hotel & Resort (Kuakata Marine Drive) under one single entry."}
             </p>
           </div>
           <Link href="/projects/super-combo" className="btn btn-primary shrink-0">

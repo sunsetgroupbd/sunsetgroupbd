@@ -44,11 +44,20 @@ export default function HeroSection() {
           sizes="100vw"
           className="object-cover object-center"
         />
+        {/* Desktop gradient overlay */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 hidden md:block"
           style={{
             background:
               "linear-gradient(180deg, rgba(8, 24, 17, 0.55) 0%, rgba(8, 24, 17, 0.32) 36%, rgba(8, 24, 17, 0.72) 78%, rgba(8, 24, 17, 0.92) 100%)",
+          }}
+        />
+        {/* Darker mobile gradient overlay for superior text contrast */}
+        <div
+          className="absolute inset-0 block md:hidden"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(8, 24, 17, 0.78) 0%, rgba(8, 24, 17, 0.58) 36%, rgba(8, 24, 17, 0.85) 75%, rgba(8, 24, 17, 0.96) 100%)",
           }}
         />
       </motion.div>
@@ -90,8 +99,8 @@ export default function HeroSection() {
             style={{ color: "rgba(255, 255, 255, 0.88)" }}
           >
             {isBn
-              ? "কুয়াকাটা রিসোর্ট, সান কেয়ার হাসপাতাল, ঢাকা ফ্যান্টাসি আইল্যান্ড ও ম্যানগ্রোভ রিসোর্টে সাফ-কবালা নিবন্ধিত স্থায়ী মালিকানা। শরীয়া তদারকিতে পরিচালিত, দীর্ঘমেয়াদি হালাল আয়।"
-              : "Own deeded equity across Sunset Kuakata Resort, Sun Care Hospital, Dhaka Fantasy Island, and Mangrove Resort — governed by Islamic finance principles, designed for long-term halal income."}
+              ? "কুয়াকাটা রিসোর্ট, সান কেয়ার হাসপাতাল, ঢাকা ফ্যান্টাসি আইল্যান্ড ও কুয়াকাটা মেরিন ড্রাইভে ম্যানগ্রোভ হোটেল অ্যান্ড রিসোর্টে সাফ-কবালা নিবন্ধিত স্থায়ী মালিকানা। শরীয়া তদারকিতে পরিচালিত, দীর্ঘমেয়াদি হালাল আয়।"
+              : "Own deeded equity across Sunset Kuakata Resort, Sun Care Hospital, Dhaka Fantasy Island, and Mangrove Hotel & Resort on Kuakata Marine Drive — governed by Islamic finance principles, designed for long-term halal income."}
           </motion.p>
 
           <motion.div
@@ -132,9 +141,18 @@ export default function HeroSection() {
       >
         <div className="container-site grid grid-cols-3 gap-x-4 gap-y-5 py-5 sm:gap-x-8 md:py-7">
           {[
-            { value: "04", label: isBn ? "প্রধান প্রকল্প" : "Flagship developments" },
-            { value: "100%", label: isBn ? "শরীয়া তদারকি" : "Shariah supervised" },
-            { value: "Saf-Kabala", label: isBn ? "নিবন্ধিত দলিল" : "Registered title deed" },
+            {
+              value: isBn ? "পাঁচতারা" : "5-Star",
+              label: isBn ? "লাক্সারি হসপিটালিটি" : "Luxury hospitality",
+            },
+            {
+              value: "100%",
+              label: isBn ? "শরীয়া তদারকি" : "Shariah supervised",
+            },
+            {
+              value: isBn ? "সাফ-কবালা" : "Saf-Kabala",
+              label: isBn ? "নিবন্ধিত দলিল" : "Registered title deed",
+            },
           ].map((item) => (
             <div key={item.label}>
               <div

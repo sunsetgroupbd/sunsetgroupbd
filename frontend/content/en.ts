@@ -165,7 +165,7 @@ export const en = {
       "Dhaka Fantasy Island (DFI)",
       "Super Combo Investment",
       "The Deck",
-      "Mangrove Resort",
+      "Mangrove Hotel & Resort (Kuakata Marine Drive)",
       "General Inquiry",
     ],
     packageOptions: [

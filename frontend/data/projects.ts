@@ -245,12 +245,12 @@ export const projects: Project[] = [
     nameBn: "সুপার কম্বো বিনিয়োগ",
     tagline: "Own a stake across all key projects — Kuakata, Sun Care, DFI & Mangrove.",
     taglineBn: "একসাথে চারটি প্রধান প্রকল্পে মালিকানা — কুয়াকাটা, সান কেয়ার, ডিএফআই এবং ম্যানগ্রোভ।",
-    location: "Kuakata + Dhaka + Mangrove",
-    locationBn: "কুয়াকাটা + ঢাকা + ম্যানগ্রোভ",
+    location: "Kuakata (Marine Drive) + Dhaka",
+    locationBn: "কুয়াকাটা (মেরিন ড্রাইভ) + ঢাকা",
     description:
-      "The Super Combo package gives investors a diversified ownership stake across Sunset Group's core developments: Sunset Kuakata Hotel & Resort, Sun Care Hospital, Dhaka Fantasy Island (DFI), and Mangrove Resort. Diversify across coastal 5-star hospitality, urban healthcare, urban eco-retreat, and natural mangrove eco-tourism — all under one Shariah-compliant, legally secured umbrella.",
+      "The Super Combo package gives investors a diversified ownership stake across Sunset Group's core developments: Sunset Kuakata Hotel & Resort, Sun Care Hospital, Dhaka Fantasy Island (DFI), and Mangrove Hotel & Resort on Kuakata Marine Drive. Diversify across coastal 5-star hospitality, urban healthcare, urban eco-retreat, and prime Marine Drive coastal resort living — all under one Shariah-compliant, legally secured umbrella.",
     descriptionBn:
-      "সুপার কম্বো প্যাকেজ বিনিয়োগকারীদের সানসেট গ্রুপের মূল প্রকল্পগুলোতে একসাথে অংশীদারিত্ব দেয়: কুয়াকাটা হোটেল ও রিসোর্ট, সান কেয়ার হাসপাতাল, ঢাকা ফ্যান্টাসি আইল্যান্ড এবং ম্যানগ্রোভ রিসোর্ট। পাঁচতারা আতিথেয়তা, স্বাস্থ্যসেবা, নগর ইকো-রিসোর্ট এবং ম্যানগ্রোভ পর্যটন — চারটি সম্ভাবনাময় খাতে এককালীন বিনিয়োগ।",
+      "সুপার কম্বো প্যাকেজ বিনিয়োগকারীদের সানসেট গ্রুপের মূল প্রকল্পগুলোতে একসাথে অংশীদারিত্ব দেয়: কুয়াকাটা হোটেল ও রিসোর্ট, সান কেয়ার হাসপাতাল, ঢাকা ফ্যান্টাসি আইল্যান্ড এবং কুয়াকাটা মেরিন ড্রাইভ সংলগ্ন ম্যানগ্রোভ হোটেল ও রিসোর্ট। পাঁচতারা আতিথেয়তা, স্বাস্থ্যসেবা, নগর ইকো-রিসোর্ট এবং মেরিন ড্রাইভ উপকূলীয় রিসোর্ট — চারটি সম্ভাবনাময় খাতে এককালীন বিনিয়োগ।",
     heroImage: "/images/kuakata/hero.webp",
     galleryImages: [
       "/images/kuakata/gallery-01.webp",
@@ -260,13 +260,13 @@ export const projects: Project[] = [
     ],
     keyFacts: [
       { label: "Projects Included", value: "4 Flagship Developments (Kuakata, Sun Care, DFI, Mangrove)" },
-      { label: "Sectors", value: "Hospitality, Healthcare, Eco-Resorts" },
+      { label: "Sectors", value: "5-Star Hospitality, Healthcare, Urban Leisure & Marine Drive Resort" },
       { label: "Registration", value: "Company Act 1994 + Saf-Kabala" },
       { label: "Oversight", value: "Shariah Supervisory Committee" },
     ],
     whyInvest: [
       "Maximum diversification across 4 growth sectors under a single investment",
-      "Combined ownership in Kuakata 5-Star Resort, Sun Care Hospital, DFI, and Mangrove Resort",
+      "Combined ownership in Kuakata 5-Star Resort, Sun Care Hospital, DFI, and Marine Drive Mangrove Resort",
       "Healthcare services strictly at cost price for you and 20 nominated individuals",
       "Annual audited profit-sharing from hotel operations, hospital, and eco-resorts",
       "Best value-per-taka with combined multi-project package pricing",
@@ -319,21 +319,21 @@ export const projects: Project[] = [
   },
 
   /* ─────────────────────────────────────────
-     06 — MANGROVE (placeholder)
+     06 — MANGROVE HOTEL & RESORT
   ───────────────────────────────────────── */
   {
     slug: "mangrove",
     number: "06",
-    name: "Mangrove Resort",
-    nameBn: "ম্যানগ্রোভ রিসোর্ট",
-    tagline: "Immerse yourself in the magic of the mangrove forest.",
-    taglineBn: "ম্যানগ্রোভ বনের যাদুতে নিজেকে ডুবিয়ে দিন।",
-    location: "Bangladesh (details coming soon)",
-    locationBn: "বাংলাদেশ (বিস্তারিত শীঘ্রই)",
+    name: "Mangrove Hotel & Resort",
+    nameBn: "ম্যানগ্রোভ হোটেল ও রিসোর্ট",
+    tagline: "Prime coastal hospitality along the scenic Kuakata Marine Drive.",
+    taglineBn: "নয়নাভিরাম কুয়াকাটা মেরিন ড্রাইভ সংলগ্ন প্রিমিয়াম উপকূলীয় আতিথেয়তা।",
+    location: "Marine Drive, Kuakata, Patuakhali",
+    locationBn: "মেরিন ড্রাইভ, কুয়াকাটা, পটুয়াখালী",
     description:
-      "Mangrove Resort is Sunset Group's nature-first eco-resort nestled within a mangrove forest setting. This unique concept blends sustainable tourism with community development. Investment packages and registration details will be announced soon.",
+      "Mangrove Hotel & Resort is Sunset Group's upcoming coastal leisure destination located directly along the prestigious Marine Drive in Kuakata. Positioned within the high-growth coastal development corridor, the resort commands stunning views of the Bay of Bengal and seamless Marine Drive connectivity. Offering Shariah-compliant shared ownership with legally registered saf-kabala deed rights, it is also integrated into the Sunset Super Combo portfolio.",
     descriptionBn:
-      "ম্যানগ্রোভ রিসোর্ট হলো সানসেট গ্রুপের প্রকৃতি-প্রথম ইকো রিসোর্ট যা ম্যানগ্রোভ বনে অবস্থিত। বিনিয়োগ প্যাকেজ ও নিবন্ধন বিস্তারিত শীঘ্রই ঘোষণা করা হবে।",
+      "ম্যানগ্রোভ হোটেল ও রিসোর্ট হলো সানসেট গ্রুপের একটি প্রিমিয়াম উপকূলীয় প্রকল্প, যা কুয়াকাটার মনোরম মেরিন ড্রাইভ সড়কের পাশে অবস্থিত। বঙ্গোপসাগরের মনোরম দৃশ্য ও মেরিন ড্রাইভের সরাসরি সংযোগ সংবলিত এই প্রকল্প বিনিয়োগকারীদের দীর্ঘমেয়াদি অংশীদারিত্ব ও হালাল আয়ের সুযোগ দেয়। এটি সানসেট সুপার কম্বো প্যাকেজেরও অংশ।",
     heroImage: "/images/mangrove/Mangrove.webp",
     galleryImages: [
       "/images/mangrove/Mangrove.webp",
@@ -347,19 +347,22 @@ export const projects: Project[] = [
       "/images/mangrove/Mangrove09.webp",
     ],
     keyFacts: [
-      { label: "Type", value: "Eco / Nature Resort" },
-      { label: "Status", value: "Coming Soon" },
+      { label: "Type", value: "Coastal Hotel & Resort" },
+      { label: "Location", value: "Marine Drive, Kuakata" },
+      { label: "Access", value: "Direct Marine Drive Frontage" },
+      { label: "Registration", value: "Saf-Kabala Deed Registered" },
       { label: "Oversight", value: "Shariah Supervisory Committee" },
     ],
     whyInvest: [
-      "Eco-tourism is the fastest growing travel segment globally",
-      "Unique mangrove forest setting — unmatched in Bangladesh",
-      "Shariah-compliant investment structure",
-      "Register interest early for preferred package access",
+      "Prime frontage on the prestigious Kuakata Marine Drive corridor",
+      "Surging tourism growth and infrastructure expansion in Kuakata",
+      "Direct beach & coastal highway connectivity",
+      "Shariah-compliant deeded saf-kabala shared ownership",
+      "Included in the high-yield Sunset Super Combo package",
     ],
-    safKabala: false,
-    badge: "Coming Soon",
-    badgeBn: "শীঘ্রই আসছে",
+    safKabala: true,
+    badge: "Kuakata Marine Drive",
+    badgeBn: "কুয়াকাটা মেরিন ড্রাইভ",
   },
 ];
 

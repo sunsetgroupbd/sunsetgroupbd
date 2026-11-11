@@ -101,7 +101,7 @@ export default function AboutSnippet() {
 
             <div className="mb-8 grid grid-cols-3 gap-6 border-t border-[var(--line)] pt-6">
               {[
-                { value: "04", label: isBn ? "প্রকল্প" : "Developments" },
+                { value: isBn ? "পাঁচতারা" : "5-Star", label: isBn ? "প্রিমিয়াম মান" : "Premier standard" },
                 { value: "2023", label: isBn ? "প্রতিষ্ঠা" : "Founded" },
                 { value: "100%", label: isBn ? "শরীয়া সম্মত" : "Shariah compliant" },
               ].map((stat) => (

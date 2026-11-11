@@ -234,12 +234,12 @@ export const galleryImages: GalleryImage[] = [
     width: 1200,
     height: 800,
   },
-  // Mangrove
+  // Mangrove Hotel & Resort (Kuakata Marine Drive)
   {
     id: "mg-01",
     src: "/images/mangrove/Mangrove.webp",
-    alt: "Mangrove Resort — entrance render",
-    altBn: "ম্যানগ্রোভ রিসোর্ট — প্রবেশদ্বার রেন্ডার",
+    alt: "Mangrove Hotel & Resort — Kuakata Marine Drive entrance render",
+    altBn: "ম্যানগ্রোভ হোটেল ও রিসোর্ট — কুয়াকাটা মেরিন ড্রাইভ প্রবেশদ্বার রেন্ডার",
     category: "mangrove",
     width: 1200,
     height: 800,
@@ -247,8 +247,8 @@ export const galleryImages: GalleryImage[] = [
   {
     id: "mg-02",
     src: "/images/mangrove/Mangrove Entry01.webp",
-    alt: "Mangrove Resort — entry view",
-    altBn: "ম্যানগ্রোভ রিসোর্ট — প্রবেশ দৃশ্য",
+    alt: "Mangrove Hotel & Resort — Kuakata Marine Drive entry view",
+    altBn: "ম্যানগ্রোভ হোটেল ও রিসোর্ট — কুয়াকাটা মেরিন ড্রাইভ প্রবেশ দৃশ্য",
     category: "mangrove",
     width: 1200,
     height: 800,
@@ -256,8 +256,8 @@ export const galleryImages: GalleryImage[] = [
   {
     id: "mg-03",
     src: "/images/mangrove/Mangrove02.webp",
-    alt: "Mangrove Resort — forest view",
-    altBn: "ম্যানগ্রোভ রিসোর্ট — বন দৃশ্য",
+    alt: "Mangrove Hotel & Resort — coastal surroundings",
+    altBn: "ম্যানগ্রোভ হোটেল ও রিসোর্ট — উপকূলীয় চারপাশ",
     category: "mangrove",
     width: 1200,
     height: 800,

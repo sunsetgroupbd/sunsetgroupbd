@@ -24,9 +24,7 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
   return (
     <div style={{ backgroundColor: "var(--paper)" }}>
       <PageHero
-        eyebrow={`${isBn ? "প্রকল্প" : "Project"} ${project.number} · ${
-          isBn ? project.locationBn : project.location
-        }`}
+        eyebrow={isBn ? project.locationBn : project.location}
         title={isBn ? project.nameBn : project.name}
         description={isBn ? project.taglineBn : project.tagline}
         image={project.heroImage}

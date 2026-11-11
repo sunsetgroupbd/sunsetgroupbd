@@ -76,9 +76,6 @@ export default function ProjectsShowcase() {
                       <MapPin size={12} className="text-[var(--sunset-red)]" />
                       {isBn ? project.locationBn : project.location}
                     </div>
-                    <span className="absolute right-4 top-4 rounded-full bg-[#0e2a1f] px-3 py-1 text-[11px] font-semibold tabular-nums text-white shadow-md border border-white/20">
-                      {project.number}
-                    </span>
                   </Link>
                 </div>
 
