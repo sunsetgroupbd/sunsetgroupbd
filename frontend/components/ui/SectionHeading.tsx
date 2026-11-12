@@ -37,8 +37,8 @@ export default function SectionHeading({
           >
             <span className="h-px w-6 bg-[var(--sunset-red)]" aria-hidden />
             <p
-              className="text-eyebrow"
-              style={{ color: isDark ? "rgba(255, 255, 255, 0.6)" : "var(--sunset-green-700)" }}
+              className="text-eyebrow font-semibold"
+              style={{ color: isDark ? "#ffffff" : "var(--sunset-green-700)" }}
             >
               {eyebrow}
             </p>

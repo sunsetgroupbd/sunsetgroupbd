@@ -72,7 +72,7 @@ export default function HeroSection() {
             className="mb-6 flex items-center gap-3"
           >
             <span className="h-px w-8 bg-[var(--sunset-red)]" aria-hidden />
-            <p className="text-eyebrow font-semibold" style={{ color: "rgba(255, 255, 255, 0.94)" }}>
+            <p className="text-eyebrow font-semibold text-white/95 drop-shadow-[0_1px_3px_rgba(0,0,0,0.6)]">
               {isBn
                 ? "শরীয়া তদারকি · সাফ-কবালা নিবন্ধিত · কোম্পানি আইন ১৯৯৪"
                 : "Shariah supervised · Saf-Kabala registered · Company Act 1994"}
@@ -83,8 +83,8 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: EASE, delay: 0.08 }}
-            className="text-display-xl mb-6 font-bold"
-            style={{ color: "var(--paper)", fontFamily: "var(--font-display)" }}
+            className="text-display-xl mb-6 font-bold text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.7)]"
+            style={{ fontFamily: "var(--font-display)" }}
           >
             {isBn
               ? "বিলাসিতা ও বিনোদন, নৈতিক আতিথেয়তার সাথে"
@@ -95,8 +95,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: EASE, delay: 0.2 }}
-            className="text-body-lg mb-9 max-w-xl leading-relaxed"
-            style={{ color: "rgba(255, 255, 255, 0.88)" }}
+            className="text-body-lg mb-9 max-w-xl leading-relaxed text-white/95 drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]"
           >
             {isBn
               ? "কুয়াকাটা রিসোর্ট, সান কেয়ার হাসপাতাল, ঢাকা ফ্যান্টাসি আইল্যান্ড ও কুয়াকাটা মেরিন ড্রাইভে ম্যানগ্রোভ হোটেল অ্যান্ড রিসোর্টে সাফ-কবালা নিবন্ধিত স্থায়ী মালিকানা। শরীয়া তদারকিতে পরিচালিত, দীর্ঘমেয়াদি হালাল আয়।"

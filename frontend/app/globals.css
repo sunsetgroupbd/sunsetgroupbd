@@ -671,7 +671,7 @@ textarea.form-input {
 }
 
 /* Dark section prose adjustments */
-.on-dark .text-eyebrow { color: rgba(255, 255, 255, 0.62); }
+.on-dark .text-eyebrow { color: #ffffff; }
 .on-dark .text-lead { color: rgba(255, 255, 255, 0.74); }
 
 /* Remove default number input arrows */

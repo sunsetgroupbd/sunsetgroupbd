@@ -8,6 +8,7 @@ import { ArrowRight, MapPin } from "lucide-react";
 import { useLang } from "@/lib/lang";
 import { projects } from "@/data/projects";
 import SectionHeading from "@/components/ui/SectionHeading";
+import ProjectImageSlideshow from "@/components/ui/ProjectImageSlideshow";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -64,18 +65,28 @@ export default function ProjectsShowcase() {
                     href={`/projects/${project.slug}`}
                     className="group relative block aspect-[16/11] overflow-hidden rounded-[20px] bg-[var(--sand)]"
                   >
-                    <Image
-                      src={project.heroImage}
-                      alt={project.name}
-                      fill
-                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-                      sizes="(max-width: 1024px) 100vw, 60vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[rgba(14,42,31,0.35)] via-transparent to-transparent opacity-70" />
-                    <div className="absolute bottom-4 left-4 flex items-center gap-2 rounded-full bg-[#0e2a1f] px-3.5 py-1.5 text-[11px] font-semibold text-white shadow-md border border-white/20">
-                      <MapPin size={12} className="text-[var(--sunset-red)]" />
-                      {isBn ? project.locationBn : project.location}
-                    </div>
+                    {project.slideshowImages && project.slideshowImages.length > 0 ? (
+                      <ProjectImageSlideshow
+                        slides={project.slideshowImages}
+                        isBn={isBn}
+                        sizes="(max-width: 1024px) 100vw, 60vw"
+                      />
+                    ) : (
+                      <>
+                        <Image
+                          src={project.heroImage}
+                          alt={project.name}
+                          fill
+                          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                          sizes="(max-width: 1024px) 100vw, 60vw"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[rgba(14,42,31,0.35)] via-transparent to-transparent opacity-70" />
+                        <div className="absolute bottom-4 left-4 flex items-center gap-2 rounded-full bg-[#0e2a1f] px-3.5 py-1.5 text-[11px] font-semibold text-white shadow-md border border-white/20">
+                          <MapPin size={12} className="text-[var(--sunset-red)]" />
+                          {isBn ? project.locationBn : project.location}
+                        </div>
+                      </>
+                    )}
                   </Link>
                 </div>
 

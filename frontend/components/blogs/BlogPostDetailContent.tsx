@@ -27,10 +27,10 @@ export default function BlogPostDetailContent({ post }: BlogPostDetailContentPro
               "radial-gradient(60% 120% at 85% 0%, rgba(62,115,85,0.3) 0%, rgba(14,42,31,0) 62%)",
           }}
         />
-        <div className="container-site relative max-w-3xl">
+        <div className="container-site relative z-10 max-w-3xl">
           <Link
             href="/blogs"
-            className="mb-6 inline-flex items-center gap-1.5 text-[11.5px] font-medium text-[rgba(255, 255, 255,0.62)] transition-colors hover:text-[var(--paper)]"
+            className="mb-6 inline-flex items-center gap-1.5 text-[11.5px] font-medium text-white/85 transition-colors hover:text-white"
           >
             <ArrowLeft size={13} />
             {isBn ? "জার্নালে ফিরে যান" : "Back to the journal"}
@@ -40,11 +40,11 @@ export default function BlogPostDetailContent({ post }: BlogPostDetailContentPro
             {isBn ? post.categoryBn : post.category}
           </p>
 
-          <h1 className="text-display-lg mb-6 text-[var(--paper)]">
+          <h1 className="text-display-lg mb-6 text-white font-bold drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]">
             {isBn ? post.titleBn : post.title}
           </h1>
 
-          <div className="flex flex-wrap items-center gap-5 border-t border-[rgba(255, 255, 255,0.14)] pt-5 text-[11.5px] text-[rgba(255, 255, 255,0.62)]">
+          <div className="flex flex-wrap items-center gap-5 border-t border-white/20 pt-5 text-[11.5px] text-white/85">
             <span className="flex items-center gap-1.5">
               <User size={12} />
               {isBn ? post.authorBn : post.author}

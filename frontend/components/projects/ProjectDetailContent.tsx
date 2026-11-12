@@ -28,6 +28,7 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
         title={isBn ? project.nameBn : project.name}
         description={isBn ? project.taglineBn : project.tagline}
         image={project.heroImage}
+        slides={project.slideshowImages?.map((s) => s.src)}
         imageAlt={isBn ? project.nameBn : project.name}
         actions={
           <>
@@ -46,10 +47,12 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
         meta={
           project.keyFacts.slice(0, 3).map((fact) => (
             <div key={fact.label}>
-              <p className="text-[10.5px] uppercase tracking-[0.12em] text-[rgba(255, 255, 255,0.5)]">
+              <p className="text-[10.5px] uppercase tracking-[0.12em] text-white/90 font-medium">
                 {fact.label}
               </p>
-              <p className="mt-1 text-[13px] text-[var(--paper)]">{fact.value}</p>
+              <p className="mt-1 text-[13px] font-bold text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.7)]">
+                {fact.value}
+              </p>
             </div>
           ))
         }

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MapPin, ShieldCheck } from "lucide-react";
 import PageHero from "@/components/layout/PageHero";
+import ProjectImageSlideshow from "@/components/ui/ProjectImageSlideshow";
 import { projects } from "@/data/projects";
 import { useLang } from "@/lib/lang";
 
@@ -55,24 +56,40 @@ export default function ProjectsContent() {
                   href={`/projects/${project.slug}`}
                   className="relative block aspect-[16/11] overflow-hidden bg-[var(--sand)]"
                 >
-                  <Image
-                    src={project.heroImage}
-                    alt={isBn ? project.nameBn : project.name}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(14,42,31,0.42)] via-transparent to-transparent" />
-                  {(isBn ? project.badgeBn : project.badge) && (
+                  {project.slideshowImages && project.slideshowImages.length > 0 ? (
+                    <ProjectImageSlideshow
+                      slides={project.slideshowImages}
+                      isBn={isBn}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  ) : (
+                    <>
+                      <Image
+                        src={project.heroImage}
+                        alt={isBn ? project.nameBn : project.name}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[rgba(14,42,31,0.42)] via-transparent to-transparent" />
+                    </>
+                  )}
+                  {(isBn ? project.badgeBn : project.badge) && !project.slideshowImages && (
                     <span className="absolute left-4 top-4 rounded-full bg-[#0e2a1f] px-3 py-1 text-[10px] font-semibold text-white shadow-md border border-white/20">
                       {isBn ? project.badgeBn : project.badge}
                     </span>
+                  )}
+                  {!project.slideshowImages && (
+                    <div className="absolute bottom-3 left-3 flex items-center gap-1.5 rounded-full bg-[#0e2a1f]/90 backdrop-blur-sm px-2.5 py-1 text-[10.5px] font-semibold text-white shadow-md border border-white/20">
+                      <MapPin size={11} className="text-[var(--sunset-red)]" />
+                      <span className="text-white font-medium">{isBn ? project.locationBn : project.location}</span>
+                    </div>
                   )}
                 </Link>
 
                 <div className="flex flex-1 flex-col justify-between p-6 md:p-7">
                   <div>
-                    <p className="mb-2 flex items-center gap-1.5 text-[11px] font-semibold text-[var(--sunset-grey-700)]">
+                    <p className="mb-2 flex items-center gap-1.5 text-[11.5px] font-semibold text-[var(--sunset-green-800)]">
                       <MapPin size={11} className="text-[var(--sunset-red)]" />
                       {isBn ? project.locationBn : project.location}
                     </p>

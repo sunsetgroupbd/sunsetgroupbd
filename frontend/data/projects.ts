@@ -17,6 +17,14 @@ export interface ProjectFact {
   value: string;
 }
 
+export interface ProjectSlide {
+  src: string;
+  name: string;
+  nameBn: string;
+  location: string;
+  locationBn: string;
+}
+
 export interface Project {
   slug: string;
   number: string;        // "01", "02", etc.
@@ -29,6 +37,7 @@ export interface Project {
   description: string;   // paragraph, English
   descriptionBn: string;
   heroImage: string;     // path relative to /public
+  slideshowImages?: ProjectSlide[];
   galleryImages: string[];
   keyFacts: ProjectFact[];
   whyInvest: string[];
@@ -65,13 +74,6 @@ export const projects: Project[] = [
       "/images/kuakata/gallery-04.webp",
       "/images/kuakata/gallery-05.webp",
       "/images/kuakata/gallery-06.webp",
-      "/images/kuakata/02.webp",
-      "/images/kuakata/03.webp",
-      "/images/kuakata/04.webp",
-      "/images/kuakata/05.webp",
-      "/images/kuakata/06.webp",
-      "/images/kuakata/07.webp",
-      "/images/kuakata/Sunset Hotel & Resort.webp",
     ],
     keyFacts: [
       { label: "Project Type", value: "5-Star Hotel & Resort" },
@@ -146,11 +148,9 @@ export const projects: Project[] = [
       "সান কেয়ার হাসপাতাল ও ডায়াগনস্টিক সেন্টার লিমিটেড ঢাকার মোহাম্মদপুর/বসিলায় একটি আধুনিক বহু-বিশেষজ্ঞ হাসপাতাল। বিনিয়োগকারী এবং প্রতি প্যাকেজে ২০ জন মনোনীত ব্যক্তি খরচমূল্যে হাসপাতাল সেবা পাবেন। ২৪/৭ জরুরি সেবা, হোম ভিজিট, ডায়াগনস্টিক ল্যাব, ফার্মেসি, অ্যাম্বুলেন্স ও বিশেষজ্ঞ ডাক্তার রয়েছে।",
     heroImage: "/images/sun-care/hero.webp",
     galleryImages: [
-      "/images/sun-care/gallery-01.webp",
-      "/images/sun-care/gallery-02.webp",
+      "/images/sun-care/hero.webp",
       "/images/sun-care/Hospital view.webp",
-      "/images/sun-care/Sun Care Hospital.webp",
-      "/images/sun-care/Suncare hospital close view.webp",
+      "/images/sun-care/gallery-02.webp",
     ],
     keyFacts: [
       { label: "Type", value: "Multi-Specialty Hospital" },
@@ -204,9 +204,7 @@ export const projects: Project[] = [
     heroImage: "/images/dfi/dfi-aerial.webp",
     galleryImages: [
       "/images/dfi/dfi-aerial.webp",
-      "/images/dfi/DFI.webp",
       "/images/dfi/DFI-top-view.webp",
-      "/images/dfi/Dhaka-Fantasy-Island.webp",
       "/images/dfi/Hotel & restaurant View.jpg.webp",
       "/images/dfi/North View.jpg.webp",
       "/images/dfi/South View.jpg.webp",
@@ -252,11 +250,45 @@ export const projects: Project[] = [
     descriptionBn:
       "সুপার কম্বো প্যাকেজ বিনিয়োগকারীদের সানসেট গ্রুপের মূল প্রকল্পগুলোতে একসাথে অংশীদারিত্ব দেয়: কুয়াকাটা হোটেল ও রিসোর্ট, সান কেয়ার হাসপাতাল, ঢাকা ফ্যান্টাসি আইল্যান্ড এবং কুয়াকাটা মেরিন ড্রাইভ সংলগ্ন ম্যানগ্রোভ হোটেল ও রিসোর্ট। পাঁচতারা আতিথেয়তা, স্বাস্থ্যসেবা, নগর ইকো-রিসোর্ট এবং মেরিন ড্রাইভ উপকূলীয় রিসোর্ট — চারটি সম্ভাবনাময় খাতে এককালীন বিনিয়োগ।",
     heroImage: "/images/kuakata/hero.webp",
+    slideshowImages: [
+      {
+        src: "/images/kuakata/hero.webp",
+        name: "Sunset Kuakata Hotel & Resort",
+        nameBn: "সানসেট কুয়াকাটা হোটেল ও রিসোর্ট",
+        location: "KTC Master Plan, Kuakata",
+        locationBn: "কেটিসি মাস্টার প্ল্যান, কুয়াকাটা",
+      },
+      {
+        src: "/images/sun-care/hero.webp",
+        name: "Sun Care Hospital & Diagnostic Center",
+        nameBn: "সান কেয়ার হাসপাতাল ও ডায়াগনস্টিক সেন্টার",
+        location: "Mohammadpur / Basila, Dhaka",
+        locationBn: "মোহাম্মদপুর / বসিলা, ঢাকা",
+      },
+      {
+        src: "/images/dfi/dfi-aerial.webp",
+        name: "Dhaka Fantasy Island (DFI)",
+        nameBn: "ঢাকা ফ্যান্টাসি আইল্যান্ড (ডিএফআই)",
+        location: "Mohammadpur, Dhaka",
+        locationBn: "মোহাম্মদপুর, ঢাকা",
+      },
+      {
+        src: "/images/mangrove/Mangrove.webp",
+        name: "Mangrove Hotel & Resort",
+        nameBn: "ম্যানগ্রোভ হোটেল ও রিসোর্ট",
+        location: "Marine Drive, Kuakata",
+        locationBn: "মেরিন ড্রাইভ, কুয়াকাটা",
+      },
+    ],
     galleryImages: [
-      "/images/kuakata/gallery-01.webp",
+      "/images/kuakata/hero.webp",
+      "/images/sun-care/hero.webp",
       "/images/dfi/dfi-aerial.webp",
-      "/images/sun-care/sun-care-center.webp",
       "/images/mangrove/Mangrove.webp",
+      "/images/kuakata/gallery-01.webp",
+      "/images/sun-care/Hospital view.webp",
+      "/images/dfi/DFI-top-view.webp",
+      "/images/mangrove/Mangrove Entry01.webp",
     ],
     keyFacts: [
       { label: "Projects Included", value: "4 Flagship Developments (Kuakata, Sun Care, DFI, Mangrove)" },
