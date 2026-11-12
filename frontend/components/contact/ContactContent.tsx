@@ -74,8 +74,8 @@ export default function ContactContent({
                     </span>
                     <span className="mt-0.5 block text-[11.5px] text-[var(--sunset-grey-700)]">
                       {isBn
-                        ? "রবিবার – বৃহস্পতিবার, সকাল ৯:৩০ – সন্ধ্যা ৬:৩০"
-                        : "Sunday – Thursday, 9:30 am – 6:30 pm BST"}
+                        ? "সোমবার – শনিবার, সকাল ১০:০০ – সন্ধ্যা ৭:০০ (রবিবার বন্ধ)"
+                        : "Monday – Saturday, 10:00 am – 7:00 pm (Sunday closed)"}
                     </span>
                   </span>
                 </a>

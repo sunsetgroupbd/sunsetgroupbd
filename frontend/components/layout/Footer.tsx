@@ -200,7 +200,7 @@ export default function Footer() {
 
               <li className="flex gap-3">
                 <Clock size={15} className="mt-0.5 shrink-0 text-[rgba(255, 255, 255,0.4)]" />
-                <span>{isBn ? "রবিবার – বৃহস্পতিবার, ৯:৩০ – ১৮:৩০" : "Sunday – Thursday, 9:30 – 18:30"}</span>
+                <span>{isBn ? "সোমবার – শনিবার, ১০:০০ – ১৯:০০ (রবিবার বন্ধ)" : "Monday – Saturday, 10:00 – 19:00 (Sunday closed)"}</span>
               </li>
             </ul>
           </div>
