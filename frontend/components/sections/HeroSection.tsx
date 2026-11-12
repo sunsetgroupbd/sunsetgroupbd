@@ -71,8 +71,11 @@ export default function HeroSection() {
             transition={{ duration: 0.6, ease: EASE }}
             className="mb-6 flex items-center gap-3"
           >
-            <span className="h-px w-8 bg-[var(--sunset-red)]" aria-hidden />
-            <p className="text-eyebrow font-semibold text-white/95 drop-shadow-[0_1px_3px_rgba(0,0,0,0.6)]">
+            <span className="h-px w-8 bg-[var(--sunset-red)] shadow-sm" aria-hidden />
+            <p
+              className="text-eyebrow font-bold tracking-[0.14em]"
+              style={{ color: "#ffffff", textShadow: "0 1px 4px rgba(0, 0, 0, 0.85)" }}
+            >
               {isBn
                 ? "শরীয়া তদারকি · সাফ-কবালা নিবন্ধিত · কোম্পানি আইন ১৯৯৪"
                 : "Shariah supervised · Saf-Kabala registered · Company Act 1994"}
@@ -155,12 +158,12 @@ export default function HeroSection() {
           ].map((item) => (
             <div key={item.label}>
               <div
-                className="text-xl font-bold tabular-nums md:text-2xl"
-                style={{ color: "var(--paper)", fontFamily: "var(--font-display)" }}
+                className="text-xl font-bold tabular-nums md:text-2xl text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.6)]"
+                style={{ fontFamily: "var(--font-display)" }}
               >
                 {item.value}
               </div>
-              <div className="mt-1 text-[10.5px] uppercase tracking-[0.12em] text-[rgba(255, 255, 255,0.52)]">
+              <div className="mt-1 text-[11px] uppercase tracking-[0.12em] font-medium text-white/90 drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
                 {item.label}
               </div>
             </div>

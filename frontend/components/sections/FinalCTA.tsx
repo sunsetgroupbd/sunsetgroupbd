@@ -34,8 +34,11 @@ export default function FinalCTA() {
           className="mx-auto max-w-2xl text-center"
         >
           <div className="mb-5 flex items-center justify-center gap-3">
-            <span className="h-px w-6 bg-[var(--sunset-red)]" aria-hidden />
-            <p className="text-eyebrow" style={{ color: "rgba(255, 255, 255,0.62)" }}>
+            <span className="h-px w-6 bg-[var(--sunset-red)] shadow-sm" aria-hidden />
+            <p
+              className="text-eyebrow font-bold tracking-[0.14em]"
+              style={{ color: "#ffffff", textShadow: "0 1px 4px rgba(0, 0, 0, 0.85)" }}
+            >
               {isBn ? "শরীয়া তদারকি · সাফ-কবালা নিবন্ধিত" : "Shariah supervised · Saf-kabala registered"}
             </p>
           </div>
