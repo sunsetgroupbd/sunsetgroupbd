@@ -11,10 +11,10 @@ export default function CalculatorTeaser() {
   const { isBn } = useLang();
 
   const tiers = [
-    { label: "Platinum", price: "৳ 36,00,000", days: "112" },
-    { label: "Gold", price: "৳ 18,50,000", days: "56" },
-    { label: "Silver", price: "৳ 11,50,000", days: "33" },
-    { label: "Bronze", price: "৳ 4,00,000", days: "10" },
+    { label: "Platinum", price: isBn ? "৳ ৫৪,০০,০০০" : "৳ 54,00,000", days: isBn ? "১১২" : "112" },
+    { label: "Gold", price: isBn ? "৳ ২৭,৫০,০০০" : "৳ 27,50,000", days: isBn ? "৫৬" : "56" },
+    { label: "Silver", price: isBn ? "৳ ১৬,৮০,০০০" : "৳ 16,80,000", days: isBn ? "৩৩" : "33" },
+    { label: "Bronze", price: isBn ? "৳ ৫,৭০,০০০" : "৳ 5,70,000", days: isBn ? "১০" : "10" },
   ];
 
   return (
@@ -47,8 +47,8 @@ export default function CalculatorTeaser() {
 
             <p className="text-body mb-8 max-w-xl text-[var(--sunset-grey-700)]">
               {isBn
-                ? "প্যাকেজ নির্বাচন করে বুকিং মানি, অবশিষ্ট কিস্তি এবং বার্ষিক মুনাফার আনুমানিক হিসাব দেখুন।"
-                : "Select a tier to see booking money, structured instalments and annual profit days under Shariah-supervised principles."}
+                ? "প্যাকেজ নির্বাচন করে বুকিং মানি, অবশিষ্ট কিস্তি এবং বার্ষিক আবাসন সুবিধা ও মুনাফার আনুমানিক হিসাব দেখুন।"
+                : "Select a tier to see booking money, structured instalments and annual accommodation days under Shariah-supervised principles."}
             </p>
 
             <Link href="/profit-calculator" className="btn btn-primary btn-lg">
@@ -65,7 +65,7 @@ export default function CalculatorTeaser() {
                   {isBn ? "প্যাকেজ" : "Tier"}
                 </p>
                 <p className="text-[10.5px] font-semibold uppercase tracking-[0.12em] text-[var(--sunset-grey-700)]">
-                  {isBn ? "মুনাফার দিন" : "Profit days"}
+                  {isBn ? "আবাসন সুবিধা" : "Accommodation days"}
                 </p>
               </div>
 
@@ -86,7 +86,7 @@ export default function CalculatorTeaser() {
                     <p className="text-[12.5px] font-semibold tabular-nums text-[var(--sunset-green-900)]">
                       {item.days}
                       <span className="ml-1 text-[10.5px] font-normal text-[var(--sunset-grey-700)]">
-                        / {isBn ? "বছর" : "yr"}
+                        / {isBn ? "দিন" : "days"}
                       </span>
                     </p>
                   </li>
@@ -95,8 +95,8 @@ export default function CalculatorTeaser() {
             </div>
             <p className="mt-3 text-[10.5px] leading-relaxed text-[var(--sunset-grey-700)]">
               {isBn
-                ? "আনুমানিক হিসাব; চূড়ান্ত শর্তাবলি প্রযোজ্য।"
-                : "Illustrative figures only. Final terms apply."}
+                ? "দৃষ্টান্তমূলক তথ্য। শর্ত প্রযোজ্য। বিনিয়োগের পূর্বে চুক্তিপত্র পড়ে নিন।"
+                : "Illustrative information. Terms apply. Please read Deed of Agreement."}
             </p>
           </div>
         </motion.div>

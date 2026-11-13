@@ -8,6 +8,9 @@ import {
   FileSpreadsheet,
   Banknote,
   ArrowRight,
+  ShieldCheck,
+  CheckCircle2,
+  Layers,
 } from "lucide-react";
 import PageHero from "@/components/layout/PageHero";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -56,11 +59,11 @@ export default function SourceOfIncomeContent() {
       step: "04",
       icon: Coins,
       title: isBn
-        ? "প্যাকেজের দিন অনুযায়ী অনুপাত নির্ধারণ"
-        : "Package day allocation",
+        ? "মুনাফা বণ্টন ও বার্ষিক আবাসন সুবিধা"
+        : "Profit-sharing & accommodation stay days",
       desc: isBn
-        ? "নিট পরিচালনা মুনাফা প্যাকেজের দিন অনুযায়ী আনুপাতিক হারে বরাদ্দ করা হয় — প্লাটিনাম ১১২ দিন, গোল্ড ৫৬ দিন, সিলভার ৩৩ দিন এবং ব্রোঞ্জ ১০ দিন।"
-        : "Net profit is proportioned by tier — 112 days for Platinum, 56 for Gold, 33 for Silver and 10 for Bronze — corresponding to operational trading cycles.",
+        ? "নিরীক্ষিত নিট ব্যবসায়িক মুনাফা চুক্তিপত্র অনুযায়ী আনুপাতিক হারে বণ্টিত হয় এবং একই সাথে বিনিয়োগকারী প্যাকেজ অনুযায়ী বার্ষিক বিনামূল্যে আবাসন সুবিধা (১০ থেকে ১১২ দিন) ভোগ করেন।"
+        : "Net audited operating profit is distributed in accordance with agreed shareholding percentages, while shareholders also enjoy complimentary annual accommodation stay days (10 to 112 days).",
     },
     {
       step: "05",
@@ -91,8 +94,8 @@ export default function SourceOfIncomeContent() {
         ? "সান কেয়ার ডায়াগনস্টিক ও হাসপাতাল"
         : "Sun Care diagnostic & hospital",
       body: isBn
-        ? "২৪/৭ জরুরি বিভাগ, আধুনিক ল্যাব ও ইমেজিং, বহির্বিভাগীয় কনসাল্টেশন এবং ফার্মেসি বিক্রয় থেকে স্থিতিশীল আয়।"
-        : "A 24/7 emergency clinic, advanced imaging, surgical facilities, commercial pharmacy sales and specialist consultations.",
+        ? "২৪/৭ জরুরি বিভাগ, আধুনিক ল্যাব ও ইমেজিং, বহির্বিভাগীয় কনসাল্টেশন এবং ফার্মেসি বিক্রয় থেকে স্থিতিশীল আয়। বিনিয়োগকারী ও মনোনীত ব্যক্তিদের জন্য খরচমূল্যে সেবা।"
+        : "A 24/7 emergency clinic, advanced imaging, surgical facilities, commercial pharmacy sales and specialist consultations. Cost-price healthcare for investors & nominated individuals.",
       note: isBn ? "মন্দামুক্ত অপরিহার্য জরুরি সেবা" : "Recession-resilient essential service",
     },
     {
@@ -101,9 +104,99 @@ export default function SourceOfIncomeContent() {
         ? "ঢাকা ফ্যান্টাসি আইল্যান্ড"
         : "Dhaka Fantasy Island",
       body: isBn
-        ? "সংসদ ভবন থেকে ২০ মিনিটের দূরত্বে আধুনিক ইকো-রিসোর্ট, অ্যামিউজমেন্ট জোন, ক্যাফে লাউঞ্জ ও পারিবারিক অবকাশযাপন কেন্দ্র।"
-        : "Commercial retail space, amusement arcade, cafe lounges and corporate retreat bookings — 20 minutes from Parliament House.",
+        ? "২৭ সপ্তক স্কয়ার থেকে ১৯ মিনিট ও সংসদ ভবন থেকে ২০ মিনিটের দূরত্বে আধুনিক ইকো-রিসোর্ট, অ্যামিউজমেন্ট জোন, ক্যাফে লাউঞ্জ ও পারিবারিক অবকাশযাপন কেন্দ্র।"
+        : "Commercial retail space, amusement arcade, cafe lounges and corporate retreat bookings — 19 min from Shaptak Square, 20 min from Parliament.",
       note: isBn ? "সারাবছর পারিবারিক জনসমাগম" : "Year-round family footfall",
+    },
+  ];
+
+  const eightIncomeSources = [
+    {
+      nameEn: "Room Rent",
+      nameBn: "রুম ভাড়া",
+      descEn: "Luxury oceanfront suites and premium guest accommodation.",
+      descBn: "বিলাসবহুল প্রেসিডেন্সিয়াল ও প্রিমিয়াম গেস্ট রুম ভাড়া।",
+    },
+    {
+      nameEn: "Multi-Purpose Hall",
+      nameBn: "মাল্টি-পারপাস হল",
+      descEn: "Conferences, grand wedding receptions, corporate seminars.",
+      descBn: "কনফারেন্স, জমকালো বিয়ে ও করপোরেট সেমিনার আয়োজন।",
+    },
+    {
+      nameEn: "Training Institute",
+      nameBn: "প্রশিক্ষণ ইনস্টিটিউট",
+      descEn: "Hospitality and skill development training programs.",
+      descBn: "আতিথেয়তা ও দক্ষতা উন্নয়নমূলক প্রশিক্ষণ কার্যক্রম।",
+    },
+    {
+      nameEn: "Shopping Mall",
+      nameBn: "শপিং মল",
+      descEn: "Retail brand outlets and coastal souvenir shopping.",
+      descBn: "রিটেইল ব্র্যান্ড আউটলেট ও কেনাকাটার বাণিজ্যিক স্পেস।",
+    },
+    {
+      nameEn: "Gaming Zone",
+      nameBn: "গেমিং জোন",
+      descEn: "Virtual reality, arcade gaming, and family recreation.",
+      descBn: "ভিআর গেমস, আর্কেড গেমিং ও ফ্যামিলি বিনোদন।",
+    },
+    {
+      nameEn: "Restaurants",
+      nameBn: "রেস্তোরাঁ ও ডাইনিং",
+      descEn: "Multi-cuisine fine dining and international seafood.",
+      descBn: "মাল্টি-কুইজিন ফাইন ডাইনিং ও আন্তর্জাতিক সি-ফুড।",
+    },
+    {
+      nameEn: "Food & Beverage",
+      nameBn: "ফুড অ্যান্ড বেভারেজ",
+      descEn: "Cafes, bakeries, juice bars, and catering services.",
+      descBn: "ক্যাফে, জুস বার, বেকারি ও ক্যাটারিং পরিসেবা।",
+    },
+    {
+      nameEn: "Indoor Activity Zone",
+      nameBn: "ইনডোর অ্যাক্টিভিটি জোন",
+      descEn: "All-weather sports, leisure games, and children play area.",
+      descBn: "ইনডোর খেলাধুলা, বিনোদন ও শিশুদের প্লে-জোন।",
+    },
+  ];
+
+  const facilities = [
+    {
+      titleEn: "Rooms",
+      titleBn: "রুম ও স্যুট",
+      descEn: "5-star luxury standard rooms, suites, and chalets.",
+      descBn: "পাঁচতারা মানের আধুনিক সুসজ্জিত রুম ও প্রেসিডেন্সিয়াল স্যুট।",
+    },
+    {
+      titleEn: "Dining",
+      titleBn: "ডাইনিং",
+      descEn: "Seafood restaurant, rooftop cafe, 24/7 room service.",
+      descBn: "সি-ফুড রেস্তোরাঁ, রুফটপ ক্যাফে ও সার্বক্ষণিক রুম সার্ভিস।",
+    },
+    {
+      titleEn: "Pools",
+      titleBn: "সুইমিং পুল",
+      descEn: "Infinity pool with panoramic horizon & sea view.",
+      descBn: "দিগন্তজোড়া সমুদ্রের দৃশ্য উপভোগের ইনফিনিটি পুল।",
+    },
+    {
+      titleEn: "Games",
+      titleBn: "খেলাধুলা ও গেমিং",
+      descEn: "Billiards, arcade simulators, table tennis, board games.",
+      descBn: "বিলিয়ার্ডস, আর্কেড সিমুলেটর, টেবিল টেনিস ও ইনডোর গেমস।",
+    },
+    {
+      titleEn: "Fit & Relax",
+      titleBn: "ফিটনেস ও রিল্যাক্স",
+      descEn: "Modern gymnasium, spa, sauna, and wellness zone.",
+      descBn: "আধুনিক জিমনেসিয়াম, স্পা, সৌনা ও ওয়েলনেস সেন্টার।",
+    },
+    {
+      titleEn: "Added Services",
+      titleBn: "অতিরিক্ত সেবাসমূহ",
+      descEn: "Concierge, airport/helipad transfers, guided beach tours.",
+      descBn: "কনসিয়ার্জ, হেলিপ্যাড/ট্রান্সফার ও গাইডেড সমুদ্র সৈকত ভ্রমণ।",
     },
   ];
 
@@ -224,6 +317,184 @@ export default function SourceOfIncomeContent() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 8 Income Sources Grid */}
+      <section className="section-gap" style={{ backgroundColor: "var(--paper)" }}>
+        <div className="container-site">
+          <SectionHeading
+            eyebrow={isBn ? "৮টি আয়ের উৎস" : "8 Income Sources"}
+            title={
+              isBn
+                ? "হোটেল ও রিসোর্টের বহুমুখী বাণিজ্যিক আয়ের খাত"
+                : "Eight diversified commercial revenue engines"
+            }
+            description={
+              isBn
+                ? "সানসেট গ্রুপের প্রকল্পসমূহে আয়ের জন্য রয়েছে ৮টি সুনির্দিষ্ট খাত — যা বছরের প্রতিটি মৌসুমে টেকসই পরিচালন উদ্বৃত্ত নিশ্চিত করে।"
+                : "Operations are built across 8 distinct revenue streams ensuring continuous operational cash flow across all seasons."
+            }
+            className="mb-12"
+          />
+
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {eightIncomeSources.map((source, idx) => (
+              <div
+                key={source.nameEn}
+                className="rounded-[16px] border border-[var(--line)] bg-white p-6 shadow-sm transition-all hover:border-[var(--sunset-green-700)]"
+              >
+                <div className="mb-3 flex items-center justify-between">
+                  <span className="font-display text-[1.5rem] leading-none text-[var(--sunset-green-900)]">
+                    0{idx + 1}
+                  </span>
+                  <span className="h-2 w-2 rounded-full bg-[var(--sunset-red)]" />
+                </div>
+                <h4 className="mb-2 text-[15px] font-semibold text-[var(--ink)]">
+                  {isBn ? source.nameBn : source.nameEn}
+                </h4>
+                <p className="text-[12px] leading-relaxed text-[var(--sunset-grey-700)]">
+                  {isBn ? source.descBn : source.descEn}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Facilities Grid */}
+      <section className="section-gap" style={{ backgroundColor: "var(--sand)" }}>
+        <div className="container-site">
+          <SectionHeading
+            eyebrow={isBn ? "প্রকল্পের সুযোগ-সুবিধাসমূহ" : "World-Class Facilities"}
+            title={
+              isBn
+                ? "আন্তর্জাতিক পাঁচতারা মানের সুযোগ-সুবিধা"
+                : "Modern 5-star facilities & amenities"
+            }
+            description={
+              isBn
+                ? "অতিথিদের সর্বোচ্চ সন্তুষ্টি ও দীর্ঘমেয়াদি বুকিং নিশ্চিত করতে বিশ্বমানের সকল সুযোগ-সুবিধা অন্তর্ভুক্ত।"
+                : "Premium amenities driving premium occupancy rates, guest retention, and operational yield."
+            }
+            className="mb-12"
+          />
+
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {facilities.map((fac) => (
+              <div
+                key={fac.titleEn}
+                className="rounded-[16px] border border-[var(--line)] bg-white p-6"
+              >
+                <h4 className="mb-2 text-[15px] font-semibold text-[var(--sunset-green-900)]">
+                  {isBn ? fac.titleBn : fac.titleEn}
+                </h4>
+                <p className="text-[12.5px] leading-relaxed text-[var(--sunset-grey-700)]">
+                  {isBn ? fac.descBn : fac.descEn}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Ownership Lifecycle & Exit Policy Banner */}
+      <section className="section-gap" style={{ backgroundColor: "var(--paper)" }}>
+        <div className="container-site">
+          <div className="rounded-[22px] border border-[var(--line)] bg-[var(--sand)] p-8 md:p-12">
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
+              <div>
+                <span className="mb-3 inline-flex items-center gap-2 rounded-full bg-[rgba(18,54,42,0.08)] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--sunset-green-900)]">
+                  <ShieldCheck size={14} />
+                  {isBn ? "মালিকানা প্রক্রিয়া" : "Ownership Lifecycle"}
+                </span>
+                <h3 className="text-display-sm mt-3 mb-4 text-[var(--ink)]">
+                  {isBn
+                    ? "মানি রসিদ থেকে সাফ-কবালা পর্যন্ত নিশ্চিত ধাপসমূহ"
+                    : "Step-by-step verified legal ownership pathway"}
+                </h3>
+                <ul className="space-y-3 text-[13px] text-[var(--sunset-grey-700)]">
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-[var(--sunset-green-700)]" />
+                    <span>
+                      <strong>{isBn ? "১. মানি রসিদ (Money Receipt):" : "1. Money Receipt:"}</strong>{" "}
+                      {isBn
+                        ? "বুকিং মানি জমার পর তাত্ক্ষণিক আনুষ্ঠানিক মানি রসিদ প্রদান।"
+                        : "Issued immediately upon initial booking amount payment."}
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-[var(--sunset-green-700)]" />
+                    <span>
+                      <strong>{isBn ? "২. চুক্তিপত্র (Deed of Agreement):" : "2. Deed of Agreement:"}</strong>{" "}
+                      {isBn
+                        ? "ডাউন পেমেন্ট সম্পন্ন হওয়ার পর উভয় পক্ষের মধ্যে নিবন্ধিত চুক্তিপত্র সম্পাদন।"
+                        : "Executed upon completion of down payment securing investor rights."}
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-[var(--sunset-green-700)]" />
+                    <span>
+                      <strong>{isBn ? "৩. সাফ-কবালা দলিল (Saf-Kabala):" : "3. Saf-Kabala Title Deed:"}</strong>{" "}
+                      {isBn
+                        ? "সম্পূর্ণ মূল্য পরিশোধের পর সরকারি সাব-রেজিস্ট্রি অফিসে বিনিয়োগকারীর নামে সাফ-কবালা দলিলের পূর্ণাঙ্গ রেজিস্ট্রি।"
+                        : "Official deed registration at the Sub-Registry office upon full payment."}
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-[var(--sunset-green-700)]" />
+                    <span>
+                      <strong>{isBn ? "সহজ কিস্তি সুবিধা:" : "Flexible Installments:"}</strong>{" "}
+                      {isBn
+                        ? "প্যাকেজ ভেদে সহজ কিস্তিতে পরিশোধের সুযোগ রয়েছে।"
+                        : "Structured installments available across packages."}
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <span className="mb-3 inline-flex items-center gap-2 rounded-full bg-[rgba(18,54,42,0.08)] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--sunset-green-900)]">
+                  <Layers size={14} />
+                  {isBn ? "প্রস্থান নীতি ও ট্র্যাকিং" : "Exit Policy & Portal"}
+                </span>
+                <h3 className="text-display-sm mt-3 mb-4 text-[var(--ink)]">
+                  {isBn
+                    ? "শেয়ার হস্তান্তর ও ইআরপি ট্র্যাকিং ব্যবস্থা"
+                    : "Exit policy and transparent shareholder updates"}
+                </h3>
+                <ul className="space-y-3 text-[13px] text-[var(--sunset-grey-700)]">
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-[var(--sunset-green-700)]" />
+                    <span>
+                      <strong>{isBn ? "এক্সিট ও বিক্রয় নীতি (Exit Policy):" : "Exit & Resale Policy:"}</strong>{" "}
+                      {isBn
+                        ? "সাফ-কবালা নিবন্ধন সম্পন্ন হওয়ার পর শেয়ারহোল্ডার তার মালিকানা শেয়ার আইনসঙ্গতভাবে যেকোনো সময় হস্তান্তর বা বিক্রি করতে পারবেন।"
+                        : "Share transfer and resale are permitted at any time following saf-kabala registration."}
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-[var(--sunset-green-700)]" />
+                    <span>
+                      <strong>{isBn ? "ইআরপি সফটওয়্যার ট্র্যাকিং:" : "ERP Shareholder Software:"}</strong>{" "}
+                      {isBn
+                        ? "বিনিয়োগকারীদের নিয়মিত আপডেট ও হিসাব ব্যবস্থাপনার জন্য সেন্ট্রাল সফটওয়্যার সমাধান (ক্লায়েন্ট নিশ্চিতকরণ সাপেক্ষ)।"
+                        : "Centralized ERP software for shareholder account tracking and project updates (CLIENT TO CONFIRM)."}
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-[var(--sunset-green-700)]" />
+                    <span>
+                      <strong>{isBn ? "আইনি বাধ্যবাধকতা:" : "Legal Integrity:"}</strong>{" "}
+                      {isBn
+                        ? "কোম্পানি আইন ১৯৯৪ ও শরীয়াহ মুশারাকাহ কাঠামোর অধীনে সকল লেনদেন সংরক্ষিত।"
+                        : "Governed under Company Act 1994 and Islamic Musharakah frameworks."}
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -93,7 +93,7 @@ export const en = {
     price: "Package Price",
     booking: "Booking Amount",
     remaining: "Remaining Balance",
-    profitDays: "Profit-Sharing Days",
+    profitDays: "Accommodation Days",
     cta: "Book This Package",
     disclaimer:
       "* Profit-sharing is subject to actual project performance. Not a guaranteed return. Please read the full terms and conditions.",
@@ -106,7 +106,7 @@ export const en = {
       price: "Package Price",
       booking: "Booking Amount",
       remaining: "Remaining Balance",
-      profitDays: "Profit-Sharing Period",
+      profitDays: "Accommodation Stay Days",
       illustrativeReturn: "Illustrative Annual Return",
     },
     disclaimer:
@@ -144,7 +144,7 @@ export const en = {
     privacyPolicy: "Privacy Policy",
     terms: "Terms & Conditions",
     importantNotice:
-      "Important Notice: Investment in Sunset Group projects involves risk. Past performance is not indicative of future results. All projected profit-sharing figures are illustrative and subject to terms. Investors should seek independent financial advice before investing.",
+      "Illustrative information. Terms apply. Please read the Deed of Agreement before investing. Investment in Sunset Group projects involves risk. Past performance is not indicative of future results.",
     copyright: "© 2026 Sunset Group. All rights reserved.",
   },
   contact: {
@@ -169,10 +169,13 @@ export const en = {
       "General Inquiry",
     ],
     packageOptions: [
-      "Platinum — ৳ 36,00,000",
-      "Gold — ৳ 18,50,000",
-      "Silver — ৳ 11,50,000",
-      "Bronze — ৳ 4,00,000",
+      "Kuakata Platinum — ৳ 54,00,000",
+      "Kuakata Gold — ৳ 27,50,000",
+      "Kuakata Silver — ৳ 16,80,000",
+      "Kuakata Bronze — ৳ 5,70,000",
+      "Sun Care Hospital (From ৳ 3,50,000)",
+      "Dhaka Fantasy Island (From ৳ 3,50,000)",
+      "Super Combo (From ৳ 12,40,000)",
       "Not sure yet",
     ],
   },

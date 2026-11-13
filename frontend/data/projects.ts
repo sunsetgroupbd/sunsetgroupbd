@@ -6,10 +6,18 @@
 
 export interface ProjectPackage {
   name: string;
+  nameBn?: string;
   priceLabel: string;
   priceBDT: number;
   bookingBDT: number;
-  profitDays: number;
+  areaSft?: number;
+  accommodationDays?: number;
+  /** @deprecated use accommodationDays */
+  profitDays?: number;
+  profitSharePercent?: number;
+  nominatedPersons?: number; // for Sun Care and Super Combo
+  insuranceBDT?: number; // for Super Combo
+  installmentFromBDT?: number; // for DFI
 }
 
 export interface ProjectFact {
@@ -81,49 +89,66 @@ export const projects: Project[] = [
       { label: "Land Purchase", value: "2023" },
       { label: "Construction Start", value: "2024" },
       { label: "Partial Opening", value: "2025" },
-      { label: "Full Operations", value: "2029" },
-      { label: "Registration", value: "Company Act 1994" },
+      { label: "Project Timeline", value: "2027 (Planned) · 2029 (Planned)" },
+      { label: "Registration", value: "Company Act 1994 + Saf-Kabala" },
       { label: "Oversight", value: "Shariah Supervisory Committee" },
     ],
     whyInvest: [
       "Only sunrise AND sunset visible beach in Bangladesh",
       "Adjacent to Sundarbans — unique eco-tourism hub",
-      "KTC Government Master Plan zone — guaranteed infrastructure",
-      "New bridge, highway & upcoming airport improving connectivity",
-      "Rising domestic & international tourist numbers",
-      "Low hotel competition in Kuakata market",
-      "Outside Bangladesh earthquake-prone zone",
-      "Lifetime halal profit-sharing income",
+      "KTC Government Master Plan zone — planned infrastructure",
+      "Combined inclusions: Sunset Hotel + Mangrove Eco Resort",
+      "8 income streams: room rent, hall, training institute, mall, gaming, restaurant, F&B, indoor activity",
+      "World-class facilities: rooms, dining, pools, games, fit & relax, added services",
+      "Ownership lifecycle: Money Receipt -> Deed of Agreement -> Saf-Kabala after full payment",
+      "Exit policy: Share transfer and resale permitted after saf-kabala registration",
+      "Halal operational profit-sharing with deeded saf-kabala asset backing",
     ],
     safKabala: true,
     packages: [
       {
         name: "Platinum",
-        priceLabel: "৳ ৩৬,০০,০০০",
-        priceBDT: 3600000,
-        bookingBDT: 800000,
+        nameBn: "প্লাটিনাম",
+        priceLabel: "৳ ৫৪,০০,০০০",
+        priceBDT: 5400000,
+        bookingBDT: 1200000,
+        areaSft: 280,
+        accommodationDays: 112,
         profitDays: 112,
+        profitSharePercent: 60,
       },
       {
         name: "Gold",
-        priceLabel: "৳ ১৮,৫০,০০০",
-        priceBDT: 1850000,
-        bookingBDT: 500000,
+        nameBn: "গোল্ড",
+        priceLabel: "৳ ২৭,৫০,০০০",
+        priceBDT: 2750000,
+        bookingBDT: 750000,
+        areaSft: 140,
+        accommodationDays: 56,
         profitDays: 56,
+        profitSharePercent: 60,
       },
       {
         name: "Silver",
-        priceLabel: "৳ ১১,৫০,০০০",
-        priceBDT: 1150000,
-        bookingBDT: 300000,
+        nameBn: "সিলভার",
+        priceLabel: "৳ ১৬,৮০,০০০",
+        priceBDT: 1680000,
+        bookingBDT: 450000,
+        areaSft: 84,
+        accommodationDays: 33,
         profitDays: 33,
+        profitSharePercent: 50,
       },
       {
         name: "Bronze",
-        priceLabel: "৳ ৪,০০,০০০",
-        priceBDT: 400000,
-        bookingBDT: 100000,
+        nameBn: "ব্রোঞ্জ",
+        priceLabel: "৳ ৫,৭০,০০০",
+        priceBDT: 570000,
+        bookingBDT: 150000,
+        areaSft: 28,
+        accommodationDays: 10,
         profitDays: 10,
+        profitSharePercent: 40,
       },
     ],
     badge: "First 5-Star in Kuakata",
@@ -140,12 +165,12 @@ export const projects: Project[] = [
     nameBn: "সান কেয়ার হাসপাতাল ও ডায়াগনস্টিক সেন্টার লিমিটেড",
     tagline: "Invest in health — yours and your community's.",
     taglineBn: "স্বাস্থ্যে বিনিয়োগ করুন — আপনার এবং সমাজের জন্য।",
-    location: "Mohammadpur / Basila, Dhaka",
-    locationBn: "মোহাম্মদপুর / বসিলা, ঢাকা",
+    location: "Mohammadpur / Basila, Dhaka (15 min from 27 Shaptak Square)",
+    locationBn: "মোহাম্মদপুর / বসিলা, ঢাকা (২৭ সপ্তক স্কয়ার থেকে ১৫ মিনিট)",
     description:
-      "Sun Care Hospital & Diagnostic Center Ltd. is a modern multi-specialty hospital in Mohammadpur / Basila, Dhaka. Investors and 20 nominated individuals per package receive hospital services at cost price — a unique benefit beyond financial returns. The hospital features 24/7 emergency services, home visits, a full diagnostic lab, pharmacy, ambulance fleet and specialist doctors.",
+      "Sun Care Hospital & Diagnostic Center Ltd. is a modern multi-specialty hospital in Mohammadpur / Basila, Dhaka — conveniently located just 15 minutes from 27 Shaptak Square. Investors and 20 to 200 nominated individuals depending on tier (Bronze 20, Silver 60, Gold 100, Platinum 200 // CLIENT TO CONFIRM) receive hospital services strictly at cost price — a unique benefit beyond financial returns. The hospital features 24/7 emergency services, home visits, a full diagnostic lab, pharmacy, ambulance fleet and specialist doctors.",
     descriptionBn:
-      "সান কেয়ার হাসপাতাল ও ডায়াগনস্টিক সেন্টার লিমিটেড ঢাকার মোহাম্মদপুর/বসিলায় একটি আধুনিক বহু-বিশেষজ্ঞ হাসপাতাল। বিনিয়োগকারী এবং প্রতি প্যাকেজে ২০ জন মনোনীত ব্যক্তি খরচমূল্যে হাসপাতাল সেবা পাবেন। ২৪/৭ জরুরি সেবা, হোম ভিজিট, ডায়াগনস্টিক ল্যাব, ফার্মেসি, অ্যাম্বুলেন্স ও বিশেষজ্ঞ ডাক্তার রয়েছে।",
+      "সান কেয়ার হাসপাতাল ও ডায়াগনস্টিক সেন্টার লিমিটেড ঢাকার মোহাম্মদপুর/বসিলায় একটি আধুনিক বহু-বিশেষজ্ঞ হাসপাতাল — ২৭ সপ্তক স্কয়ার থেকে মাত্র ১৫ মিনিটের দূরত্বে। বিনিয়োগকারী এবং প্যাকেজ স্তর অনুযায়ী ২০ থেকে ২০০ জন মনোনীত ব্যক্তি (ব্রোঞ্জ ২০, সিলভার ৬০, গোল্ড ১০০, প্লাটিনাম ২০০ // ক্লায়েন্ট নিশ্চিতকরণ সাপেক্ষ) খরচমূল্যে হাসপাতাল সেবা পাবেন। ২৪/৭ জরুরি সেবা, হোম ভিজিট, ডায়াগনস্টিক ল্যাব, ফার্মেসি, অ্যাম্বুলেন্স ও বিশেষজ্ঞ ডাক্তার রয়েছে।",
     heroImage: "/images/sun-care/hero.webp",
     galleryImages: [
       "/images/sun-care/hero.webp",
@@ -155,20 +180,23 @@ export const projects: Project[] = [
     keyFacts: [
       { label: "Type", value: "Multi-Specialty Hospital" },
       { label: "Location", value: "Mohammadpur / Basila, Dhaka" },
+      { label: "Distance", value: "15 min from 27 Shaptak Square" },
       { label: "Emergency", value: "24/7 Available" },
       { label: "Home Service", value: "Available" },
-      { label: "Registration", value: "Saf-Kabala (placeholder reg. no.)" },
+      { label: "Registration", value: "Company Act 1994 + Saf-Kabala" },
       { label: "Investor Benefit", value: "Services at cost price" },
-      { label: "Nominated Persons", value: "20 per package" },
+      { label: "Nominated Persons", value: "20 / 60 / 100 / 200 by tier // CLIENT TO CONFIRM" },
+      { label: "Oversight", value: "Shariah Supervisory Committee" },
     ],
     whyInvest: [
       "Healthcare sector in Bangladesh growing at 15%+ annually",
-      "Investors & 20 nominated persons receive services at cost",
-      "Annual profit-sharing from both sales & services revenue",
-      "Legally registered — saf-kabala registration",
-      "Prime location in rapidly developing Basila area",
+      "Investors & 20 to 200 nominated persons receive services at cost // CLIENT TO CONFIRM",
+      "Annual profit-sharing from both medical sales & diagnostic services revenue",
+      "Legally secure saf-kabala deed registration per unit",
+      "Prime location in rapidly developing Basila corridor, 15 min from Dhanmondi 27",
       "Shariah supervisory committee oversight",
-      "Diversify investment beyond real estate",
+      "Ownership lifecycle: Money Receipt -> Deed of Agreement -> Saf-Kabala after full payment",
+      "Exit policy: Share transfer and resale permitted after saf-kabala registration",
     ],
     services: [
       "24/7 Emergency Services",
@@ -181,6 +209,44 @@ export const projects: Project[] = [
       "Minor & Major Surgery",
     ],
     safKabala: true,
+    packages: [
+      {
+        name: "Platinum",
+        nameBn: "প্লাটিনাম",
+        priceLabel: "৳ ৩২,০০,০০০",
+        priceBDT: 3200000,
+        bookingBDT: 800000,
+        areaSft: 24.64,
+        nominatedPersons: 200, // CLIENT TO CONFIRM
+      },
+      {
+        name: "Gold",
+        nameBn: "গোল্ড",
+        priceLabel: "৳ ১৬,৫০,০০০",
+        priceBDT: 1650000,
+        bookingBDT: 500000,
+        areaSft: 12.32,
+        nominatedPersons: 100, // CLIENT TO CONFIRM
+      },
+      {
+        name: "Silver",
+        nameBn: "সিলভার",
+        priceLabel: "৳ ১০,২০,০০০",
+        priceBDT: 1020000,
+        bookingBDT: 300000,
+        areaSft: 7.392,
+        nominatedPersons: 60, // CLIENT TO CONFIRM
+      },
+      {
+        name: "Bronze",
+        nameBn: "ব্রোঞ্জ",
+        priceLabel: "৳ ৩,৫০,০০০",
+        priceBDT: 350000,
+        bookingBDT: 100000,
+        areaSft: 2.464,
+        nominatedPersons: 20, // CLIENT TO CONFIRM
+      },
+    ],
     badge: "Services at Cost Price",
     badgeBn: "খরচমূল্যে স্বাস্থ্যসেবা",
   },
@@ -195,12 +261,12 @@ export const projects: Project[] = [
     nameBn: "ঢাকা ফ্যান্টাসি আইল্যান্ড",
     tagline: "An eco-resort escape — just 20 minutes from Parliament.",
     taglineBn: "সংসদ ভবন থেকে মাত্র ২০ মিনিট — একটি পরিবেশবান্ধব রিসোর্ট।",
-    location: "Mohammadpur, Dhaka (20 min from Parliament House)",
-    locationBn: "মোহাম্মদপুর, ঢাকা (জাতীয় সংসদ ভবন থেকে ২০ মিনিট)",
+    location: "Mohammadpur, Dhaka (19 min from 27 Shaptak Square, 20 min from Parliament)",
+    locationBn: "মোহাম্মদপুর, ঢাকা (২৭ সপ্তক স্কয়ার থেকে ১৯ মিনিট, সংসদ ভবন থেকে ২০ মিনিট)",
     description:
-      "Dhaka Fantasy Island is an eco hotel & resort combining residential and commercial zones in the heart of Dhaka's expanding western corridor. Strategically located just 20 minutes from Parliament House in Mohammadpur, DFI offers a unique urban retreat concept. All units carry saf-kabala registration, ensuring legal security for investors.",
+      "Dhaka Fantasy Island is an eco hotel & resort combining residential and commercial zones in the heart of Dhaka's expanding western corridor. Strategically located just 19 minutes from 27 Shaptak Square and 20 minutes from Parliament House in Mohammadpur, DFI offers a unique urban retreat concept. All units carry saf-kabala registration, ensuring legal security for investors.",
     descriptionBn:
-      "ঢাকা ফ্যান্টাসি আইল্যান্ড ঢাকার পশ্চিম করিডরে আবাসিক ও বাণিজ্যিক এলাকা নিয়ে একটি ইকো হোটেল ও রিসোর্ট। জাতীয় সংসদ ভবন থেকে মাত্র ২০ মিনিটের দূরত্বে মোহাম্মদপুরে অবস্থিত। সকল ইউনিট সাফ-কবালা নিবন্ধিত।",
+      "ঢাকা ফ্যান্টাসি আইল্যান্ড ঢাকার পশ্চিম করিডরে আবাসিক ও বাণিজ্যিক এলাকা নিয়ে একটি ইকো হোটেল ও রিসোর্ট। ২৭ সপ্তক স্কয়ার থেকে ১৯ মিনিট এবং জাতীয় সংসদ ভবন থেকে মাত্র ২০ মিনিটের দূরত্বে মোহাম্মদপুরে অবস্থিত। সকল ইউনিট সাফ-কবালা নিবন্ধিত।",
     heroImage: "/images/dfi/dfi-aerial.webp",
     galleryImages: [
       "/images/dfi/dfi-aerial.webp",
@@ -215,22 +281,72 @@ export const projects: Project[] = [
     keyFacts: [
       { label: "Type", value: "Eco Hotel & Resort" },
       { label: "Location", value: "Mohammadpur, Dhaka" },
-      { label: "Distance", value: "20 min from Parliament House" },
+      { label: "Distance", value: "19 min from 27 Shaptak Square" },
       { label: "Zones", value: "Residential + Commercial" },
-      { label: "Registration", value: "Saf-Kabala (placeholder reg. no.)" },
+      { label: "Installments", value: "From Tk 4,990/month // CLIENT TO CONFIRM" },
+      { label: "Registration", value: "Company Act 1994 + Saf-Kabala" },
       { label: "Oversight", value: "Shariah Supervisory Committee" },
     ],
     whyInvest: [
-      "Strategic urban location — closest eco-resort to Dhaka centre",
+      "Strategic urban location — closest eco-resort to Dhaka centre (19 min from Shaptak Square)",
       "Rising demand for urban retreats and staycation tourism",
       "Residential + commercial dual-zone maximises return potential",
+      "Flexible monthly installment options starting from Tk 4,990 // CLIENT TO CONFIRM",
       "Legally secure saf-kabala registration",
       "Shariah-compliant investment structure",
-      "Annual profit-sharing from operational revenue",
+      "Annual profit-sharing from operational revenue plus annual accommodation stay days",
+      "Ownership lifecycle: Money Receipt -> Deed of Agreement -> Saf-Kabala after full payment",
+      "Exit policy: Share transfer and resale permitted after saf-kabala registration",
     ],
     safKabala: true,
-    badge: "Eco Resort — 20 min from Parliament",
-    badgeBn: "পরিবেশবান্ধব রিসোর্ট — সংসদ থেকে ২০ মিনিট",
+    packages: [
+      {
+        name: "Platinum",
+        nameBn: "প্লাটিনাম",
+        priceLabel: "৳ ৩২,০০,০০০",
+        priceBDT: 3200000,
+        bookingBDT: 800000,
+        areaSft: 140,
+        accommodationDays: 36, // TODO: CLIENT TO CONFIRM (source PDF says 30 days, brochure says 36)
+        profitDays: 36,
+        profitSharePercent: 25,
+      },
+      {
+        name: "Gold",
+        nameBn: "গোল্ড",
+        priceLabel: "৳ ১৬,৫০,০০০",
+        priceBDT: 1650000,
+        bookingBDT: 500000,
+        areaSft: 70,
+        accommodationDays: 17,
+        profitDays: 17,
+        profitSharePercent: 20,
+      },
+      {
+        name: "Silver",
+        nameBn: "সিলভার",
+        priceLabel: "৳ ১০,২০,০০০",
+        priceBDT: 1020000,
+        bookingBDT: 300000,
+        areaSft: 42,
+        accommodationDays: 10,
+        profitDays: 10,
+        profitSharePercent: 15,
+      },
+      {
+        name: "Bronze",
+        nameBn: "ব্রোঞ্জ",
+        priceLabel: "৳ ৩,৫০,০০০",
+        priceBDT: 350000,
+        bookingBDT: 100000,
+        areaSft: 14,
+        accommodationDays: 3,
+        profitDays: 3,
+        profitSharePercent: 10,
+      },
+    ],
+    badge: "Eco Resort — 19 min from Shaptak Sq.",
+    badgeBn: "ইকো রিসোর্ট — সপ্তক স্কয়ার থেকে ১৯ মি.",
   },
 
   /* ─────────────────────────────────────────
@@ -294,18 +410,74 @@ export const projects: Project[] = [
       { label: "Projects Included", value: "4 Flagship Developments (Kuakata, Sun Care, DFI, Mangrove)" },
       { label: "Sectors", value: "5-Star Hospitality, Healthcare, Urban Leisure & Marine Drive Resort" },
       { label: "Registration", value: "Company Act 1994 + Saf-Kabala" },
+      { label: "Hospital Benefit", value: "20 to 200 nominated persons // CLIENT TO CONFIRM" },
+      { label: "Life Insurance", value: "৳ 5L to ৳ 50L coverage" },
       { label: "Oversight", value: "Shariah Supervisory Committee" },
     ],
     whyInvest: [
       "Maximum diversification across 4 growth sectors under a single investment",
       "Combined ownership in Kuakata 5-Star Resort, Sun Care Hospital, DFI, and Marine Drive Mangrove Resort",
-      "Healthcare services strictly at cost price for you and 20 nominated individuals",
+      "Healthcare services strictly at cost price for 20 to 200 nominated individuals depending on tier // CLIENT TO CONFIRM",
+      "Complimentary life insurance coverage from ৳ 5 Lakh up to ৳ 50 Lakh",
+      "Annual accommodation stay days: Kuakata 10-112 days + DFI 3-36 days (13 to 148 days total)",
       "Annual audited profit-sharing from hotel operations, hospital, and eco-resorts",
       "Best value-per-taka with combined multi-project package pricing",
       "Full Shariah compliance across all four developments",
       "Legally registered saf-kabala deed registration on all real estate developments",
+      "Ownership lifecycle: Money Receipt -> Deed of Agreement -> Saf-Kabala after full payment",
+      "Exit policy: Share transfer and resale permitted after saf-kabala registration",
     ],
     safKabala: true,
+    packages: [
+      {
+        name: "Platinum",
+        nameBn: "প্লাটিনাম",
+        priceLabel: "৳ ১,১৫,০০,০০০",
+        priceBDT: 11500000,
+        bookingBDT: 1700000,
+        areaSft: 444.64,
+        accommodationDays: 148, // Kuakata 112 + DFI 36 (TODO: CLIENT TO CONFIRM)
+        profitDays: 148,
+        nominatedPersons: 200, // CLIENT TO CONFIRM
+        insuranceBDT: 5000000,
+      },
+      {
+        name: "Gold",
+        nameBn: "গোল্ড",
+        priceLabel: "৳ ৫৯,০০,০০০",
+        priceBDT: 5900000,
+        bookingBDT: 1000000,
+        areaSft: 222.32,
+        accommodationDays: 73, // Kuakata 56 + DFI 17
+        profitDays: 73,
+        nominatedPersons: 100, // CLIENT TO CONFIRM
+        insuranceBDT: 2500000,
+      },
+      {
+        name: "Silver",
+        nameBn: "সিলভার",
+        priceLabel: "৳ ৩৬,৩০,০০০",
+        priceBDT: 3630000,
+        bookingBDT: 700000,
+        areaSft: 133.392,
+        accommodationDays: 43, // Kuakata 33 + DFI 10
+        profitDays: 43,
+        nominatedPersons: 60, // CLIENT TO CONFIRM
+        insuranceBDT: 1500000,
+      },
+      {
+        name: "Bronze",
+        nameBn: "ব্রোঞ্জ",
+        priceLabel: "৳ ১২,৪০,০০০",
+        priceBDT: 1240000,
+        bookingBDT: 300000,
+        areaSft: 44.464,
+        accommodationDays: 13, // Kuakata 10 + DFI 3
+        profitDays: 13,
+        nominatedPersons: 20, // CLIENT TO CONFIRM
+        insuranceBDT: 500000,
+      },
+    ],
     comboSlugs: ["kuakata-hotel", "sun-care", "dfi", "mangrove"],
     badge: "Best Value — 4 Projects",
     badgeBn: "সর্বোচ্চ সুবিধা — ৪টি প্রকল্প",

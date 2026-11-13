@@ -24,8 +24,8 @@ export default function PackagesSection() {
           title={isBn ? "আপনার উপযুক্ত প্যাকেজ বেছে নিন" : "Transparent ownership tiers"}
           description={
             isBn
-              ? "প্রতিটি প্যাকেজে বুকিং মানি, কিস্তি এবং বার্ষিক মুনাফার দিন স্পষ্টভাবে নির্ধারিত।"
-              : "Every tier sets out booking money, instalments and annual profit days in plain terms."
+              ? "প্রতিটি প্যাকেজে বুকিং মানি, কিস্তি এবং বার্ষিক আবাসন সুবিধা ও মুনাফা ভাগাভাগি স্পষ্টভাবে নির্ধারিত।"
+              : "Every tier sets out booking money, instalments and annual accommodation days in plain terms."
           }
           action={
             <Link href="/packages" className="btn btn-outline">
@@ -82,10 +82,12 @@ export default function PackagesSection() {
                   </div>
                   <div className="flex items-center justify-between gap-2">
                     <dt className="text-[var(--sunset-grey-700)]">
-                      {isBn ? "মুনাফার সময়" : "Profit period"}
+                      {isBn ? "আবাসন সুবিধা" : "Accommodation days"}
                     </dt>
                     <dd className="font-semibold text-[var(--sunset-red)]">
-                      {isBn ? pkg.profitDaysBn : `${pkg.profitDays} days / yr`}
+                      {isBn
+                        ? `${pkg.accommodationDays ?? pkg.profitDays} দিন / বছর`
+                        : `${pkg.accommodationDays ?? pkg.profitDays} days / yr`}
                     </dd>
                   </div>
                 </dl>
@@ -120,8 +122,8 @@ export default function PackagesSection() {
 
         <p className="mx-auto mt-10 max-w-2xl text-center text-[11.5px] leading-relaxed text-[var(--sunset-grey-700)]">
           {isBn
-            ? "* মুনাফা বার্ষিক নিরীক্ষিত পরিচালন আয় থেকে আপনার প্যাকেজের মুনাফার দিন অনুযায়ী বিতরণ করা হয়। এটি শুধুমাত্র আনুমানিক হিসাব; শর্ত প্রযোজ্য।"
-            : "* Returns are distributed annually from net audited operating revenue according to your package profit-period days. Illustrative only; subject to terms."}
+            ? "* দৃষ্টান্তমূলক তথ্য। শর্ত প্রযোজ্য। বিনিয়োগের পূর্বে অনুগ্রহ করে চুক্তিপত্র (Deed of Agreement) পড়ে নিন।"
+            : "* Illustrative information. Terms apply. Please read the Deed of Agreement before investing."}
         </p>
       </div>
     </section>

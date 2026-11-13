@@ -21,11 +21,11 @@ export default function CalculatorPageContent() {
     },
     {
       title: isBn
-        ? "বার্ষিক মুনাফার দিন সম্পর্কিত ব্যাখ্যা"
-        : "Annual profit days explained",
+        ? "বার্ষিক আবাসন সুবিধা ও মুনাফা বণ্টন সম্পর্কিত ব্যাখ্যা"
+        : "Annual accommodation days and profit-sharing explained",
       body: isBn
-        ? "প্রতিটি প্যাকেজে ক্যালেন্ডার বছরে নির্দিষ্ট সংখ্যক মুনাফার দিন বরাদ্দ থাকে — যেমন প্লাটিনামে ১১২ দিন এবং গোল্ডে ৫৬ দিন। ওই সময়ের মধ্যে হোটেল স্যুট, কনভেনশন সুবিধা ও স্বাস্থ্যসেবা থেকে প্রাপ্ত নিট পরিচালনা মুনাফা আনুপাতিকভাবে বণ্টন করা হয়।"
-        : "Each package allocates a defined number of profit-sharing days per calendar year — for example 112 days for Platinum and 56 for Gold. Net operational revenue from hotel suites, convention facilities and healthcare services over that period is distributed proportionally.",
+        ? "প্রতিটি প্যাকেজে ক্যালেন্ডার বছরে নির্দিষ্ট সংখ্যক আবাসন দিন বরাদ্দ থাকে — যেমন কুয়াকাটায় প্লাটিনামে ১১২ দিন এবং গোল্ডে ৫৬ দিন। এটি বিনিয়োগকারীর বার্ষিক থাকার সুবিধা (Accommodation days), কোনো মুনাফা নয়। মুনাফা বার্ষিক নিরীক্ষিত পরিচালন আয়ের ওপর ভিত্তি করে আনুপাতিক হারে বণ্টিত হয়।"
+        : "Each package allocates a defined number of complimentary accommodation stay days per calendar year — for example 112 days for Platinum and 56 for Gold. These are stay days at the hotel, not profit. Profit is distributed separately from net audited operating revenue according to your agreed sharing percentage.",
     },
     {
       title: isBn
@@ -52,8 +52,8 @@ export default function CalculatorPageContent() {
         }
         description={
           isBn
-            ? "প্লাটিনাম, গোল্ড, সিলভার ও ব্রোঞ্জ প্যাকেজের বিনিয়োগ বিশ্লেষণ করুন। বুকিং মানি, কিস্তি কাঠামো এবং বার্ষিক মুনাফার দিনের হিসাব জেনে নিন।"
-            : "Explore the investment breakdown across Platinum, Gold, Silver and Bronze tiers. Calculate booking amounts, structured balances and annual profit days."
+            ? "প্লাটিনাম, গোল্ড, সিলভার ও ব্রোঞ্জ প্যাকেজের বিনিয়োগ বিশ্লেষণ করুন। বুকিং মানি, কিস্তি কাঠামো এবং বার্ষিক আবাসন সুবিধার হিসাব জেনে নিন।"
+            : "Explore the investment breakdown across Platinum, Gold, Silver and Bronze tiers. Calculate booking amounts, structured balances and annual accommodation days."
         }
         actions={
           <Link href="/packages" className="btn btn-outline-white">

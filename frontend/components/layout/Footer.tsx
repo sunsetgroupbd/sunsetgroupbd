@@ -80,7 +80,7 @@ export default function Footer() {
 
             <div className="mt-7 space-y-1.5 text-[11.5px] text-[rgba(255, 255, 255,0.45)]">
               <p>{isBn ? "আরজেএসসি নিবন্ধন নং C-189422/2023" : "RJSC Reg. No. C-189422/2023"}</p>
-              <p>{isBn ? "শরীয়া সুপারভাইজরি কমিটি প্রত্যয়িত" : "Shariah Supervisory Committee certified"}</p>
+              <p>{isBn ? "শরীয়া সুপারভাইজরি কমিটি তত্ত্বাবধানে পরিচালিত" : "Shariah Supervisory Committee supervised"}</p>
             </div>
 
             <div className="mt-7 flex gap-2.5">
@@ -204,6 +204,17 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+        </div>
+      </div>
+
+      {/* Disclaimer Notice */}
+      <div className="border-t border-[rgba(255, 255, 255,0.08)] py-4">
+        <div className="container-site">
+          <p className="text-center text-[11.5px] leading-relaxed text-[rgba(255, 255, 255,0.52)]">
+            {isBn
+              ? "দৃষ্টান্তমূলক তথ্য। শর্ত প্রযোজ্য। বিনিয়োগের পূর্বে অনুগ্রহ করে চুক্তিপত্র (Deed of Agreement) পড়ে নিন।"
+              : "Illustrative information. Terms apply. Please read the Deed of Agreement before investing."}
+          </p>
         </div>
       </div>
 

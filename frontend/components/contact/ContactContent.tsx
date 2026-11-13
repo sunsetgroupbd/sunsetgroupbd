@@ -32,8 +32,8 @@ export default function ContactContent({
         }
         description={
           isBn
-            ? "সাফ-কবালা নিবন্ধন, শরীয়া সনদ বা কোনো নির্দিষ্ট প্রকল্পের অগ্রগতি সম্পর্কে জানতে চান? আমাদের সিনিয়র বিনিয়োগ উপদেষ্টারা আপনাকে সার্বিক সহায়তা করতে প্রস্তুত।"
-            : "Questions about saf-kabala registration, Shariah certification or a specific project milestone? Our advisers are here to guide you."
+            ? "সাফ-কবালা নিবন্ধন, শরীয়া তদারকি বা কোনো নির্দিষ্ট প্রকল্পের অগ্রগতি সম্পর্কে জানতে চান? আমাদের সিনিয়র বিনিয়োগ উপদেষ্টারা আপনাকে সার্বিক সহায়তা করতে প্রস্তুত।"
+            : "Questions about saf-kabala registration, Shariah supervision or a specific project milestone? Our advisers are here to guide you."
         }
         align="center"
       />
@@ -51,8 +51,8 @@ export default function ContactContent({
                 }
                 description={
                   isBn
-                    ? "আমাদের ধানমন্ডি প্রধান কার্যালয়ে সরাসরি পরামর্শ, ব্যক্তিগত প্রসপেক্টাস পর্যালোচনা এবং দলিলের তথ্য যাচাইয়ের জন্য স্বাগত।"
-                    : "Our advisers are available for in-person consultations, private prospectus walkthroughs and deed verification at our Dhanmondi headquarters."
+                    ? "আমাদের ধানমন্ডি প্রধান কার্যালয়ে সরাসরি পরামর্শ, ব্যক্তিগত দলিল ও প্রকল্প নথি পর্যালোচনা এবং দলিলের তথ্য যাচাইয়ের জন্য স্বাগত।"
+                    : "Our advisers are available for in-person consultations, private documentation walkthroughs and deed verification at our Dhanmondi headquarters."
                 }
                 className="mb-9"
               />

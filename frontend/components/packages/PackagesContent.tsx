@@ -1,13 +1,47 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { Check, ShieldCheck, Scale, Award, ArrowRight } from "lucide-react";
+import { Check, ShieldCheck, Scale, Award, ArrowRight, Building2, HeartPulse, Sparkles, Layers } from "lucide-react";
 import PageHero from "@/components/layout/PageHero";
-import { packages } from "@/data/packages";
+import {
+  projectPackagesMap,
+  ProjectPackageCategory,
+} from "@/data/packages";
 import { useLang } from "@/lib/lang";
 
 export default function PackagesContent() {
   const { isBn } = useLang();
+  const [activeCategory, setActiveCategory] = useState<ProjectPackageCategory>("kuakata");
+
+  const categories: { id: ProjectPackageCategory; labelEn: string; labelBn: string; icon: typeof Building2 }[] = [
+    {
+      id: "kuakata",
+      labelEn: "Kuakata Hotel & Resort",
+      labelBn: "কুয়াকাটা হোটেল ও রিসোর্ট",
+      icon: Building2,
+    },
+    {
+      id: "sun-care",
+      labelEn: "Sun Care Hospital",
+      labelBn: "সান কেয়ার হাসপাতাল",
+      icon: HeartPulse,
+    },
+    {
+      id: "dfi",
+      labelEn: "Dhaka Fantasy Island",
+      labelBn: "ঢাকা ফ্যান্টাসি আইল্যান্ড",
+      icon: Sparkles,
+    },
+    {
+      id: "super-combo",
+      labelEn: "Super Combo (All 4)",
+      labelBn: "সুপার কম্বো (৪টি প্রকল্প)",
+      icon: Layers,
+    },
+  ];
+
+  const currentPackages = projectPackagesMap[activeCategory];
 
   const assurances = [
     {
@@ -28,8 +62,8 @@ export default function PackagesContent() {
       icon: Award,
       title: isBn ? "কোম্পানি আইন ১৯৯৪ সুরক্ষা" : "Company Act 1994 backing",
       body: isBn
-        ? "সানসেট কুয়াকাটা হোটেল ও রিসোর্ট লিমিটেড বাংলাদেশ সরকারের কোম্পানি আইন ১৯৯৪-এর অধীন আরজেএসসি-তে নিবন্ধিত।"
-        : "Sunset Kuakata Hotel & Resort Ltd. is registered with RJSC under the Company Act 1994.",
+        ? "সানসেট গ্রুপের প্রকল্পসমূহ বাংলাদেশ সরকারের কোম্পানি আইন ১৯৯৪-এর অধীন আরজেএসসি-তে নিবন্ধিত।"
+        : "Sunset Group entities are registered with RJSC under the Company Act 1994.",
     },
   ];
 
@@ -48,8 +82,8 @@ export default function PackagesContent() {
         }
         description={
           isBn
-            ? "প্রতিটি প্যাকেজ সানসেট কুয়াকাটা হোটেল ও রিসোর্ট লিমিটেড-এ দলিলভিত্তিক, শরীয়া-তদারকিকৃত অংশীদারিত্ব নিশ্চিত করে। আপনার বিনিয়োগ পরিকল্পনার সাথে মানানসই প্যাকেজটি বেছে নিন।"
-            : "Every package represents deeded, Shariah-supervised ownership in Sunset Kuakata Hotel & Resort Ltd. Choose the tier that matches your investment horizon."
+            ? "প্রতিটি প্যাকেজ দলিলভিত্তিক, শরীয়া-তদারকিকৃত অংশীদারিত্ব নিশ্চিত করে। কুয়াকাটা হোটেল, সান কেয়ার হাসপাতাল, ঢাকা ফ্যান্টাসি আইল্যান্ড বা সুপার কম্বো থেকে আপনার বিনিয়োগের স্তর বেছে নিন।"
+            : "Every package represents deeded, Shariah-supervised ownership across Kuakata Hotel & Resort, Sun Care Hospital, Dhaka Fantasy Island, or the diversified Super Combo portfolio."
         }
         actions={
           <>
@@ -64,15 +98,42 @@ export default function PackagesContent() {
         }
       />
 
+      {/* Category selector tabs */}
+      <section className="border-b border-[var(--line)] bg-white py-6">
+        <div className="container-site">
+          <div className="flex flex-wrap items-center justify-center gap-2.5">
+            {categories.map((cat) => {
+              const Icon = cat.icon;
+              const isActive = activeCategory === cat.id;
+              return (
+                <button
+                  key={cat.id}
+                  onClick={() => setActiveCategory(cat.id)}
+                  type="button"
+                  className={`flex items-center gap-2 rounded-full px-5 py-2.5 text-[13px] font-semibold transition-all ${
+                    isActive
+                      ? "bg-[var(--sunset-green-900)] text-white shadow-sm"
+                      : "bg-[var(--sand)] text-[var(--ink)] hover:bg-[rgba(18,54,42,0.08)]"
+                  }`}
+                >
+                  <Icon size={15} />
+                  <span>{isBn ? cat.labelBn : cat.labelEn}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       <section className="section-gap" style={{ backgroundColor: "var(--paper)" }}>
         <div className="container-site">
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {packages.map((pkg) => (
+            {currentPackages.map((pkg) => (
               <article
                 key={pkg.id}
                 className={`flex flex-col justify-between rounded-[18px] border bg-white p-7 transition-shadow hover:shadow-[0_20px_55px_-32px_rgba(18,54,42,0.4)] ${
                   pkg.highlighted
-                    ? "border-[var(--sunset-green-900)]"
+                    ? "border-[var(--sunset-green-900)] ring-1 ring-[var(--sunset-green-900)]"
                     : "border-[var(--line)]"
                 }`}
               >
@@ -106,6 +167,7 @@ export default function PackagesContent() {
                         {isBn ? pkg.bookingBn : pkg.bookingDisplay}
                       </dd>
                     </div>
+
                     <div className="flex items-center justify-between">
                       <dt className="text-[var(--sunset-grey-700)]">
                         {isBn ? "বাকি পরিশোধ" : "Remaining balance"}
@@ -116,14 +178,61 @@ export default function PackagesContent() {
                           : `৳ ${(pkg.remainingBDT / 100000).toFixed(2)} Lac`}
                       </dd>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <dt className="text-[var(--sunset-grey-700)]">
-                        {isBn ? "মুনাফার সময়কাল" : "Profit-sharing period"}
-                      </dt>
-                      <dd className="font-semibold text-[var(--sunset-red)]">
-                        {isBn ? pkg.profitDaysBn : `${pkg.profitDays} days / year`}
-                      </dd>
-                    </div>
+
+                    {pkg.areaSft && (
+                      <div className="flex items-center justify-between">
+                        <dt className="text-[var(--sunset-grey-700)]">
+                          {isBn ? "সাফ-কবালা স্পেস" : "Deeded Area"}
+                        </dt>
+                        <dd className="font-semibold text-[var(--ink)]">
+                          {pkg.areaSft} {isBn ? "বর্গফুট" : "sft"}
+                        </dd>
+                      </div>
+                    )}
+
+                    {pkg.accommodationDays > 0 && (
+                      <div className="flex items-center justify-between">
+                        <dt className="text-[var(--sunset-grey-700)]">
+                          {isBn ? "আবাসন সুবিধা" : "Accommodation days"}
+                        </dt>
+                        <dd className="font-semibold text-[var(--sunset-red)]">
+                          {isBn ? pkg.accommodationDaysBn : `${pkg.accommodationDays} days / yr`}
+                        </dd>
+                      </div>
+                    )}
+
+                    {pkg.profitSharePercent && (
+                      <div className="flex items-center justify-between">
+                        <dt className="text-[var(--sunset-grey-700)]">
+                          {isBn ? "মুনাফা অংশীদারিত্ব" : "Profit Sharing"}
+                        </dt>
+                        <dd className="font-semibold text-[var(--sunset-green-700)]">
+                          {pkg.profitSharePercent}%
+                        </dd>
+                      </div>
+                    )}
+
+                    {pkg.nominatedPersons && (
+                      <div className="flex items-center justify-between">
+                        <dt className="text-[var(--sunset-grey-700)]">
+                          {isBn ? "মনোনীত ব্যক্তি" : "Nominated Persons"}
+                        </dt>
+                        <dd className="font-semibold text-[var(--sunset-green-700)]">
+                          {pkg.nominatedPersons} {isBn ? "জন" : "persons"}
+                        </dd>
+                      </div>
+                    )}
+
+                    {pkg.insuranceBDT && (
+                      <div className="flex items-center justify-between">
+                        <dt className="text-[var(--sunset-grey-700)]">
+                          {isBn ? "জীবন বীমা কাভারেজ" : "Life Insurance"}
+                        </dt>
+                        <dd className="font-semibold text-[var(--sunset-green-700)]">
+                          ৳ {pkg.insuranceBDT / 100000} Lac
+                        </dd>
+                      </div>
+                    )}
                   </dl>
 
                   <ul className="mb-8 space-y-2.5">
@@ -143,7 +252,7 @@ export default function PackagesContent() {
                 </div>
 
                 <Link
-                  href={`/contact?package=${encodeURIComponent(pkg.name)}`}
+                  href={`/contact?package=${encodeURIComponent(`${pkg.name} (${activeCategory.toUpperCase()})`)}`}
                   className={`btn w-full ${
                     pkg.highlighted ? "btn-primary" : "btn-outline"
                   }`}
@@ -154,11 +263,18 @@ export default function PackagesContent() {
             ))}
           </div>
 
-          <p className="mx-auto mt-10 max-w-2xl text-center text-[11.5px] leading-relaxed text-[var(--sunset-grey-700)]">
-            {isBn
-              ? "* লাভ-ক্ষতি বণ্টন নিরীক্ষিত ব্যবসায়িক আয়ের ওপর নির্ভরশীল। এটি কোনো সুনির্দিষ্ট বা নিশ্চিত মুনাফার প্রতিশ্রুতি নয়। বিনিয়োগের পূর্বে অনুগ্রহ করে নিয়মাবলী ও শর্তসমূহ সম্পূর্ণ পড়ুন।"
-              : "* Profit-sharing is subject to actual project performance and audited accounts. Not a guaranteed return. Please read the full terms and conditions."}
-          </p>
+          <div className="mx-auto mt-12 max-w-3xl rounded-[16px] border border-[var(--line)] bg-[var(--sand)] p-6 text-center">
+            <p className="text-[12.5px] font-medium text-[var(--ink)]">
+              {isBn
+                ? "মালিকানা প্রক্রিয়া: মানি রসিদ → ডাউন পেমেন্টের পর ডিড অব এগ্রিমেন্ট (চুক্তিপত্র) → সম্পূর্ণ পরিশোধের পর সাফ-কবালা সাব-রেজিস্ট্রি নিবন্ধন।"
+                : "Ownership Process: Money Receipt → Deed of Agreement (after down payment) → Saf-Kabala registration (after full payment). Flexible installments available."}
+            </p>
+            <p className="mt-2 text-[11.5px] leading-relaxed text-[var(--sunset-grey-700)]">
+              {isBn
+                ? "দৃষ্টান্তমূলক তথ্য। শর্ত প্রযোজ্য। বিনিয়োগের পূর্বে অনুগ্রহ করে চুক্তিপত্র (Deed of Agreement) পড়ে নিন। সাফ-কবালা নিবন্ধনের পর শেয়ার স্থানান্তর ও বিক্রয় নীতিমালার অধীনে অনুমোদিত।"
+                : "Illustrative information. Terms apply. Please read the Deed of Agreement before investing. Share transfer and resale permitted following saf-kabala registration."}
+            </p>
+          </div>
         </div>
       </section>
 

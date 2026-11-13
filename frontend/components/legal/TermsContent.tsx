@@ -88,7 +88,7 @@ export default function TermsContent() {
             <p className="text-[12.5px] leading-relaxed text-[var(--sunset-grey-700)]">
               {isBn
                 ? "আমাদের যেকোনো আইনি চুক্তি বা সাফ-কবালা দলিলের নমুনা দেখতে আমাদের প্রধান কার্যালয়ে সরাসরি আসুন।"
-                : "Copies of specimen deed documents and the full investment prospectus are available upon request."}
+                : "Copies of specimen deed documents and official investment documentation are available upon request."}
             </p>
             <div className="mt-4">
               <Link href="/contact" className="btn btn-primary">

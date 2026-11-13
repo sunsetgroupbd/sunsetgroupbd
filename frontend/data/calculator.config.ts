@@ -1,7 +1,7 @@
 /**
  * CALCULATOR CONFIG
- * TODO: Fill in real profit rates before launch.
- * Keep this file as the single source of truth for all calculator figures.
+ * Kept aligned with verified package prices and accommodation days.
+ * Note: Stay days at the hotel are strictly Accommodation days, not profit.
  */
 
 export interface PackageCalcConfig {
@@ -10,13 +10,17 @@ export interface PackageCalcConfig {
   nameBn: string;
   priceBDT: number;
   bookingBDT: number;
+  areaSft: number;
+  accommodationDays: number;
+  /** @deprecated mapped to accommodationDays */
   profitDays: number;
+  profitSharePercent?: number;
   /**
    * TODO: Set real annual profit rate (as decimal, e.g. 0.12 = 12%)
    * This is used ONLY for illustrative projection display.
    * NOT a guaranteed return.
    */
-  illustrativeAnnualRate: number; // PLACEHOLDER — replace with real data
+  illustrativeAnnualRate: number;
 }
 
 export const calculatorConfig: PackageCalcConfig[] = [
@@ -24,43 +28,54 @@ export const calculatorConfig: PackageCalcConfig[] = [
     id: "platinum",
     name: "Platinum",
     nameBn: "প্লাটিনাম",
-    priceBDT: 3600000,
-    bookingBDT: 800000,
+    priceBDT: 5400000,
+    bookingBDT: 1200000,
+    areaSft: 280,
+    accommodationDays: 112,
     profitDays: 112,
-    illustrativeAnnualRate: 0.0, // TODO: set real rate
+    profitSharePercent: 60,
+    illustrativeAnnualRate: 0.0,
   },
   {
     id: "gold",
     name: "Gold",
     nameBn: "গোল্ড",
-    priceBDT: 1850000,
-    bookingBDT: 500000,
+    priceBDT: 2750000,
+    bookingBDT: 750000,
+    areaSft: 140,
+    accommodationDays: 56,
     profitDays: 56,
-    illustrativeAnnualRate: 0.0, // TODO: set real rate
+    profitSharePercent: 60,
+    illustrativeAnnualRate: 0.0,
   },
   {
     id: "silver",
     name: "Silver",
     nameBn: "সিলভার",
-    priceBDT: 1150000,
-    bookingBDT: 300000,
+    priceBDT: 1680000,
+    bookingBDT: 450000,
+    areaSft: 84,
+    accommodationDays: 33,
     profitDays: 33,
-    illustrativeAnnualRate: 0.0, // TODO: set real rate
+    profitSharePercent: 50,
+    illustrativeAnnualRate: 0.0,
   },
   {
     id: "bronze",
     name: "Bronze",
     nameBn: "ব্রোঞ্জ",
-    priceBDT: 400000,
-    bookingBDT: 100000,
+    priceBDT: 570000,
+    bookingBDT: 150000,
+    areaSft: 28,
+    accommodationDays: 10,
     profitDays: 10,
-    illustrativeAnnualRate: 0.0, // TODO: set real rate
+    profitSharePercent: 40,
+    illustrativeAnnualRate: 0.0,
   },
 ];
 
 export const DISCLAIMER_EN =
-  "Illustrative estimate only. Profit rates shown are placeholders pending final board approval. Actual returns depend on project performance. This is not a guarantee of returns. Please read the full terms and conditions and consult the company before investing.";
+  "Illustrative estimate only. Profit-sharing is subject to actual operational performance and audited accounts. This is not a guarantee of returns. Please read the Deed of Agreement before investing.";
 
 export const DISCLAIMER_BN =
-  "এটি শুধুমাত্র একটি চিত্রমূলক অনুমান। দেখানো মুনাফার হার চূড়ান্ত বোর্ড অনুমোদনের আগে প্লেসহোল্ডার। প্রকৃত মুনাফা প্রকল্পের কর্মক্ষমতার উপর নির্ভর করে। এটি রিটার্নের কোনো গ্যারান্টি নয়। বিনিয়োগের আগে সম্পূর্ণ নিয়মাবলী পড়ুন এবং কোম্পানির সাথে পরামর্শ করুন।";
-
+  "এটি শুধুমাত্র একটি চিত্রমূলক অনুমান। প্রকৃত লভ্যাংশ ব্যবসায়িক কর্মক্ষমতা এবং নিরীক্ষিত হিসাবের ওপর নির্ভরশীল। এটি কোনো নিশ্চিত মুনাফার প্রতিশ্রুতি নয়। বিনিয়োগের পূর্বে অনুগ্রহ করে চুক্তিপত্র (Deed of Agreement) পড়ে নিন।";

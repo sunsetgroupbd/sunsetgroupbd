@@ -51,8 +51,8 @@ export default function FinalCTA() {
 
           <p className="text-body-lg mx-auto mb-9 max-w-xl leading-relaxed text-[rgba(255, 255, 255,0.7)]">
             {isBn
-              ? "সীমিত সংখ্যক সাফ-কবালা নিবন্ধিত শেয়ারহোল্ডার প্যাকেজ উপলব্ধ। আজই আমাদের বিনিয়োগ উপদেষ্টার সাথে কথা বলুন।"
-              : "A limited number of saf-kabala registered packages remain. Speak directly with an investment adviser today."}
+              ? "দলিলভিত্তিক সাফ-কবালা নিবন্ধিত অংশীদারিত্ব সম্পর্কে জানতে আজই আমাদের বিনিয়োগ উপদেষ্টার সাথে কথা বলুন।"
+              : "Learn more about deeded saf-kabala ownership packages. Speak directly with an investment adviser today."}
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-3">

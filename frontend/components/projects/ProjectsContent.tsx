@@ -123,7 +123,7 @@ export default function ProjectsContent() {
                       href={`/projects/${project.slug}`}
                       className="btn btn-outline w-full justify-between"
                     >
-                      <span>{isBn ? "প্রসপেক্টাস ও প্যাকেজ" : "View prospectus & packages"}</span>
+                      <span>{isBn ? "প্রকল্প বিবরণ ও প্যাকেজ" : "View project & packages"}</span>
                       <ArrowRight size={13} />
                     </Link>
                   </div>

@@ -18,7 +18,7 @@ export default function ProfitCalculator() {
   const totalInvestment = selectedPkg.priceBDT * customUnits;
   const totalBooking = selectedPkg.bookingBDT * customUnits;
   const remainingAmount = totalInvestment - totalBooking;
-  const totalProfitDays = selectedPkg.profitDays * customUnits;
+  const totalAccommodationDays = (selectedPkg.accommodationDays ?? selectedPkg.profitDays) * customUnits;
 
   const isRatePlaceholder = selectedPkg.illustrativeAnnualRate === 0;
   const projectedAnnualReturn = totalInvestment * selectedPkg.illustrativeAnnualRate;
@@ -68,7 +68,7 @@ export default function ProfitCalculator() {
                   ৳ {(pkg.priceBDT / 100000).toFixed(2)} Lac
                 </span>
                 <span className="mt-2 block text-[11px] opacity-70">
-                  {pkg.profitDays} {isBn ? "দিন" : "profit days"}
+                  {pkg.accommodationDays ?? pkg.profitDays} {isBn ? "দিন আবাসন" : "stay days"}
                 </span>
               </button>
             );
@@ -161,9 +161,9 @@ export default function ProfitCalculator() {
               note: isBn ? "সহজ কিস্তি কাঠামো" : "Structured instalment plan",
             },
             {
-              label: t.packages.profitDays,
-              value: `${totalProfitDays} ${isBn ? "দিন" : "days"}`,
-              note: isBn ? "বার্ষিক ব্যবসায়িক আয় বণ্টন চক্র" : "Annual operational revenue cycle",
+              label: isBn ? "আবাসন সুবিধা" : "Accommodation stay days",
+              value: `${totalAccommodationDays} ${isBn ? "দিন" : "days"}`,
+              note: isBn ? "বার্ষিক বিনামূল্যে হোটেল থাকার সুবিধা" : "Complimentary annual hotel stay days",
               accent: true,
             },
           ].map((item) => (
@@ -198,8 +198,8 @@ export default function ProfitCalculator() {
               {isRatePlaceholder ? (
                 <span className="text-[var(--sunset-red)]">
                   {isBn
-                    ? "মুনাফার হার গোপনীয় এবং ব্যক্তিগত পরামর্শে বিস্তারিত জানানো হয়।"
-                    : "Rates are confidential and disclosed during a private briefing."}
+                    ? "প্রকৃত মুনাফা নিরীক্ষিত পরিচালন আয়ের ওপর ভিত্তি করে নির্ধারিত হবে।"
+                    : "Actual returns depend on net audited operating performance."}
                 </span>
               ) : (
                 <span className="text-[var(--paper)]">

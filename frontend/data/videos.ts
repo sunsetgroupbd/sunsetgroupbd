@@ -43,9 +43,9 @@ export const projectVideos: ProjectVideo[] = [
     category: "Eco-Tourism",
     duration: "Project Showcase",
     description:
-      "Located just 20 minutes from Bangladesh Parliament House in Mohammadpur, DFI bridges modern residential zones, commercial hubs, and nature-inspired staycations.",
+      "Located just 19 minutes from 27 Shaptak Square and 20 minutes from Parliament House in Mohammadpur, DFI bridges modern residential zones, commercial hubs, and nature-inspired staycations.",
     descriptionBn:
-      "জাতীয় সংসদ ভবন থেকে মাত্র ২০ মিনিটে মোহাম্মদপুরে অবস্থিত ডিএফআই — পরিবেশবান্ধব রিসোর্ট ও বাণিজ্যিক বিনিয়োগের দারুণ সুযোগ।",
+      "২৭ সপ্তক স্কয়ার থেকে ১৯ মিনিট ও জাতীয় সংসদ ভবন থেকে মাত্র ২০ মিনিটে মোহাম্মদপুরে অবস্থিত ডিএফআই — পরিবেশবান্ধব রিসোর্ট ও বাণিজ্যিক বিনিয়োগের দারুণ সুযোগ।",
     thumbnail: "https://img.youtube.com/vi/RaqvrqdSCe4/maxresdefault.jpg",
   },
   {
@@ -58,9 +58,9 @@ export const projectVideos: ProjectVideo[] = [
     category: "Hospital",
     duration: "Healthcare Tour",
     description:
-      "Explore Mohammadpur / Basila's upcoming modern multi-specialty hospital. Learn how shareholders and 20 nominated family members receive lifetime healthcare at cost price.",
+      "Explore Mohammadpur / Basila's upcoming modern multi-specialty hospital (15 min from 27 Shaptak Square). Learn how shareholders and 20 to 200 nominated family members depending on tier receive lifetime healthcare at cost price.",
     descriptionBn:
-      "মোহাম্মদপুর/বসিলায় আধুনিক বহু-বিশেষজ্ঞ হাসপাতাল। বিনিয়োগকারী এবং ২০ জন মনোনীত ব্যক্তির খরচমূল্যে আজীবন স্বাস্থ্যসেবার সুযোগ।",
+      "মোহাম্মদপুর/বসিলায় আধুনিক বহু-বিশেষজ্ঞ হাসপাতাল (২৭ সপ্তক স্কয়ার থেকে ১৫ মিনিট)। বিনিয়োগকারী এবং প্যাকেজ স্তর অনুযায়ী ২০ থেকে ২০০ জন মনোনীত ব্যক্তির খরচমূল্যে আজীবন স্বাস্থ্যসেবার সুযোগ।",
     thumbnail: "https://img.youtube.com/vi/7eYD2fDw4Fk/maxresdefault.jpg",
   },
   {

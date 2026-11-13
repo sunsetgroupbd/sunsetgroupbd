@@ -298,8 +298,8 @@ export default function AboutContent() {
               </div>
               <h2 className="text-display-md mb-5 text-[var(--paper)]">
                 {isBn
-                  ? "ইসলামী নীতিমালার আলোকে নিরীক্ষিত ও প্রত্যয়িত"
-                  : "Audited and certified under Islamic principles"}
+                  ? "ইসলামী নীতিমালার আলোকে নিরীক্ষিত ও পরিচালিত"
+                  : "Audited and supervised under Islamic principles"}
               </h2>
               <div className="space-y-4 text-body text-[rgba(255, 255, 255,0.72)]">
                 <p>
@@ -329,11 +329,11 @@ export default function AboutContent() {
 
               <p className="mt-7 rounded-[12px] border border-[rgba(255, 255, 255,0.14)] bg-[rgba(255, 255, 255,0.04)] p-4 text-[12px] leading-relaxed text-[rgba(255, 255, 255,0.62)]">
                 <strong className="text-[var(--paper)]">
-                  {isBn ? "অফিসিয়াল ফতোয়া ও সনদ" : "Official fatwa & board certification"}
+                  {isBn ? "শরীয়া সুপারভাইজরি বোর্ড তত্ত্বাবধান" : "Shariah supervisory board oversight"}
                 </strong>{" "}
                 {isBn
-                  ? "আমাদের কর্পোরেট কার্যালয়ে পরিদর্শনের জন্য উন্মুক্ত। শরীয়া নিবন্ধন নং SG/SHR-2023/044।"
-                  : "is available on request at our corporate office. Shariah registration No. SG/SHR-2023/044 — verification on file."}
+                  ? "সংক্রান্ত নীতিমালা ও বিবরণ আমাদের কর্পোরেট কার্যালয়ে পরিদর্শনের জন্য উন্মুক্ত।"
+                  : "guidelines and documentation are available on request at our corporate office."}
               </p>
             </div>
 
@@ -351,8 +351,8 @@ export default function AboutContent() {
                   {
                     title: isBn ? "প্রধান শরীয়া উপদেষ্টা" : "Chief Shariah adviser",
                     body: isBn
-                      ? "বিশিষ্ট ইসলামী অর্থনীতিবিদ ও গবেষক। বিস্তারিত প্রসপেক্টাসে উল্লেখিত।"
-                      : "Eminent Islamic finance scholar and author. Details available in the prospectus.",
+                      ? "বিশিষ্ট ইসলামী অর্থনীতিবিদ ও গবেষক। বিস্তারিত অফিসিয়াল নথিতে উল্লেখিত।"
+                      : "Eminent Islamic finance scholar and author. Details available in official documentation.",
                   },
                   {
                     title: isBn ? "আইনি ও ফিকহ পরামর্শক" : "Legal & fiqh consultant",

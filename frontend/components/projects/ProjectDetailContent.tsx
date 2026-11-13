@@ -251,14 +251,61 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
                           ৳ {(pkg.bookingBDT / 100000).toFixed(2)} Lac
                         </dd>
                       </div>
-                      <div className="flex justify-between gap-2">
-                        <dt className="text-[var(--sunset-grey-700)]">
-                          {isBn ? "মুনাফার সময়কাল" : "Profit period"}
-                        </dt>
-                        <dd className="font-semibold text-[var(--sunset-green-900)]">
-                          {pkg.profitDays} {isBn ? "দিন / বছর" : "days / yr"}
-                        </dd>
-                      </div>
+
+                      {pkg.areaSft && (
+                        <div className="flex justify-between gap-2">
+                          <dt className="text-[var(--sunset-grey-700)]">
+                            {isBn ? "সাফ-কবালা স্পেস" : "Deeded Area"}
+                          </dt>
+                          <dd className="font-semibold text-[var(--ink)]">
+                            {pkg.areaSft} {isBn ? "বর্গফুট" : "sft"}
+                          </dd>
+                        </div>
+                      )}
+
+                      {(pkg.accommodationDays ?? pkg.profitDays) ? (
+                        <div className="flex justify-between gap-2">
+                          <dt className="text-[var(--sunset-grey-700)]">
+                            {isBn ? "আবাসন সুবিধা" : "Accommodation stay"}
+                          </dt>
+                          <dd className="font-semibold text-[var(--sunset-red)]">
+                            {pkg.accommodationDays ?? pkg.profitDays} {isBn ? "দিন / বছর" : "days / yr"}
+                          </dd>
+                        </div>
+                      ) : null}
+
+                      {pkg.profitSharePercent && (
+                        <div className="flex justify-between gap-2">
+                          <dt className="text-[var(--sunset-grey-700)]">
+                            {isBn ? "মুনাফা অংশীদারিত্ব" : "Profit Sharing"}
+                          </dt>
+                          <dd className="font-semibold text-[var(--sunset-green-700)]">
+                            {pkg.profitSharePercent}%
+                          </dd>
+                        </div>
+                      )}
+
+                      {pkg.nominatedPersons && (
+                        <div className="flex justify-between gap-2">
+                          <dt className="text-[var(--sunset-grey-700)]">
+                            {isBn ? "মনোনীত ব্যক্তি" : "Nominated Persons"}
+                          </dt>
+                          <dd className="font-semibold text-[var(--sunset-green-700)]">
+                            {pkg.nominatedPersons} {isBn ? "জন" : "persons"}
+                          </dd>
+                        </div>
+                      )}
+
+                      {pkg.insuranceBDT && (
+                        <div className="flex justify-between gap-2">
+                          <dt className="text-[var(--sunset-grey-700)]">
+                            {isBn ? "জীবন বীমা কাভারেজ" : "Life Insurance"}
+                          </dt>
+                          <dd className="font-semibold text-[var(--sunset-green-700)]">
+                            ৳ {pkg.insuranceBDT / 100000} Lac
+                          </dd>
+                        </div>
+                      )}
                     </dl>
                   </div>
                   <Link
