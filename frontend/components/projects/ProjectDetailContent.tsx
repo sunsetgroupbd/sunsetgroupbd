@@ -252,13 +252,31 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
                         </dd>
                       </div>
 
+                      {pkg.units && (
+                        <div className="flex justify-between gap-2">
+                          <dt className="text-[var(--sunset-grey-700)]">
+                            {isBn ? "ইউনিট সংখ্যা" : "Units"}
+                          </dt>
+                          <dd className="font-semibold text-[var(--ink)]">
+                            {pkg.units}x {isBn ? "ইউনিট" : "Units"}
+                          </dd>
+                        </div>
+                      )}
+
                       {pkg.areaSft && (
                         <div className="flex justify-between gap-2">
                           <dt className="text-[var(--sunset-grey-700)]">
                             {isBn ? "সাফ-কবালা স্পেস" : "Deeded Area"}
                           </dt>
-                          <dd className="font-semibold text-[var(--ink)]">
-                            {pkg.areaSft} {isBn ? "বর্গফুট" : "sft"}
+                          <dd className="font-semibold text-[var(--ink)] text-right">
+                            <span>{pkg.areaSft} {isBn ? "বর্গফুট" : "sft"}</span>
+                            {pkg.landAreaSft && pkg.buildAreaSft && (
+                              <span className="block text-[10.5px] font-normal text-[var(--sunset-grey-700)]">
+                                {isBn
+                                  ? `(জমি ${pkg.landAreaSft} + নির্মাণ ${pkg.buildAreaSft})`
+                                  : `(Land ${pkg.landAreaSft} + Build ${pkg.buildAreaSft})`}
+                              </span>
+                            )}
                           </dd>
                         </div>
                       )}
@@ -273,6 +291,17 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
                           </dd>
                         </div>
                       ) : null}
+
+                      {pkg.resortDiscountPercent && (
+                        <div className="flex justify-between gap-2">
+                          <dt className="text-[var(--sunset-grey-700)]">
+                            {isBn ? "রিসোর্ট ডিসকাউন্ট" : "Resort Discount"}
+                          </dt>
+                          <dd className="font-semibold text-[var(--sunset-green-700)]">
+                            {pkg.resortDiscountPercent}%
+                          </dd>
+                        </div>
+                      )}
 
                       {pkg.profitSharePercent && (
                         <div className="flex justify-between gap-2">

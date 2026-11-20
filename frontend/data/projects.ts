@@ -10,11 +10,15 @@ export interface ProjectPackage {
   priceLabel: string;
   priceBDT: number;
   bookingBDT: number;
+  units?: number;
   areaSft?: number;
+  landAreaSft?: number;
+  buildAreaSft?: number;
   accommodationDays?: number;
   /** @deprecated use accommodationDays */
   profitDays?: number;
   profitSharePercent?: number;
+  resortDiscountPercent?: number;
   nominatedPersons?: number; // for Sun Care and Super Combo
   insuranceBDT?: number; // for Super Combo
   installmentFromBDT?: number; // for DFI
@@ -71,9 +75,9 @@ export const projects: Project[] = [
     location: "Mohammadpur / Basila, Dhaka (15 min from 27 Shaptak Square)",
     locationBn: "মোহাম্মদপুর / বসিলা, ঢাকা (২৭ সপ্তক স্কয়ার থেকে ১৫ মিনিট)",
     description:
-      "Sun Care Hospital & Diagnostic Center Ltd. is a modern multi-specialty hospital in Mohammadpur / Basila, Dhaka — conveniently located just 15 minutes from 27 Shaptak Square. Investors and 20 to 200 nominated individuals depending on tier (Bronze 20, Silver 60, Gold 100, Platinum 200 // CLIENT TO CONFIRM) receive hospital services strictly at cost price — a unique benefit beyond financial returns. The hospital features 24/7 emergency services, home visits, a full diagnostic lab, pharmacy, ambulance fleet and specialist doctors.",
+      "Sun Care Hospital & Diagnostic Center Ltd. is a modern multi-specialty hospital in Mohammadpur / Basila, Dhaka — conveniently located just 15 minutes from 27 Shaptak Square. Investors and 20 to 200 nominated individuals depending on tier (Bronze 20, Silver 60, Gold 100, Platinum 200) receive hospital services strictly at cost price — a unique benefit beyond financial returns. The hospital features 24/7 emergency services, home visits, a full diagnostic lab, pharmacy, ambulance fleet and specialist doctors.",
     descriptionBn:
-      "সান কেয়ার হাসপাতাল ও ডায়াগনস্টিক সেন্টার লিমিটেড ঢাকার মোহাম্মদপুর/বসিলায় একটি আধুনিক বহু-বিশেষজ্ঞ হাসপাতাল — ২৭ সপ্তক স্কয়ার থেকে মাত্র ১৫ মিনিটের দূরত্বে। বিনিয়োগকারী এবং প্যাকেজ স্তর অনুযায়ী ২০ থেকে ২০০ জন মনোনীত ব্যক্তি (ব্রোঞ্জ ২০, সিলভার ৬০, গোল্ড ১০০, প্লাটিনাম ২০০ // ক্লায়েন্ট নিশ্চিতকরণ সাপেক্ষ) খরচমূল্যে হাসপাতাল সেবা পাবেন। ২৪/৭ জরুরি সেবা, হোম ভিজিট, ডায়াগনস্টিক ল্যাব, ফার্মেসি, অ্যাম্বুলেন্স ও বিশেষজ্ঞ ডাক্তার রয়েছে।",
+      "সান কেয়ার হাসপাতাল ও ডায়াগনস্টিক সেন্টার লিমিটেড ঢাকার মোহাম্মদপুর/বসিলায় একটি আধুনিক বহু-বিশেষজ্ঞ হাসপাতাল — ২৭ সপ্তক স্কয়ার থেকে মাত্র ১৫ মিনিটের দূরত্বে। বিনিয়োগকারী এবং প্যাকেজ স্তর অনুযায়ী ২০ থেকে ২০০ জন মনোনীত ব্যক্তি (ব্রোঞ্জ ২০, সিলভার ৬০, গোল্ড ১০০, প্লাটিনাম ২০০) খরচমূল্যে হাসপাতাল সেবা পাবেন। ২৪/৭ জরুরি সেবা, হোম ভিজিট, ডায়াগনস্টিক ল্যাব, ফার্মেসি, অ্যাম্বুলেন্স ও বিশেষজ্ঞ ডাক্তার রয়েছে।",
     heroImage: "/images/sun-care/hero.webp",
     galleryImages: [
       "/images/sun-care/hero.webp",
@@ -88,12 +92,12 @@ export const projects: Project[] = [
       { label: "Home Service", value: "Available" },
       { label: "Registration", value: "Company Act 1994 + Saf-Kabala" },
       { label: "Investor Benefit", value: "Services at cost price" },
-      { label: "Nominated Persons", value: "20 / 60 / 100 / 200 by tier // CLIENT TO CONFIRM" },
+      { label: "Nominated Persons", value: "20 / 60 / 100 / 200 by tier" },
       { label: "Oversight", value: "Shariah Supervisory Committee" },
     ],
     whyInvest: [
       "Healthcare sector in Bangladesh growing at 15%+ annually",
-      "Investors & 20 to 200 nominated persons receive services at cost // CLIENT TO CONFIRM",
+      "Investors & 20 to 200 nominated persons receive services at cost",
       "Annual profit-sharing from both medical sales & diagnostic services revenue",
       "Legally secure saf-kabala deed registration per unit",
       "Prime location in rapidly developing Basila corridor, 15 min from Dhanmondi 27",
@@ -119,8 +123,11 @@ export const projects: Project[] = [
         priceLabel: "৳ ৩২,০০,০০০",
         priceBDT: 3200000,
         bookingBDT: 800000,
+        units: 10,
         areaSft: 24.64,
-        nominatedPersons: 200, // CLIENT TO CONFIRM
+        landAreaSft: 2.64,
+        buildAreaSft: 22,
+        nominatedPersons: 200,
       },
       {
         name: "Gold",
@@ -128,8 +135,11 @@ export const projects: Project[] = [
         priceLabel: "৳ ১৬,৫০,০০০",
         priceBDT: 1650000,
         bookingBDT: 500000,
+        units: 5,
         areaSft: 12.32,
-        nominatedPersons: 100, // CLIENT TO CONFIRM
+        landAreaSft: 1.32,
+        buildAreaSft: 11,
+        nominatedPersons: 100,
       },
       {
         name: "Silver",
@@ -137,8 +147,11 @@ export const projects: Project[] = [
         priceLabel: "৳ ১০,২০,০০০",
         priceBDT: 1020000,
         bookingBDT: 300000,
+        units: 3,
         areaSft: 7.392,
-        nominatedPersons: 60, // CLIENT TO CONFIRM
+        landAreaSft: 0.792,
+        buildAreaSft: 6.6,
+        nominatedPersons: 60,
       },
       {
         name: "Bronze",
@@ -146,8 +159,11 @@ export const projects: Project[] = [
         priceLabel: "৳ ৩,৫০,০০০",
         priceBDT: 350000,
         bookingBDT: 100000,
+        units: 1,
         areaSft: 2.464,
-        nominatedPersons: 20, // CLIENT TO CONFIRM
+        landAreaSft: 0.264,
+        buildAreaSft: 2.2,
+        nominatedPersons: 20,
       },
     ],
     badge: "Services at Cost Price",
@@ -186,7 +202,7 @@ export const projects: Project[] = [
       { label: "Location", value: "Mohammadpur, Dhaka" },
       { label: "Distance", value: "19 min from 27 Shaptak Square" },
       { label: "Zones", value: "Residential + Commercial" },
-      { label: "Installments", value: "From Tk 4,990/month // CLIENT TO CONFIRM" },
+      { label: "Installments", value: "From Tk 4,990/month" },
       { label: "Registration", value: "Company Act 1994 + Saf-Kabala" },
       { label: "Oversight", value: "Shariah Supervisory Committee" },
     ],
@@ -194,7 +210,7 @@ export const projects: Project[] = [
       "Strategic urban location — closest eco-resort to Dhaka centre (19 min from Shaptak Square)",
       "Rising demand for urban retreats and staycation tourism",
       "Residential + commercial dual-zone maximises return potential",
-      "Flexible monthly installment options starting from Tk 4,990 // CLIENT TO CONFIRM",
+      "Flexible monthly installment options starting from Tk 4,990",
       "Legally secure saf-kabala registration",
       "Shariah-compliant investment structure",
       "Annual profit-sharing from operational revenue plus annual accommodation stay days",
@@ -209,10 +225,13 @@ export const projects: Project[] = [
         priceLabel: "৳ ৩২,০০,০০০",
         priceBDT: 3200000,
         bookingBDT: 800000,
+        units: 10,
         areaSft: 140,
-        accommodationDays: 36, // TODO: CLIENT TO CONFIRM (source PDF says 30 days, brochure says 36)
+        landAreaSft: 40,
+        buildAreaSft: 100,
+        accommodationDays: 36,
         profitDays: 36,
-        profitSharePercent: 25,
+        resortDiscountPercent: 25,
       },
       {
         name: "Gold",
@@ -220,10 +239,13 @@ export const projects: Project[] = [
         priceLabel: "৳ ১৬,৫০,০০০",
         priceBDT: 1650000,
         bookingBDT: 500000,
+        units: 5,
         areaSft: 70,
+        landAreaSft: 20,
+        buildAreaSft: 50,
         accommodationDays: 17,
         profitDays: 17,
-        profitSharePercent: 20,
+        resortDiscountPercent: 20,
       },
       {
         name: "Silver",
@@ -231,10 +253,13 @@ export const projects: Project[] = [
         priceLabel: "৳ ১০,২০,০০০",
         priceBDT: 1020000,
         bookingBDT: 300000,
+        units: 3,
         areaSft: 42,
+        landAreaSft: 12,
+        buildAreaSft: 30,
         accommodationDays: 10,
         profitDays: 10,
-        profitSharePercent: 15,
+        resortDiscountPercent: 15,
       },
       {
         name: "Bronze",
@@ -242,10 +267,14 @@ export const projects: Project[] = [
         priceLabel: "৳ ৩,৫০,০০০",
         priceBDT: 350000,
         bookingBDT: 100000,
+        units: 1,
         areaSft: 14,
+        landAreaSft: 4,
+        buildAreaSft: 10,
         accommodationDays: 3,
         profitDays: 3,
-        profitSharePercent: 10,
+        resortDiscountPercent: 10,
+        installmentFromBDT: 4990,
       },
     ],
     badge: "Eco Resort — 19 min from Shaptak Sq.",
@@ -306,10 +335,13 @@ export const projects: Project[] = [
         priceLabel: "৳ ৫৪,০০,০০০",
         priceBDT: 5400000,
         bookingBDT: 1200000,
+        units: 10,
         areaSft: 280,
+        landAreaSft: 80,
+        buildAreaSft: 200,
         accommodationDays: 112,
         profitDays: 112,
-        profitSharePercent: 60,
+        resortDiscountPercent: 60,
       },
       {
         name: "Gold",
@@ -317,10 +349,13 @@ export const projects: Project[] = [
         priceLabel: "৳ ২৭,৫০,০০০",
         priceBDT: 2750000,
         bookingBDT: 750000,
+        units: 5,
         areaSft: 140,
+        landAreaSft: 40,
+        buildAreaSft: 100,
         accommodationDays: 56,
         profitDays: 56,
-        profitSharePercent: 60,
+        resortDiscountPercent: 60,
       },
       {
         name: "Silver",
@@ -328,10 +363,13 @@ export const projects: Project[] = [
         priceLabel: "৳ ১৬,৮০,০০০",
         priceBDT: 1680000,
         bookingBDT: 450000,
+        units: 3,
         areaSft: 84,
+        landAreaSft: 24,
+        buildAreaSft: 60,
         accommodationDays: 33,
         profitDays: 33,
-        profitSharePercent: 50,
+        resortDiscountPercent: 50,
       },
       {
         name: "Bronze",
@@ -339,10 +377,13 @@ export const projects: Project[] = [
         priceLabel: "৳ ৫,৭০,০০০",
         priceBDT: 570000,
         bookingBDT: 150000,
+        units: 1,
         areaSft: 28,
+        landAreaSft: 8,
+        buildAreaSft: 20,
         accommodationDays: 10,
         profitDays: 10,
-        profitSharePercent: 40,
+        resortDiscountPercent: 40,
       },
     ],
     badge: "First 5-Star in Kuakata",
@@ -413,6 +454,7 @@ export const projects: Project[] = [
         priceLabel: "৳ ৫৩,০০,০০০",
         priceBDT: 5300000,
         bookingBDT: 1050000,
+        units: 10,
         accommodationDays: 70,
         profitDays: 70,
       },
@@ -422,6 +464,7 @@ export const projects: Project[] = [
         priceLabel: "৳ ২৭,০০,০০০",
         priceBDT: 2700000,
         bookingBDT: 750000,
+        units: 5,
         accommodationDays: 35,
         profitDays: 35,
       },
@@ -431,6 +474,7 @@ export const projects: Project[] = [
         priceLabel: "৳ ১৭,০০,০০০",
         priceBDT: 1700000,
         bookingBDT: 450000,
+        units: 3,
         accommodationDays: 21,
         profitDays: 21,
       },
@@ -440,6 +484,7 @@ export const projects: Project[] = [
         priceLabel: "৳ ৫,৮০,০০০",
         priceBDT: 580000,
         bookingBDT: 150000,
+        units: 1,
         accommodationDays: 7,
         profitDays: 7,
       },
@@ -509,14 +554,14 @@ export const projects: Project[] = [
       { label: "Projects Included", value: "4 Flagship Developments (Kuakata, Sun Care, DFI, Mangrove)" },
       { label: "Sectors", value: "5-Star Hospitality, Healthcare, Urban Leisure & Marine Drive Resort" },
       { label: "Registration", value: "Company Act 1994 + Saf-Kabala" },
-      { label: "Hospital Benefit", value: "20 to 200 nominated persons // CLIENT TO CONFIRM" },
+      { label: "Hospital Benefit", value: "20 to 200 nominated persons" },
       { label: "Life Insurance", value: "৳ 5L to ৳ 50L coverage" },
       { label: "Oversight", value: "Shariah Supervisory Committee" },
     ],
     whyInvest: [
       "Maximum diversification across 4 growth sectors under a single investment",
       "Combined ownership in Kuakata 5-Star Resort, Sun Care Hospital, DFI, and Marine Drive Mangrove Resort",
-      "Healthcare services strictly at cost price for 20 to 200 nominated individuals depending on tier // CLIENT TO CONFIRM",
+      "Healthcare services strictly at cost price for 20 to 200 nominated individuals depending on tier",
       "Complimentary life insurance coverage from ৳ 5 Lakh up to ৳ 50 Lakh",
       "Annual accommodation stay days: Kuakata 10-112 days + DFI 3-36 days (13 to 148 days total)",
       "Annual audited profit-sharing from hotel operations, hospital, and eco-resorts",
@@ -534,10 +579,11 @@ export const projects: Project[] = [
         priceLabel: "৳ ১,১৫,০০,০০০",
         priceBDT: 11500000,
         bookingBDT: 1700000,
+        units: 10,
         areaSft: 444.64,
-        accommodationDays: 148, // Kuakata 112 + DFI 36 (TODO: CLIENT TO CONFIRM)
+        accommodationDays: 148, // Kuakata 112 + DFI 36
         profitDays: 148,
-        nominatedPersons: 200, // CLIENT TO CONFIRM
+        nominatedPersons: 200,
         insuranceBDT: 5000000,
       },
       {
@@ -546,10 +592,11 @@ export const projects: Project[] = [
         priceLabel: "৳ ৫৯,০০,০০০",
         priceBDT: 5900000,
         bookingBDT: 1000000,
+        units: 5,
         areaSft: 222.32,
         accommodationDays: 73, // Kuakata 56 + DFI 17
         profitDays: 73,
-        nominatedPersons: 100, // CLIENT TO CONFIRM
+        nominatedPersons: 100,
         insuranceBDT: 2500000,
       },
       {
@@ -558,10 +605,11 @@ export const projects: Project[] = [
         priceLabel: "৳ ৩৬,৩০,০০০",
         priceBDT: 3630000,
         bookingBDT: 700000,
+        units: 3,
         areaSft: 133.392,
         accommodationDays: 43, // Kuakata 33 + DFI 10
         profitDays: 43,
-        nominatedPersons: 60, // CLIENT TO CONFIRM
+        nominatedPersons: 60,
         insuranceBDT: 1500000,
       },
       {
@@ -570,10 +618,11 @@ export const projects: Project[] = [
         priceLabel: "৳ ১২,৪০,০০০",
         priceBDT: 1240000,
         bookingBDT: 300000,
+        units: 1,
         areaSft: 44.464,
         accommodationDays: 13, // Kuakata 10 + DFI 3
         profitDays: 13,
-        nominatedPersons: 20, // CLIENT TO CONFIRM
+        nominatedPersons: 20,
         insuranceBDT: 500000,
       },
     ],
