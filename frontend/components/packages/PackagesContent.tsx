@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Check, ShieldCheck, Scale, Award, ArrowRight, Building2, HeartPulse, Sparkles, Layers } from "lucide-react";
+import { Check, ShieldCheck, Scale, Award, ArrowRight, Building2, HeartPulse, Sparkles, Layers, Hotel } from "lucide-react";
 import PageHero from "@/components/layout/PageHero";
 import {
   projectPackagesMap,
@@ -20,6 +20,12 @@ export default function PackagesContent() {
       labelEn: "Kuakata Hotel & Resort",
       labelBn: "কুয়াকাটা হোটেল ও রিসোর্ট",
       icon: Building2,
+    },
+    {
+      id: "the-deck",
+      labelEn: "The Deck (Cox's Bazar)",
+      labelBn: "দ্য ডেক (কক্সবাজার)",
+      icon: Hotel,
     },
     {
       id: "sun-care",
@@ -82,8 +88,8 @@ export default function PackagesContent() {
         }
         description={
           isBn
-            ? "প্রতিটি প্যাকেজ দলিলভিত্তিক, শরীয়া-তদারকিকৃত অংশীদারিত্ব নিশ্চিত করে। কুয়াকাটা হোটেল, সান কেয়ার হাসপাতাল, ঢাকা ফ্যান্টাসি আইল্যান্ড বা সুপার কম্বো থেকে আপনার বিনিয়োগের স্তর বেছে নিন।"
-            : "Every package represents deeded, Shariah-supervised ownership across Kuakata Hotel & Resort, Sun Care Hospital, Dhaka Fantasy Island, or the diversified Super Combo portfolio."
+            ? "প্রতিটি প্যাকেজ দলিলভিত্তিক, শরীয়া-তদারকিকৃত অংশীদারিত্ব নিশ্চিত করে। কুয়াকাটা হোটেল, দ্য ডেক (কক্সবাজার), সান কেয়ার হাসপাতাল, ঢাকা ফ্যান্টাসি আইল্যান্ড বা সুপার কম্বো থেকে আপনার বিনিয়োগের স্তর বেছে নিন।"
+            : "Every package represents deeded, Shariah-supervised ownership across Kuakata Hotel & Resort, The Deck (Cox's Bazar), Sun Care Hospital, Dhaka Fantasy Island, or the diversified Super Combo portfolio."
         }
         actions={
           <>

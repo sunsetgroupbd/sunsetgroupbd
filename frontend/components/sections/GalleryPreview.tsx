@@ -26,7 +26,7 @@ export default function GalleryPreview() {
     isBn ? "সৈকত প্রাঙ্গণ" : "Beachfront",
     isBn ? "সান কেয়ার হাসপাতাল" : "Sun Care hospital",
     isBn ? "ঢাকা ফ্যান্টাসি আইল্যান্ড" : "Dhaka Fantasy Island",
-    isBn ? "দ্য ডেক" : "The Deck",
+    isBn ? "দ্য ডেক (কক্সবাজার)" : "The Deck (Cox's Bazar)",
   ];
 
   return (

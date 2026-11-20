@@ -188,12 +188,12 @@ export const galleryImages: GalleryImage[] = [
     width: 1200,
     height: 800,
   },
-  // The Deck
+  // The Deck – Cox's Bazar
   {
     id: "td-01",
     src: "/images/the-deck/The Deck view-01.webp",
-    alt: "The Deck — main view",
-    altBn: "দ্য ডেক — প্রধান দৃশ্য",
+    alt: "The Deck – Cox's Bazar — 5-Star Hotel & Resort Inani",
+    altBn: "দ্য ডেক – কক্সবাজার — ৫-তারকা হোটেল ও রিসোর্ট ইনানী",
     category: "the-deck",
     width: 1200,
     height: 800,
@@ -201,8 +201,8 @@ export const galleryImages: GalleryImage[] = [
   {
     id: "td-02",
     src: "/images/the-deck/The Deck view2-01.webp",
-    alt: "The Deck — second view",
-    altBn: "দ্য ডেক — দ্বিতীয় দৃশ্য",
+    alt: "The Deck – Cox's Bazar — Resort Architecture & Pool",
+    altBn: "দ্য ডেক – কক্সবাজার — রিসোর্ট স্থাপত্য ও সুইমিং পুল",
     category: "the-deck",
     width: 1200,
     height: 800,
@@ -210,8 +210,8 @@ export const galleryImages: GalleryImage[] = [
   {
     id: "td-03",
     src: "/images/the-deck/The deck-01.webp",
-    alt: "The Deck — lifestyle venue",
-    altBn: "দ্য ডেক — লাইফস্টাইল ভেন্যু",
+    alt: "The Deck – Cox's Bazar — 5-Star Luxury Suites & Dining",
+    altBn: "দ্য ডেক – কক্সবাজার — ৫-তারকা বিলাসবহুল স্যুট ও ডাইনিং",
     category: "the-deck",
     width: 1200,
     height: 800,
@@ -278,7 +278,7 @@ export const galleryCategories: { id: GalleryCategory; label: string; labelBn: s
   { id: "kuakata", label: "Kuakata", labelBn: "কুয়াকাটা" },
   { id: "sun-care", label: "Sun Care", labelBn: "সান কেয়ার" },
   { id: "dfi", label: "Dhaka Fantasy Island", labelBn: "ঢাকা ফ্যান্টাসি আইল্যান্ড" },
-  { id: "the-deck", label: "The Deck", labelBn: "দ্য ডেক" },
+  { id: "the-deck", label: "The Deck (Cox's Bazar)", labelBn: "দ্য ডেক (কক্সবাজার)" },
   { id: "mangrove", label: "Mangrove", labelBn: "ম্যানগ্রোভ" },
 ];
 
