@@ -12,21 +12,9 @@ import { useLang } from "@/lib/lang";
 
 export default function PackagesContent() {
   const { isBn } = useLang();
-  const [activeCategory, setActiveCategory] = useState<ProjectPackageCategory>("kuakata");
+  const [activeCategory, setActiveCategory] = useState<ProjectPackageCategory>("sun-care");
 
   const categories: { id: ProjectPackageCategory; labelEn: string; labelBn: string; icon: typeof Building2 }[] = [
-    {
-      id: "kuakata",
-      labelEn: "Kuakata Hotel & Resort",
-      labelBn: "কুয়াকাটা হোটেল ও রিসোর্ট",
-      icon: Building2,
-    },
-    {
-      id: "the-deck",
-      labelEn: "The Deck (Cox's Bazar)",
-      labelBn: "দ্য ডেক (কক্সবাজার)",
-      icon: Hotel,
-    },
     {
       id: "sun-care",
       labelEn: "Sun Care Hospital",
@@ -38,6 +26,18 @@ export default function PackagesContent() {
       labelEn: "Dhaka Fantasy Island",
       labelBn: "ঢাকা ফ্যান্টাসি আইল্যান্ড",
       icon: Sparkles,
+    },
+    {
+      id: "kuakata",
+      labelEn: "Sunset Kuakata",
+      labelBn: "সানসেট কুয়াকাটা",
+      icon: Building2,
+    },
+    {
+      id: "the-deck",
+      labelEn: "The Deck (Cox's Bazar)",
+      labelBn: "দ্য ডেক (কক্সবাজার)",
+      icon: Hotel,
     },
     {
       id: "super-combo",
@@ -88,8 +88,8 @@ export default function PackagesContent() {
         }
         description={
           isBn
-            ? "প্রতিটি প্যাকেজ দলিলভিত্তিক, শরীয়া-তদারকিকৃত অংশীদারিত্ব নিশ্চিত করে। কুয়াকাটা হোটেল, দ্য ডেক (কক্সবাজার), সান কেয়ার হাসপাতাল, ঢাকা ফ্যান্টাসি আইল্যান্ড বা সুপার কম্বো থেকে আপনার বিনিয়োগের স্তর বেছে নিন।"
-            : "Every package represents deeded, Shariah-supervised ownership across Kuakata Hotel & Resort, The Deck (Cox's Bazar), Sun Care Hospital, Dhaka Fantasy Island, or the diversified Super Combo portfolio."
+            ? "প্রতিটি প্যাকেজ দলিলভিত্তিক, শরীয়া-তদারকিকৃত অংশীদারিত্ব নিশ্চিত করে। সান কেয়ার হাসপাতাল, ঢাকা ফ্যান্টাসি আইল্যান্ড, সানসেট কুয়াকাটা, দ্য ডেক (কক্সবাজার) বা সুপার কম্বো থেকে আপনার বিনিয়োগের স্তর বেছে নিন।"
+            : "Every package represents deeded, Shariah-supervised ownership across Sun Care Hospital, Dhaka Fantasy Island, Sunset Kuakata, The Deck (Cox's Bazar), or the diversified Super Combo portfolio."
         }
         actions={
           <>

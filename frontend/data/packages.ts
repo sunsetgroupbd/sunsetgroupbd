@@ -31,7 +31,7 @@ export interface Package {
   featuresBn: string[];
 }
 
-export type ProjectPackageCategory = "kuakata" | "sun-care" | "dfi" | "super-combo" | "the-deck";
+export type ProjectPackageCategory = "sun-care" | "dfi" | "kuakata" | "the-deck" | "super-combo";
 
 /* ─────────────────────────────────────────────────────────────
    1. Kuakata Hotel & Resort (Sunset Hotel + Mangrove Eco Resort)
@@ -830,9 +830,9 @@ export const theDeckPackages: Package[] = [
 ];
 
 export const projectPackagesMap: Record<ProjectPackageCategory, Package[]> = {
-  kuakata: kuakataPackages,
   "sun-care": sunCarePackages,
   dfi: dfiPackages,
-  "super-combo": superComboPackages,
+  kuakata: kuakataPackages,
   "the-deck": theDeckPackages,
+  "super-combo": superComboPackages,
 };
