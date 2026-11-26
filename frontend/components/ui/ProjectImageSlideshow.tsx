@@ -67,7 +67,7 @@ export default function ProjectImageSlideshow({
           <span className="text-[12px] font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] truncate">
             {isBn ? currentSlide.nameBn : currentSlide.name}
           </span>
-          <div className="flex items-center gap-1.5 rounded-full bg-[#0e2a1f]/90 backdrop-blur-sm px-3 py-1 text-[10.5px] font-semibold text-white shadow-md border border-white/20 w-fit">
+          <div className="hidden sm:flex items-center gap-1.5 rounded-full bg-[#0e2a1f]/90 backdrop-blur-sm px-3 py-1 text-[10.5px] font-semibold text-white shadow-md border border-white/20 w-fit">
             <MapPin size={11} className="text-[var(--sunset-red)] shrink-0" />
             <span className="truncate">{isBn ? currentSlide.locationBn : currentSlide.location}</span>
           </div>

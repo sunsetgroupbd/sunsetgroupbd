@@ -80,7 +80,7 @@ export default function ProjectsContent() {
                     </span>
                   )}
                   {!project.slideshowImages && (
-                    <div className="absolute bottom-3 left-3 flex items-center gap-1.5 rounded-full bg-[#0e2a1f]/90 backdrop-blur-sm px-2.5 py-1 text-[10.5px] font-semibold text-white shadow-md border border-white/20">
+                    <div className="hidden sm:flex absolute bottom-3 left-3 items-center gap-1.5 rounded-full bg-[#0e2a1f]/90 backdrop-blur-sm px-2.5 py-1 text-[10.5px] font-semibold text-white shadow-md border border-white/20">
                       <MapPin size={11} className="text-[var(--sunset-red)]" />
                       <span className="text-white font-medium">{isBn ? project.locationBn : project.location}</span>
                     </div>
