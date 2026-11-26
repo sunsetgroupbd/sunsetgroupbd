@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Phone, MessageCircle, ArrowRight, MapPin } from "lucide-react";
+import { Phone, ArrowRight, MapPin } from "lucide-react";
+import { WhatsAppIcon } from "@/components/svg/SocialIcons";
 import { useLang } from "@/lib/lang";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -70,7 +71,7 @@ export default function FinalCTA() {
               rel="noopener noreferrer"
               className="btn btn-outline-white"
             >
-              <MessageCircle size={15} />
+              <WhatsAppIcon size={16} />
               {isBn ? "হোয়াটসঅ্যাপ" : "WhatsApp"}
             </a>
 

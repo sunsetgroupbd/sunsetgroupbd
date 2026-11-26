@@ -225,7 +225,13 @@ html[lang="bn"] *,
   line-height: 1.75;
 }
 
-[lang="bn"] .tabular-nums {
+[lang="bn"] .tabular-nums,
+[lang="bn"] .package-card dd,
+[lang="bn"] .package-card p,
+[lang="bn"] .bn-num,
+.bn-num {
+  font-family: var(--font-bangla-heading, var(--font-noto-serif-bengali), 'Noto Serif Bengali', 'SolaimanLipi', 'Kalpurush', serif) !important;
+  font-feature-settings: "tnum" 1;
   letter-spacing: 0 !important;
 }
 
@@ -584,23 +590,24 @@ textarea.form-input {
 
 .whatsapp-float {
   position: relative;
-  width: 52px;
-  height: 52px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  background-color: #1f9d57;
+  background-color: #25D366;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
   cursor: pointer;
-  box-shadow: 0 6px 20px rgba(16, 36, 25, 0.22);
-  transition: background-color 0.25s var(--ease-premium), transform 0.25s var(--ease-premium);
+  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.42), 0 2px 6px rgba(0, 0, 0, 0.12);
+  transition: background-color 0.25s var(--ease-premium), transform 0.25s var(--ease-premium), box-shadow 0.25s var(--ease-premium);
 }
 
 .whatsapp-float:hover {
-  background-color: #178849;
-  transform: translateY(-2px);
+  background-color: #20ba5a;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.55), 0 3px 8px rgba(0, 0, 0, 0.18);
 }
 
 /* Editorial prose (blog + legal) */

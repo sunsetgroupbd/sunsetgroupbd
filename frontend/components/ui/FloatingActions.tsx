@@ -1,8 +1,9 @@
 "use client";
 
-import { Download, MessageCircle } from "lucide-react";
+import { Download } from "lucide-react";
 import { downloadBrochure } from "@/lib/api";
 import { useLang } from "@/lib/lang";
+import { WhatsAppIcon } from "@/components/svg/SocialIcons";
 
 export default function FloatingActions() {
   const { isBn } = useLang();
@@ -29,7 +30,7 @@ export default function FloatingActions() {
         className="whatsapp-float"
         aria-label="Contact Sunset Group on WhatsApp"
       >
-        <MessageCircle size={23} fill="currentColor" stroke="none" />
+        <WhatsAppIcon size={28} className="text-white" />
       </a>
     </div>
   );

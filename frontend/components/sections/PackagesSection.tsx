@@ -6,6 +6,7 @@ import { Check, ArrowRight } from "lucide-react";
 import { useLang } from "@/lib/lang";
 import { packages } from "@/data/packages";
 import SectionHeading from "@/components/ui/SectionHeading";
+import { toBnDigits } from "@/lib/format";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -44,7 +45,7 @@ export default function PackagesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.55, ease: EASE, delay: idx * 0.06 }}
-              className={`flex flex-col justify-between rounded-[16px] border bg-white p-7 transition-shadow hover:shadow-[0_18px_50px_-30px_rgba(18,54,42,0.35)] ${
+              className={`package-card flex flex-col justify-between rounded-[16px] border bg-white p-7 transition-shadow hover:shadow-[0_18px_50px_-30px_rgba(18,54,42,0.35)] ${
                 pkg.highlighted
                   ? "border-[var(--sunset-green-900)]"
                   : "border-[var(--line)]"
@@ -66,7 +67,7 @@ export default function PackagesSection() {
                   <p className="text-[10.5px] uppercase tracking-[0.12em] text-[var(--sunset-grey-700)]">
                     {isBn ? "প্যাকেজ মূল্য" : "Package price"}
                   </p>
-                  <p className="mt-1 text-display-sm tabular-nums text-[var(--sunset-green-900)]">
+                  <p className={`mt-1 text-display-sm tabular-nums text-[var(--sunset-green-900)] ${isBn ? "bn-num" : ""}`}>
                     {isBn ? pkg.priceBn : pkg.priceDisplay}
                   </p>
                 </div>
@@ -86,7 +87,7 @@ export default function PackagesSection() {
                     </dt>
                     <dd className="font-semibold text-[var(--sunset-red)]">
                       {isBn
-                        ? `${pkg.accommodationDays ?? pkg.profitDays} দিন / বছর`
+                        ? `${toBnDigits(pkg.accommodationDays ?? pkg.profitDays ?? 0)} দিন / বছর`
                         : `${pkg.accommodationDays ?? pkg.profitDays} days / yr`}
                     </dd>
                   </div>

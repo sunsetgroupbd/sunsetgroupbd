@@ -87,6 +87,15 @@ export const galleryImages: GalleryImage[] = [
     width: 1200,
     height: 800,
   },
+  {
+    id: "k-map",
+    src: "/images/map.webp",
+    alt: "Sunset Kuakata & Mangrove Resort — Strategic Location & Tourist Map",
+    altBn: "সানসেট কুয়াকাটা ও ম্যানগ্রোভ রিসোর্ট — কৌশলগত অবস্থান ও পর্যটন ম্যাপ",
+    category: "kuakata",
+    width: 1600,
+    height: 786,
+  },
   // Sun Care
   {
     id: "sc-01",

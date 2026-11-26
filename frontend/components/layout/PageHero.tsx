@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { MapPin } from "lucide-react";
 
 interface PageHeroProps {
   eyebrow: string;
@@ -94,15 +95,12 @@ export default function PageHero({
       >
         <div className={`${centered ? "mx-auto" : ""} max-w-3xl`}>
           <div
-            className={`flex items-center gap-3 mb-5 ${centered ? "justify-center" : ""}`}
+            className={`mb-5 flex flex-wrap items-center gap-2.5 ${centered ? "justify-center" : ""}`}
           >
-            <span className="h-px w-8 bg-[var(--sunset-red)] shadow-sm" aria-hidden />
-            <p
-              className="text-eyebrow font-bold tracking-[0.14em]"
-              style={{ color: "#ffffff", textShadow: "0 1px 4px rgba(0, 0, 0, 0.85)" }}
-            >
-              {eyebrow}
-            </p>
+            <span className="inline-flex items-center gap-2 rounded-full bg-[#0e2a1f]/90 backdrop-blur-md px-3.5 py-1.5 text-[11px] sm:text-xs font-semibold text-white shadow-md border border-white/20">
+              <MapPin size={12} className="text-[var(--sunset-red)] shrink-0" />
+              <span>{eyebrow}</span>
+            </span>
           </div>
 
           <h1

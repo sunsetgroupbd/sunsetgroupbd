@@ -1,14 +1,42 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Landmark, Anchor, Car, PlaneTakeoff, Sunrise, Sunset, Trees } from "lucide-react";
+import {
+  Landmark,
+  Anchor,
+  Car,
+  PlaneTakeoff,
+  Sunrise,
+  Sunset,
+  Trees,
+} from "lucide-react";
 import { useLang } from "@/lib/lang";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
+const KUAKATA_BEACH_SLIDES = [
+  {
+    src: "/images/kuakata/gallery-02.webp",
+    alt: "Sunset over Kuakata beach panorama",
+  },
+  {
+    src: "/images/kuakata/hero.webp",
+    alt: "Sunset Kuakata Hotel & Resort coastal view",
+  },
+];
+
 export default function WhyKuakata() {
   const { isBn } = useLang();
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % KUAKATA_BEACH_SLIDES.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, []);
 
   const infrastructure = [
     {
@@ -119,18 +147,28 @@ export default function WhyKuakata() {
             transition={{ duration: 0.75, ease: EASE, delay: 0.1 }}
             className="lg:col-span-5"
           >
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[20px] bg-[rgba(0,0,0,0.3)] lg:aspect-[4/3.4]">
-              <Image
-                src="/images/kuakata/gallery-02.webp"
-                alt="Sunset over Kuakata beach"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 40vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(14,42,31,0.5)] via-transparent to-transparent" />
-              <p className="absolute bottom-4 left-4 rounded-full bg-[#0e2a1f] px-3.5 py-1.5 text-[10.5px] font-semibold uppercase tracking-[0.08em] text-white shadow-md border border-white/20">
-                {isBn ? "কেটিসি মাস্টার প্ল্যান অঞ্চল" : "KTC master plan zone"}
-              </p>
+            {/* Media Card with clean fade change effect (Beach photography only) */}
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[20px] border border-white/15 bg-[#0e2a1f] shadow-xl lg:aspect-[4/3.4]">
+              {KUAKATA_BEACH_SLIDES.map((slide, idx) => {
+                const isActive = idx === currentSlide;
+                return (
+                  <div
+                    key={slide.src}
+                    className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                      isActive ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+                    }`}
+                  >
+                    <Image
+                      src={slide.src}
+                      alt={slide.alt}
+                      fill
+                      priority={idx === 0}
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                    />
+                  </div>
+                );
+              })}
             </div>
           </motion.div>
         </div>
@@ -164,6 +202,19 @@ export default function WhyKuakata() {
                 </div>
               );
             })}
+          </div>
+
+          {/* Strategic Location & Connectivity Map */}
+          <div className="mt-10 overflow-hidden rounded-[20px] border border-white/15 bg-[#f4ede4]/95 p-2 sm:p-4 shadow-xl">
+            <div className="relative aspect-[16/8] w-full overflow-hidden rounded-[14px]">
+              <Image
+                src="/images/map.webp"
+                alt="Strategic connectivity & location map of Kuakata tourism belt, Sunset Hotel and Mangrove Resort"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1200px) 100vw, 1200px"
+              />
+            </div>
           </div>
         </div>
       </div>

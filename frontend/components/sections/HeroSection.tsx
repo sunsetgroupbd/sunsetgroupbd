@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -10,14 +10,54 @@ import { projectVideos } from "@/data/videos";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
+interface HeroSlide {
+  src: string;
+  alt: string;
+}
+
+const HERO_SLIDES: HeroSlide[] = [
+  {
+    src: "/images/kuakata/hero.webp",
+    alt: "Sunset Kuakata Hotel & Resort on the Bay of Bengal",
+  },
+  {
+    src: "/images/kuakata/gallery-05.webp",
+    alt: "Sunset Kuakata Hotel & Resort Architecture",
+  },
+  {
+    src: "/images/mangrove/Mangrove.webp",
+    alt: "Mangrove Hotel & Resort Kuakata",
+  },
+  {
+    src: "/images/sun-care/hero.webp",
+    alt: "Sun Care Hospital & Diagnostic Center Ltd.",
+  },
+  {
+    src: "/images/the-deck/The Deck view2-01.webp",
+    alt: "The Deck – Luxury 5-Star Standard Hotel & Resort Cox's Bazar",
+  },
+  {
+    src: "/images/dfi/dfi-aerial.webp",
+    alt: "Dhaka Fantasy Island Aerial View",
+  },
+];
+
 export default function HeroSection() {
   const { isBn } = useLang();
   const ref = useRef<HTMLDivElement>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const imageY = useTransform(scrollYProgress, [0, 1], [0, 70]);
 
   const featuredVideo = projectVideos[0];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, 5500);
+    return () => clearInterval(timer);
+  }, []);
 
   const scrollToVideos = () => {
     setIsVideoOpen(false);
@@ -33,20 +73,34 @@ export default function HeroSection() {
       className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden"
       aria-label="Introduction"
     >
-      {/* Background */}
+      {/* Background with cross-fade effect */}
       <motion.div className="absolute inset-0 z-0" style={{ y: imageY }}>
-        <Image
-          src="/images/kuakata/hero.webp"
-          alt="Sunset Kuakata Hotel & Resort on the Bay of Bengal"
-          fill
-          priority
-          quality={90}
-          sizes="100vw"
-          className="object-cover object-center"
-        />
+        {HERO_SLIDES.map((slide, index) => {
+          const isActive = index === currentSlide;
+          return (
+            <div
+              key={slide.src}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                isActive ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+              }`}
+              aria-hidden={!isActive}
+            >
+              <Image
+                src={slide.src}
+                alt={slide.alt}
+                fill
+                priority={index === 0}
+                quality={90}
+                sizes="100vw"
+                className="object-cover object-center"
+              />
+            </div>
+          );
+        })}
+
         {/* Desktop gradient overlay */}
         <div
-          className="absolute inset-0 hidden md:block"
+          className="absolute inset-0 z-20 hidden md:block pointer-events-none"
           style={{
             background:
               "linear-gradient(180deg, rgba(8, 24, 17, 0.55) 0%, rgba(8, 24, 17, 0.32) 36%, rgba(8, 24, 17, 0.72) 78%, rgba(8, 24, 17, 0.92) 100%)",
@@ -54,7 +108,7 @@ export default function HeroSection() {
         />
         {/* Darker mobile gradient overlay for superior text contrast */}
         <div
-          className="absolute inset-0 block md:hidden"
+          className="absolute inset-0 z-20 block md:hidden pointer-events-none"
           style={{
             background:
               "linear-gradient(180deg, rgba(8, 24, 17, 0.78) 0%, rgba(8, 24, 17, 0.58) 36%, rgba(8, 24, 17, 0.85) 75%, rgba(8, 24, 17, 0.96) 100%)",
@@ -63,7 +117,7 @@ export default function HeroSection() {
       </motion.div>
 
       {/* Content */}
-      <div className="container-site relative z-10 pt-28 pb-10 md:pt-36 md:pb-16 flex-1 flex flex-col justify-center">
+      <div className="container-site relative z-20 pt-28 pb-10 md:pt-36 md:pb-16 flex-1 flex flex-col justify-center">
         <div className="max-w-3xl pb-16 md:pb-20">
           <motion.div
             initial={{ opacity: 0, y: 14 }}
@@ -101,8 +155,8 @@ export default function HeroSection() {
             className="text-body-lg mb-9 max-w-xl leading-relaxed text-white/95 drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]"
           >
             {isBn
-              ? "কুয়াকাটা রিসোর্ট, সান কেয়ার হাসপাতাল, ঢাকা ফ্যান্টাসি আইল্যান্ড ও কুয়াকাটা মেরিন ড্রাইভে ম্যানগ্রোভ হোটেল অ্যান্ড রিসোর্টে সাফ-কবালা নিবন্ধিত স্থায়ী মালিকানা। শরীয়া তদারকিতে পরিচালিত, দীর্ঘমেয়াদি হালাল আয়।"
-              : "Own deeded equity across Sunset Kuakata Resort, Sun Care Hospital, Dhaka Fantasy Island, and Mangrove Hotel & Resort on Kuakata Marine Drive — governed by Islamic finance principles, designed for long-term halal income."}
+              ? "কুয়াকাটা রিসোর্ট, ম্যানগ্রোভ হোটেল অ্যান্ড রিসোর্ট, সান কেয়ার হাসপাতাল, ইনানীতে দ্য ডেক ও ঢাকা ফ্যান্টাসি আইল্যান্ডে সাফ-কবালা নিবন্ধিত স্থায়ী মালিকানা। শরীয়া তদারকিতে পরিচালিত, দীর্ঘমেয়াদি হালাল আয়।"
+              : "Own deeded equity across Sunset Kuakata Resort, Mangrove Hotel & Resort, Sun Care Hospital, The Deck Cox's Bazar, and Dhaka Fantasy Island — governed by Islamic finance principles, designed for long-term halal income."}
           </motion.p>
 
           <motion.div
@@ -122,9 +176,9 @@ export default function HeroSection() {
             <button
               type="button"
               onClick={() => setIsVideoOpen(true)}
-              className="inline-flex items-center gap-2.5 rounded-md border border-[rgba(255, 255, 255,0.32)] px-5 py-3.5 text-[13.5px] font-semibold text-[var(--paper)] transition-colors hover:border-[rgba(255, 255, 255,0.6)] hover:bg-[rgba(255, 255, 255,0.06)]"
+              className="inline-flex items-center gap-2.5 rounded-md border border-[rgba(255,255,255,0.32)] px-5 py-3.5 text-[13.5px] font-semibold text-[var(--paper)] transition-colors hover:border-[rgba(255,255,255,0.6)] hover:bg-[rgba(255,255,255,0.06)]"
             >
-              <span className="flex h-6 w-6 items-center justify-center rounded-full border border-[rgba(255, 255, 255,0.4)]">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full border border-[rgba(255,255,255,0.4)]">
                 <Play size={9} fill="currentColor" stroke="none" className="ml-0.5" />
               </span>
               {isBn ? "প্রকল্পের ভিডিও" : "Watch the film"}

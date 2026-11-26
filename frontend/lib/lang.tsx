@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useSyncExternalStore, ReactNode } from "react";
+import { createContext, useContext, useEffect, useSyncExternalStore, ReactNode } from "react";
 import { en } from "@/content/en";
 import { bn } from "@/content/bn";
 
@@ -37,6 +37,12 @@ function getServerSnapshot(): Locale {
 
 export function LangProvider({ children }: { children: ReactNode }) {
   const locale = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      document.documentElement.lang = locale;
+    }
+  }, [locale]);
 
   const toggle = () => {
     const next = getSnapshot() === "bn" ? "en" : "bn";

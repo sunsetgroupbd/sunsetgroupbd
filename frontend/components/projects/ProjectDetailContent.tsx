@@ -13,6 +13,7 @@ import PageHero from "@/components/layout/PageHero";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { Project } from "@/data/projects";
 import { useLang } from "@/lib/lang";
+import { toBnDigits, formatBDT, formatBDTLac } from "@/lib/format";
 
 interface ProjectDetailContentProps {
   project: Project;
@@ -20,6 +21,11 @@ interface ProjectDetailContentProps {
 
 export default function ProjectDetailContent({ project }: ProjectDetailContentProps) {
   const { isBn } = useLang();
+
+  const isKuakataProject =
+    project.slug === "kuakata-hotel" ||
+    project.slug === "mangrove" ||
+    project.slug === "super-combo";
 
   return (
     <div style={{ backgroundColor: "var(--paper)" }}>
@@ -187,6 +193,43 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
         </div>
       </section>
 
+      {/* Kuakata Tourism Belt & Location Map Section (for Kuakata Hotel, Mangrove & Super Combo) */}
+      {isKuakataProject && (
+        <section className="section-gap border-t border-[var(--line)] bg-white">
+          <div className="container-site">
+            <div className="mb-8 max-w-3xl">
+              <div className="mb-3 flex items-center gap-2.5">
+                <span className="h-px w-6 bg-[var(--sunset-red)]" aria-hidden />
+                <p className="text-eyebrow text-[var(--sunset-red)]">
+                  {isBn ? "কৌশলগত অবস্থান ও পর্যটন ম্যাপ" : "Strategic Location & Tourism Map"}
+                </p>
+              </div>
+              <h2 className="text-display-md text-[var(--sunset-green-900)]">
+                {isBn
+                  ? "কুয়াকাটা পর্যটন বলয় ও প্রকল্পসমূহের অবস্থান"
+                  : "Kuakata Tourism Belt & Project Location Map"}
+              </h2>
+              <p className="mt-3 text-body-lg text-[var(--sunset-grey-700)]">
+                {isBn
+                  ? "সানসেট কুয়াকাটা হোটেল ও রিসোর্ট এবং কুয়াকাটা মেরিন ড্রাইভের ম্যানগ্রোভ হোটেল ও রিসোর্ট—উভয় প্রকল্পই কুয়াকাটার সমুদ্র সৈকত, সুন্দরবন ম্যানগ্রোভ করিডোর এবং প্রধান পর্যটন স্পটগুলোর প্রাণকেন্দ্রে অবস্থিত।"
+                  : "Explore the prime positioning of Sunset Kuakata Hotel & Resort and Mangrove Hotel & Resort along the prestigious Marine Drive and coastal tourism corridor, surrounded by Kuakata's landmark attractions."}
+              </p>
+            </div>
+
+            <div className="overflow-hidden rounded-[16px]">
+              <Image
+                src="/images/map.webp"
+                alt="Location map of Sunset Kuakata Hotel & Resort, Mangrove Project and Kuakata tourist spots"
+                width={1600}
+                height={786}
+                className="h-auto w-full rounded-[16px] object-cover"
+                sizes="(max-width: 1200px) 100vw, 1200px"
+              />
+            </div>
+          </div>
+        </section>
+      )}
+
       {project.galleryImages && project.galleryImages.length > 0 && (
         <section className="section-gap" style={{ backgroundColor: "var(--sand)" }}>
           <div className="container-site">
@@ -233,22 +276,26 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
               {project.packages.map((pkg) => (
                 <div
                   key={pkg.name}
-                  className="flex flex-col justify-between rounded-[16px] border border-[var(--line)] bg-white p-6"
+                  className="package-card flex flex-col justify-between rounded-[16px] border border-[var(--line)] bg-white p-6"
                 >
                   <div>
                     <h3 className="text-display-sm mb-1 text-[var(--sunset-green-900)]">
-                      {pkg.name}
+                      {isBn ? pkg.nameBn || pkg.name : pkg.name}
                     </h3>
-                    <p className="mb-4 text-[1.35rem] font-medium tabular-nums text-[var(--sunset-red)]">
-                      {pkg.priceLabel}
+                    <p className={`mb-4 text-[1.35rem] font-medium tabular-nums text-[var(--sunset-red)] ${isBn ? "bn-num" : ""}`}>
+                      {isBn
+                        ? (pkg.priceBn || formatBDT(pkg.priceBDT, true))
+                        : (pkg.priceDisplay || formatBDT(pkg.priceBDT, false))}
                     </p>
                     <dl className="mb-6 space-y-2 border-y border-[var(--line)] py-3.5 text-[12px]">
                       <div className="flex justify-between gap-2">
                         <dt className="text-[var(--sunset-grey-700)]">
                           {isBn ? "বুকিং মানি" : "Booking money"}
                         </dt>
-                        <dd className="font-semibold text-[var(--ink)]">
-                          ৳ {(pkg.bookingBDT / 100000).toFixed(2)} Lac
+                        <dd className={`font-semibold text-[var(--ink)] tabular-nums ${isBn ? "bn-num" : ""}`}>
+                          {isBn
+                            ? (pkg.bookingBn || formatBDTLac(pkg.bookingBDT, true))
+                            : (pkg.bookingDisplay || formatBDTLac(pkg.bookingBDT, false))}
                         </dd>
                       </div>
 
@@ -257,8 +304,8 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
                           <dt className="text-[var(--sunset-grey-700)]">
                             {isBn ? "ইউনিট সংখ্যা" : "Units"}
                           </dt>
-                          <dd className="font-semibold text-[var(--ink)]">
-                            {pkg.units}x {isBn ? "ইউনিট" : "Units"}
+                          <dd className={`font-semibold text-[var(--ink)] tabular-nums ${isBn ? "bn-num" : ""}`}>
+                            {isBn ? `${toBnDigits(pkg.units)}টি ইউনিট` : `${pkg.units}x Units`}
                           </dd>
                         </div>
                       )}
@@ -268,12 +315,14 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
                           <dt className="text-[var(--sunset-grey-700)]">
                             {isBn ? "সাফ-কবালা স্পেস" : "Deeded Area"}
                           </dt>
-                          <dd className="font-semibold text-[var(--ink)] text-right">
-                            <span>{pkg.areaSft} {isBn ? "বর্গফুট" : "sft"}</span>
+                          <dd className={`font-semibold text-[var(--ink)] text-right tabular-nums ${isBn ? "bn-num" : ""}`}>
+                            <span>
+                              {isBn ? `${toBnDigits(pkg.areaSft)} বর্গফুট` : `${pkg.areaSft} sft`}
+                            </span>
                             {pkg.landAreaSft && pkg.buildAreaSft && (
-                              <span className="block text-[10.5px] font-normal text-[var(--sunset-grey-700)]">
+                              <span className={`block text-[10.5px] font-normal text-[var(--sunset-grey-700)] ${isBn ? "bn-num" : ""}`}>
                                 {isBn
-                                  ? `(জমি ${pkg.landAreaSft} + নির্মাণ ${pkg.buildAreaSft})`
+                                  ? `(জমি ${toBnDigits(pkg.landAreaSft)} + নির্মাণ ${toBnDigits(pkg.buildAreaSft)})`
                                   : `(Land ${pkg.landAreaSft} + Build ${pkg.buildAreaSft})`}
                               </span>
                             )}
@@ -286,8 +335,10 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
                           <dt className="text-[var(--sunset-grey-700)]">
                             {isBn ? "আবাসন সুবিধা" : "Accommodation stay"}
                           </dt>
-                          <dd className="font-semibold text-[var(--sunset-red)]">
-                            {pkg.accommodationDays ?? pkg.profitDays} {isBn ? "দিন / বছর" : "days / yr"}
+                          <dd className={`font-semibold text-[var(--sunset-red)] tabular-nums ${isBn ? "bn-num" : ""}`}>
+                            {isBn
+                              ? `${toBnDigits(pkg.accommodationDays ?? pkg.profitDays ?? 0)} দিন / বছর`
+                              : `${pkg.accommodationDays ?? pkg.profitDays} days / yr`}
                           </dd>
                         </div>
                       ) : null}
@@ -297,8 +348,8 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
                           <dt className="text-[var(--sunset-grey-700)]">
                             {isBn ? "রিসোর্ট ডিসকাউন্ট" : "Resort Discount"}
                           </dt>
-                          <dd className="font-semibold text-[var(--sunset-green-700)]">
-                            {pkg.resortDiscountPercent}%
+                          <dd className={`font-semibold text-[var(--sunset-green-700)] tabular-nums ${isBn ? "bn-num" : ""}`}>
+                            {isBn ? `${toBnDigits(pkg.resortDiscountPercent)}%` : `${pkg.resortDiscountPercent}%`}
                           </dd>
                         </div>
                       )}
@@ -308,8 +359,8 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
                           <dt className="text-[var(--sunset-grey-700)]">
                             {isBn ? "মুনাফা অংশীদারিত্ব" : "Profit Sharing"}
                           </dt>
-                          <dd className="font-semibold text-[var(--sunset-green-700)]">
-                            {pkg.profitSharePercent}%
+                          <dd className={`font-semibold text-[var(--sunset-green-700)] tabular-nums ${isBn ? "bn-num" : ""}`}>
+                            {isBn ? `${toBnDigits(pkg.profitSharePercent)}%` : `${pkg.profitSharePercent}%`}
                           </dd>
                         </div>
                       )}
@@ -319,8 +370,8 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
                           <dt className="text-[var(--sunset-grey-700)]">
                             {isBn ? "মনোনীত ব্যক্তি" : "Nominated Persons"}
                           </dt>
-                          <dd className="font-semibold text-[var(--sunset-green-700)]">
-                            {pkg.nominatedPersons} {isBn ? "জন" : "persons"}
+                          <dd className={`font-semibold text-[var(--sunset-green-700)] tabular-nums ${isBn ? "bn-num" : ""}`}>
+                            {isBn ? `${toBnDigits(pkg.nominatedPersons)} জন` : `${pkg.nominatedPersons} persons`}
                           </dd>
                         </div>
                       )}
@@ -330,15 +381,28 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
                           <dt className="text-[var(--sunset-grey-700)]">
                             {isBn ? "জীবন বীমা কাভারেজ" : "Life Insurance"}
                           </dt>
-                          <dd className="font-semibold text-[var(--sunset-green-700)]">
-                            ৳ {pkg.insuranceBDT / 100000} Lac
+                          <dd className={`font-semibold text-[var(--sunset-green-700)] tabular-nums ${isBn ? "bn-num" : ""}`}>
+                            {isBn ? formatBDTLac(pkg.insuranceBDT, true) : formatBDTLac(pkg.insuranceBDT, false)}
+                          </dd>
+                        </div>
+                      )}
+
+                      {pkg.installmentFromBDT && (
+                        <div className="flex justify-between gap-2">
+                          <dt className="text-[var(--sunset-grey-700)]">
+                            {isBn ? "মাসিক কিস্তি শুরু" : "Monthly Installment"}
+                          </dt>
+                          <dd className={`font-semibold text-[var(--sunset-green-700)] tabular-nums ${isBn ? "bn-num" : ""}`}>
+                            {isBn
+                              ? `৳ ${toBnDigits(pkg.installmentFromBDT.toLocaleString("en-IN"))} / মাস`
+                              : `From ৳ ${pkg.installmentFromBDT.toLocaleString("en-IN")} / mo`}
                           </dd>
                         </div>
                       )}
                     </dl>
                   </div>
                   <Link
-                    href={`/contact?project=${encodeURIComponent(project.name)}&package=${pkg.name}`}
+                    href={`/contact?project=${encodeURIComponent(project.name)}&package=${encodeURIComponent(pkg.name)}`}
                     className="btn btn-outline w-full"
                   >
                     {isBn ? "প্যাকেজ নির্বাচন করুন" : "Select package"}

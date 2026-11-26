@@ -9,6 +9,7 @@ import {
   ProjectPackageCategory,
 } from "@/data/packages";
 import { useLang } from "@/lib/lang";
+import { toBnDigits } from "@/lib/format";
 
 export default function PackagesContent() {
   const { isBn } = useLang();
@@ -137,7 +138,7 @@ export default function PackagesContent() {
             {currentPackages.map((pkg) => (
               <article
                 key={pkg.id}
-                className={`flex flex-col justify-between rounded-[18px] border bg-white p-7 transition-shadow hover:shadow-[0_20px_55px_-32px_rgba(18,54,42,0.4)] ${
+                className={`package-card flex flex-col justify-between rounded-[18px] border bg-white p-7 transition-shadow hover:shadow-[0_20px_55px_-32px_rgba(18,54,42,0.4)] ${
                   pkg.highlighted
                     ? "border-[var(--sunset-green-900)] ring-1 ring-[var(--sunset-green-900)]"
                     : "border-[var(--line)]"
@@ -159,7 +160,7 @@ export default function PackagesContent() {
                     <p className="text-[10px] uppercase tracking-[0.14em] text-[var(--sunset-grey-700)]">
                       {isBn ? "প্যাকেজ মূল্য" : "Package price"}
                     </p>
-                    <p className="mt-1 text-display-md tabular-nums text-[var(--sunset-green-900)]">
+                    <p className={`mt-1 text-display-md tabular-nums text-[var(--sunset-green-900)] ${isBn ? "bn-num" : ""}`}>
                       {isBn ? pkg.priceBn : pkg.priceDisplay}
                     </p>
                   </div>
@@ -180,7 +181,7 @@ export default function PackagesContent() {
                       </dt>
                       <dd className="font-semibold text-[var(--ink)]">
                         {isBn
-                          ? `৳ ${(pkg.remainingBDT / 100000).toFixed(2)} লাখ`
+                          ? `৳ ${toBnDigits((pkg.remainingBDT / 100000).toFixed(2))} লাখ`
                           : `৳ ${(pkg.remainingBDT / 100000).toFixed(2)} Lac`}
                       </dd>
                     </div>
@@ -191,7 +192,7 @@ export default function PackagesContent() {
                           {isBn ? "ইউনিট সংখ্যা" : "Units"}
                         </dt>
                         <dd className="font-semibold text-[var(--ink)]">
-                          {pkg.units}x {isBn ? "ইউনিট" : "Units"}
+                          {isBn ? `${toBnDigits(pkg.units)}টি ইউনিট` : `${pkg.units}x Units`}
                         </dd>
                       </div>
                     )}
@@ -202,11 +203,13 @@ export default function PackagesContent() {
                           {isBn ? "সাফ-কবালা স্পেস" : "Deeded Area"}
                         </dt>
                         <dd className="font-semibold text-[var(--ink)] text-right">
-                          <span>{pkg.areaSft} {isBn ? "বর্গফুট" : "sft"}</span>
+                          <span>
+                            {isBn ? `${toBnDigits(pkg.areaSft)} বর্গফুট` : `${pkg.areaSft} sft`}
+                          </span>
                           {pkg.landAreaSft && pkg.buildAreaSft && (
                             <span className="block text-[11px] font-normal text-[var(--sunset-grey-700)]">
                               {isBn
-                                ? `(জমি ${pkg.landAreaSft} + নির্মাণ ${pkg.buildAreaSft})`
+                                ? `(জমি ${toBnDigits(pkg.landAreaSft)} + নির্মাণ ${toBnDigits(pkg.buildAreaSft)})`
                                 : `(Land ${pkg.landAreaSft} + Build ${pkg.buildAreaSft})`}
                             </span>
                           )}
@@ -231,7 +234,7 @@ export default function PackagesContent() {
                           {isBn ? "রিসোর্ট ডিসকাউন্ট" : "Resort Discount"}
                         </dt>
                         <dd className="font-semibold text-[var(--sunset-green-700)]">
-                          {pkg.resortDiscountPercent}%
+                          {isBn ? `${toBnDigits(pkg.resortDiscountPercent)}%` : `${pkg.resortDiscountPercent}%`}
                         </dd>
                       </div>
                     )}
@@ -242,7 +245,7 @@ export default function PackagesContent() {
                           {isBn ? "মুনাফা অংশীদারিত্ব" : "Profit Sharing"}
                         </dt>
                         <dd className="font-semibold text-[var(--sunset-green-700)]">
-                          {pkg.profitSharePercent}%
+                          {isBn ? `${toBnDigits(pkg.profitSharePercent)}%` : `${pkg.profitSharePercent}%`}
                         </dd>
                       </div>
                     )}
@@ -253,7 +256,7 @@ export default function PackagesContent() {
                           {isBn ? "মনোনীত ব্যক্তি" : "Nominated Persons"}
                         </dt>
                         <dd className="font-semibold text-[var(--sunset-green-700)]">
-                          {pkg.nominatedPersons} {isBn ? "জন" : "persons"}
+                          {isBn ? `${toBnDigits(pkg.nominatedPersons)} জন` : `${pkg.nominatedPersons} persons`}
                         </dd>
                       </div>
                     )}
@@ -264,7 +267,9 @@ export default function PackagesContent() {
                           {isBn ? "জীবন বীমা কাভারেজ" : "Life Insurance"}
                         </dt>
                         <dd className="font-semibold text-[var(--sunset-green-700)]">
-                          ৳ {pkg.insuranceBDT / 100000} Lac
+                          {isBn
+                            ? `৳ ${toBnDigits(pkg.insuranceBDT / 100000)} লাখ`
+                            : `৳ ${pkg.insuranceBDT / 100000} Lac`}
                         </dd>
                       </div>
                     )}

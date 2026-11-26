@@ -7,7 +7,11 @@
 export interface ProjectPackage {
   name: string;
   nameBn?: string;
-  priceLabel: string;
+  priceLabel?: string;
+  priceDisplay?: string;
+  priceBn?: string;
+  bookingDisplay?: string;
+  bookingBn?: string;
   priceBDT: number;
   bookingBDT: number;
   units?: number;
@@ -120,7 +124,11 @@ export const projects: Project[] = [
       {
         name: "Platinum",
         nameBn: "প্লাটিনাম",
-        priceLabel: "৳ ৩২,০০,০০০",
+        priceLabel: "৳ 32,00,000",
+        priceDisplay: "৳ 32,00,000",
+        priceBn: "৳ ৩২,০০,০০০",
+        bookingDisplay: "৳ 8,00,000",
+        bookingBn: "৳ ৮,০০,০০০",
         priceBDT: 3200000,
         bookingBDT: 800000,
         units: 10,
@@ -132,7 +140,11 @@ export const projects: Project[] = [
       {
         name: "Gold",
         nameBn: "গোল্ড",
-        priceLabel: "৳ ১৬,৫০,০০০",
+        priceLabel: "৳ 16,50,000",
+        priceDisplay: "৳ 16,50,000",
+        priceBn: "৳ ১৬,৫০,০০০",
+        bookingDisplay: "৳ 5,00,000",
+        bookingBn: "৳ ৫,০০,০০০",
         priceBDT: 1650000,
         bookingBDT: 500000,
         units: 5,
@@ -144,7 +156,11 @@ export const projects: Project[] = [
       {
         name: "Silver",
         nameBn: "সিলভার",
-        priceLabel: "৳ ১০,২০,০০০",
+        priceLabel: "৳ 10,20,000",
+        priceDisplay: "৳ 10,20,000",
+        priceBn: "৳ ১০,২০,০০০",
+        bookingDisplay: "৳ 3,00,000",
+        bookingBn: "৳ ৩,০০,০০০",
         priceBDT: 1020000,
         bookingBDT: 300000,
         units: 3,
@@ -156,7 +172,11 @@ export const projects: Project[] = [
       {
         name: "Bronze",
         nameBn: "ব্রোঞ্জ",
-        priceLabel: "৳ ৩,৫০,০০০",
+        priceLabel: "৳ 3,50,000",
+        priceDisplay: "৳ 3,50,000",
+        priceBn: "৳ ৩,৫০,০০০",
+        bookingDisplay: "৳ 1,00,000",
+        bookingBn: "৳ ১,০০,০০০",
         priceBDT: 350000,
         bookingBDT: 100000,
         units: 1,
@@ -222,7 +242,11 @@ export const projects: Project[] = [
       {
         name: "Platinum",
         nameBn: "প্লাটিনাম",
-        priceLabel: "৳ ৩২,০০,০০০",
+        priceLabel: "৳ 32,00,000",
+        priceDisplay: "৳ 32,00,000",
+        priceBn: "৳ ৩২,০০,০০০",
+        bookingDisplay: "৳ 8,00,000",
+        bookingBn: "৳ ৮,০০,০০০",
         priceBDT: 3200000,
         bookingBDT: 800000,
         units: 10,
@@ -236,7 +260,11 @@ export const projects: Project[] = [
       {
         name: "Gold",
         nameBn: "গোল্ড",
-        priceLabel: "৳ ১৬,৫০,০০০",
+        priceLabel: "৳ 16,50,000",
+        priceDisplay: "৳ 16,50,000",
+        priceBn: "৳ ১৬,৫০,০০০",
+        bookingDisplay: "৳ 5,00,000",
+        bookingBn: "৳ ৫,০০,০০০",
         priceBDT: 1650000,
         bookingBDT: 500000,
         units: 5,
@@ -250,7 +278,11 @@ export const projects: Project[] = [
       {
         name: "Silver",
         nameBn: "সিলভার",
-        priceLabel: "৳ ১০,২০,০০০",
+        priceLabel: "৳ 10,20,000",
+        priceDisplay: "৳ 10,20,000",
+        priceBn: "৳ ১০,২০,০০০",
+        bookingDisplay: "৳ 3,00,000",
+        bookingBn: "৳ ৩,০০,০০০",
         priceBDT: 1020000,
         bookingBDT: 300000,
         units: 3,
@@ -264,7 +296,11 @@ export const projects: Project[] = [
       {
         name: "Bronze",
         nameBn: "ব্রোঞ্জ",
-        priceLabel: "৳ ৩,৫০,০০০",
+        priceLabel: "৳ 3,50,000",
+        priceDisplay: "৳ 3,50,000",
+        priceBn: "৳ ৩,৫০,০০০",
+        bookingDisplay: "৳ 1,00,000",
+        bookingBn: "৳ ১,০০,০০০",
         priceBDT: 350000,
         bookingBDT: 100000,
         units: 1,
@@ -305,6 +341,7 @@ export const projects: Project[] = [
       "/images/kuakata/gallery-04.webp",
       "/images/kuakata/gallery-05.webp",
       "/images/kuakata/gallery-06.webp",
+      "/images/map.webp",
     ],
     keyFacts: [
       { label: "Project Type", value: "5-Star Hotel & Resort" },
@@ -332,7 +369,11 @@ export const projects: Project[] = [
       {
         name: "Platinum",
         nameBn: "প্লাটিনাম",
-        priceLabel: "৳ ৫৪,০০,০০০",
+        priceLabel: "৳ 54,00,000",
+        priceDisplay: "৳ 54,00,000",
+        priceBn: "৳ ৫৪,০০,০০০",
+        bookingDisplay: "৳ 12,00,000",
+        bookingBn: "৳ ১২,০০,০০০",
         priceBDT: 5400000,
         bookingBDT: 1200000,
         units: 10,
@@ -346,7 +387,11 @@ export const projects: Project[] = [
       {
         name: "Gold",
         nameBn: "গোল্ড",
-        priceLabel: "৳ ২৭,৫০,০০০",
+        priceLabel: "৳ 27,50,000",
+        priceDisplay: "৳ 27,50,000",
+        priceBn: "৳ ২৭,৫০,০০০",
+        bookingDisplay: "৳ 7,50,000",
+        bookingBn: "৳ ৭,৫০,০০০",
         priceBDT: 2750000,
         bookingBDT: 750000,
         units: 5,
@@ -360,7 +405,11 @@ export const projects: Project[] = [
       {
         name: "Silver",
         nameBn: "সিলভার",
-        priceLabel: "৳ ১৬,৮০,০০০",
+        priceLabel: "৳ 16,80,000",
+        priceDisplay: "৳ 16,80,000",
+        priceBn: "৳ ১৬,৮০,০০০",
+        bookingDisplay: "৳ 4,50,000",
+        bookingBn: "৳ ৪,৫০,০০০",
         priceBDT: 1680000,
         bookingBDT: 450000,
         units: 3,
@@ -374,7 +423,11 @@ export const projects: Project[] = [
       {
         name: "Bronze",
         nameBn: "ব্রোঞ্জ",
-        priceLabel: "৳ ৫,৭০,০০০",
+        priceLabel: "৳ 5,70,000",
+        priceDisplay: "৳ 5,70,000",
+        priceBn: "৳ ৫,৭০,০০০",
+        bookingDisplay: "৳ 1,50,000",
+        bookingBn: "৳ ১,৫০,০০০",
         priceBDT: 570000,
         bookingBDT: 150000,
         units: 1,
@@ -451,7 +504,11 @@ export const projects: Project[] = [
       {
         name: "Platinum",
         nameBn: "প্লাটিনাম",
-        priceLabel: "৳ ৫৩,০০,০০০",
+        priceLabel: "৳ 53,00,000",
+        priceDisplay: "৳ 53,00,000",
+        priceBn: "৳ ৫৩,০০,০০০",
+        bookingDisplay: "৳ 10,50,000",
+        bookingBn: "৳ ১০,৫০,০০০",
         priceBDT: 5300000,
         bookingBDT: 1050000,
         units: 10,
@@ -461,7 +518,11 @@ export const projects: Project[] = [
       {
         name: "Gold",
         nameBn: "গোল্ড",
-        priceLabel: "৳ ২৭,০০,০০০",
+        priceLabel: "৳ 27,00,000",
+        priceDisplay: "৳ 27,00,000",
+        priceBn: "৳ ২৭,০০,০০০",
+        bookingDisplay: "৳ 7,50,000",
+        bookingBn: "৳ ৭,৫০,০০০",
         priceBDT: 2700000,
         bookingBDT: 750000,
         units: 5,
@@ -471,7 +532,11 @@ export const projects: Project[] = [
       {
         name: "Silver",
         nameBn: "সিলভার",
-        priceLabel: "৳ ১৭,০০,০০০",
+        priceLabel: "৳ 17,00,000",
+        priceDisplay: "৳ 17,00,000",
+        priceBn: "৳ ১৭,০০,০০০",
+        bookingDisplay: "৳ 4,50,000",
+        bookingBn: "৳ ৪,৫০,০০০",
         priceBDT: 1700000,
         bookingBDT: 450000,
         units: 3,
@@ -481,7 +546,11 @@ export const projects: Project[] = [
       {
         name: "Bronze",
         nameBn: "ব্রোঞ্জ",
-        priceLabel: "৳ ৫,৮০,০০০",
+        priceLabel: "৳ 5,80,000",
+        priceDisplay: "৳ 5,80,000",
+        priceBn: "৳ ৫,৮০,০০০",
+        bookingDisplay: "৳ 1,50,000",
+        bookingBn: "৳ ১,৫০,০০০",
         priceBDT: 580000,
         bookingBDT: 150000,
         units: 1,
@@ -549,6 +618,7 @@ export const projects: Project[] = [
       "/images/sun-care/Hospital view.webp",
       "/images/dfi/DFI-top-view.webp",
       "/images/mangrove/Mangrove Entry01.webp",
+      "/images/map.webp",
     ],
     keyFacts: [
       { label: "Projects Included", value: "4 Flagship Developments (Kuakata, Sun Care, DFI, Mangrove)" },
@@ -576,7 +646,11 @@ export const projects: Project[] = [
       {
         name: "Platinum",
         nameBn: "প্লাটিনাম",
-        priceLabel: "৳ ১,১৫,০০,০০০",
+        priceLabel: "৳ 1,15,00,000",
+        priceDisplay: "৳ 1,15,00,000",
+        priceBn: "৳ ১,১৫,০০,০০০",
+        bookingDisplay: "৳ 17,00,000",
+        bookingBn: "৳ ১৭,০০,০০০",
         priceBDT: 11500000,
         bookingBDT: 1700000,
         units: 10,
@@ -589,7 +663,11 @@ export const projects: Project[] = [
       {
         name: "Gold",
         nameBn: "গোল্ড",
-        priceLabel: "৳ ৫৯,০০,০০০",
+        priceLabel: "৳ 59,00,000",
+        priceDisplay: "৳ 59,00,000",
+        priceBn: "৳ ৫৯,০০,০০০",
+        bookingDisplay: "৳ 10,00,000",
+        bookingBn: "৳ ১০,০০,০০০",
         priceBDT: 5900000,
         bookingBDT: 1000000,
         units: 5,
@@ -602,7 +680,11 @@ export const projects: Project[] = [
       {
         name: "Silver",
         nameBn: "সিলভার",
-        priceLabel: "৳ ৩৬,৩০,০০০",
+        priceLabel: "৳ 36,30,000",
+        priceDisplay: "৳ 36,30,000",
+        priceBn: "৳ ৩৬,৩০,০০০",
+        bookingDisplay: "৳ 7,00,000",
+        bookingBn: "৳ ৭,০০,০০০",
         priceBDT: 3630000,
         bookingBDT: 700000,
         units: 3,
@@ -615,7 +697,11 @@ export const projects: Project[] = [
       {
         name: "Bronze",
         nameBn: "ব্রোঞ্জ",
-        priceLabel: "৳ ১২,৪০,০০০",
+        priceLabel: "৳ 12,40,000",
+        priceDisplay: "৳ 12,40,000",
+        priceBn: "৳ ১২,৪০,০০০",
+        bookingDisplay: "৳ 3,00,000",
+        bookingBn: "৳ ৩,০০,০০০",
         priceBDT: 1240000,
         bookingBDT: 300000,
         units: 1,
@@ -658,6 +744,7 @@ export const projects: Project[] = [
       "/images/mangrove/Mangrove06.webp",
       "/images/mangrove/Mangrove07.webp",
       "/images/mangrove/Mangrove09.webp",
+      "/images/map.webp",
     ],
     keyFacts: [
       { label: "Type", value: "Coastal Hotel & Resort" },

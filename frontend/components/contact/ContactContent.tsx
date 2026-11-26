@@ -1,6 +1,7 @@
 "use client";
 
-import { Phone, MessageCircle, MapPin, Clock, ShieldCheck, ExternalLink } from "lucide-react";
+import { Phone, MapPin, Clock, ShieldCheck, ExternalLink } from "lucide-react";
+import { WhatsAppIcon } from "@/components/svg/SocialIcons";
 import PageHero from "@/components/layout/PageHero";
 import SectionHeading from "@/components/ui/SectionHeading";
 import InquiryForm from "@/components/ui/InquiryForm";
@@ -87,7 +88,7 @@ export default function ContactContent({
                   className="flex items-start gap-4 rounded-[16px] border border-[var(--line)] bg-white p-5 transition-colors hover:border-[var(--line-strong)]"
                 >
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[rgba(37,211,102,0.1)] text-[#1da851]">
-                    <MessageCircle size={17} />
+                    <WhatsAppIcon size={20} />
                   </span>
                   <span>
                     <span className="block text-[10.5px] uppercase tracking-[0.1em] text-[var(--sunset-grey-700)]">
