@@ -70,7 +70,7 @@ export async function submitInquiry(
       email: data.email?.trim() || undefined,
       projectSlug,
       message: combinedMessage || undefined,
-      source: "Sunset Group Website",
+      source: data.source || "Sunset Group Website",
     };
 
     const response = await fetch("https://api.sunsetkuakatahotel.com/api/v1/inquiries", {
