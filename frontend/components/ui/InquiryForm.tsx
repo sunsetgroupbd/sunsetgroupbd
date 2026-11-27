@@ -67,12 +67,17 @@ export default function InquiryForm({ defaultProject, defaultPackage }: InquiryF
         reset();
       } else {
         setServerError(
-          "We could not send your enquiry. Please try again or reach us directly on WhatsApp."
+          result.message ||
+            (isBn
+              ? "আবেদনটি জমা দেওয়া সম্ভব হয়নি। অনুগ্রহ করে পুনরায় চেষ্টা করুন অথবা সরাসরি হোয়াটসঅ্যাপে যোগাযোগ করুন।"
+              : "We could not send your enquiry. Please try again or reach us directly on WhatsApp.")
         );
       }
     } catch {
       setServerError(
-        "An unexpected error occurred. Please contact us by phone or WhatsApp."
+        isBn
+          ? "একটি অপ্রত্যাশিত ত্রুটি ঘটেছে। অনুগ্রহ করে ফোন বা হোয়াটসঅ্যাপের মাধ্যমে আমাদের সাথে যোগাযোগ করুন।"
+          : "An unexpected error occurred. Please contact us by phone or WhatsApp."
       );
     }
   };

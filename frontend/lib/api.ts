@@ -8,24 +8,101 @@ export interface InquiryPayload {
   name: string;
   phone: string;
   email?: string;
-  project: string;
+  project?: string;
   package?: string;
   message?: string;
+  source?: string;
 }
 
 /**
- * Submit an investor inquiry.
- * TODO: replace with real API call to /api/inquiry or backend endpoint.
+ * Normalizes Bengali numerals to English digits (০-৯ -> 0-9)
  */
-export async function submitInquiry(data: InquiryPayload): Promise<{ success: boolean }> {
-  // TODO: integrate backend — replace below with fetch('/api/inquiry', { method: 'POST', body: JSON.stringify(data) })
-  console.log("[TODO: integrate backend] submitInquiry called with:", data);
+function normalizeDigits(str: string): string {
+  const bnDigits = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
+  return str.replace(/[০-৯]/g, (d) => String(bnDigits.indexOf(d)));
+}
 
-  // Simulate network delay
-  await new Promise((resolve) => setTimeout(resolve, 1200));
+/**
+ * Maps project display name (English or Bangla) to API projectSlug
+ */
+function mapProjectToSlug(project?: string): string {
+  if (!project) return "sunset-group";
+  const p = project.toLowerCase();
+  if (p.includes("sun care") || p.includes("সান কেয়ার") || p === "sun-care") return "sun-care";
+  if (p.includes("fantasy") || p.includes("dfi") || p.includes("ডিএফআই")) return "dfi";
+  if (p.includes("mangrove") || p.includes("ম্যানগ্রোভ")) return "mangrove";
+  if (p.includes("kuakata") || p.includes("কুয়াকাটা")) return "kuakata-hotel";
+  if (p.includes("deck") || p.includes("ডেক")) return "the-deck";
+  if (p.includes("combo") || p.includes("কম্বো")) return "super-combo";
+  return "sunset-group";
+}
 
-  // Always succeed in mock mode
-  return { success: true };
+/**
+ * Submit an investor inquiry to Sunset Kuakata's central NestJS backend.
+ * CORS is whitelisted for sunsetgroupbd.com.
+ * Source attribution is tagged automatically as "Sunset Group Website".
+ */
+export async function submitInquiry(
+  data: InquiryPayload
+): Promise<{ success: boolean; message?: string }> {
+  try {
+    // Clean and normalize phone number
+    let cleanPhone = normalizeDigits(data.phone.trim()).replace(/[\s-]/g, "");
+    if (cleanPhone.startsWith("+88")) {
+      cleanPhone = cleanPhone.slice(3);
+    } else if (cleanPhone.startsWith("88") && cleanPhone.length > 11) {
+      cleanPhone = cleanPhone.slice(2);
+    }
+
+    const projectSlug = mapProjectToSlug(data.project);
+
+    // Format package information if present
+    let combinedMessage = data.message?.trim() || "";
+    if (data.package && !combinedMessage.includes(data.package)) {
+      combinedMessage = combinedMessage
+        ? `[Package: ${data.package}] ${combinedMessage}`
+        : `[Package: ${data.package}] Interested in ownership opportunities.`;
+    }
+
+    const payload = {
+      fullName: data.name.trim(),
+      phone: cleanPhone,
+      email: data.email?.trim() || undefined,
+      projectSlug,
+      message: combinedMessage || undefined,
+      source: "Sunset Group Website",
+    };
+
+    const response = await fetch("https://api.sunsetkuakatahotel.com/api/v1/inquiries", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const resData = await response.json().catch(() => ({}));
+
+    if (response.ok && (resData.success === true || !("success" in resData))) {
+      return {
+        success: true,
+        message: resData.message || "Inquiry submitted successfully",
+      };
+    }
+
+    return {
+      success: false,
+      message:
+        resData.message ||
+        (Array.isArray(resData.errors) ? resData.errors.join(", ") : "Failed to submit inquiry"),
+    };
+  } catch (error) {
+    console.error("submitInquiry error:", error);
+    return {
+      success: false,
+      message: error instanceof Error ? error.message : "Network error. Please try again.",
+    };
+  }
 }
 
 /**
