@@ -15,6 +15,7 @@ interface PageHeroProps {
   actions?: ReactNode;
   meta?: ReactNode;
   align?: "left" | "center";
+  hideEyebrowOnMobile?: boolean;
 }
 
 export default function PageHero({
@@ -27,6 +28,7 @@ export default function PageHero({
   actions,
   meta,
   align = "left",
+  hideEyebrowOnMobile = false,
 }: PageHeroProps) {
   const centered = align === "center";
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -94,14 +96,18 @@ export default function PageHero({
         }`}
       >
         <div className={`${centered ? "mx-auto" : ""} max-w-3xl`}>
-          <div
-            className={`mb-5 flex flex-wrap items-center gap-2.5 ${centered ? "justify-center" : ""}`}
-          >
-            <span className="inline-flex items-center gap-2 rounded-full bg-[#0e2a1f]/90 backdrop-blur-md px-3.5 py-1.5 text-[11px] sm:text-xs font-semibold text-white shadow-md border border-white/20">
-              <MapPin size={12} className="text-[var(--sunset-red)] shrink-0" />
-              <span>{eyebrow}</span>
-            </span>
-          </div>
+          {eyebrow && (
+            <div
+              className={`mb-5 ${
+                hideEyebrowOnMobile ? "hidden sm:flex" : "flex"
+              } flex-wrap items-center gap-2.5 ${centered ? "justify-center" : ""}`}
+            >
+              <span className="inline-flex items-center gap-2 rounded-full bg-[#0e2a1f]/90 backdrop-blur-md px-3.5 py-1.5 text-[11px] sm:text-xs font-semibold text-white shadow-md border border-white/20">
+                <MapPin size={12} className="text-[var(--sunset-red)] shrink-0" />
+                <span>{eyebrow}</span>
+              </span>
+            </div>
+          )}
 
           <h1
             className="text-display-lg mb-5 font-bold text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.7)]"

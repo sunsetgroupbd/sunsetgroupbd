@@ -31,6 +31,7 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
     <div style={{ backgroundColor: "var(--paper)" }}>
       <PageHero
         eyebrow={isBn ? project.locationBn : project.location}
+        hideEyebrowOnMobile={true}
         title={isBn ? project.nameBn : project.name}
         description={isBn ? project.taglineBn : project.tagline}
         image={project.heroImage}
