@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, CheckCircle2, Send, Loader2, ShieldCheck, Sparkles } from "lucide-react";
+import { X, CheckCircle2, Send, Loader2, ShieldCheck } from "lucide-react";
 import { submitInquiry } from "@/lib/api";
 import { useLang } from "@/lib/lang";
 
@@ -197,8 +197,7 @@ export default function InvestmentLeadModal() {
             ) : (
               <div>
                 {/* Header Badge */}
-                <div className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-[rgba(18,54,42,0.08)] px-3 py-1 text-[11px] font-semibold text-[var(--sunset-green-800)]">
-                  <Sparkles size={12} className="text-[#C89D47]" />
+                <div className="mb-3 inline-flex items-center rounded-full bg-[rgba(18,54,42,0.08)] px-3 py-1 text-[11px] font-semibold text-[var(--sunset-green-800)]">
                   <span>
                     {isBn
                       ? "হালাল বিনিয়োগ ও যৌথ মালিকানা"
