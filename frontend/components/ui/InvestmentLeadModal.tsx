@@ -8,7 +8,7 @@ import { useLang } from "@/lib/lang";
 
 const STORAGE_DISMISSED_KEY = "sg_lead_modal_dismissed_at";
 const STORAGE_SUBMITTED_KEY = "sg_lead_modal_submitted";
-const POPUP_DELAY_MS = 6000; // 6 seconds after opening
+const POPUP_DELAY_MS = 3000; // 3 seconds after opening
 const DISMISS_SUPPRESSION_HOURS = 24;
 
 export default function InvestmentLeadModal() {
